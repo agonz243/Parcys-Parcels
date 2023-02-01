@@ -12,6 +12,13 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement; // can store horizontal and verticle
 
+    private int envelopesHeld; // The amount of envelopes currently held for the dog minigame
+
+    void Start()
+    {
+        envelopesHeld = 0;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -38,9 +45,14 @@ public class PlayerMovement : MonoBehaviour
 
     // COLLISION W/ SPRINKLERS
     private void OnTriggerEnter2D(Collider2D collision){
-        Debug.Log("as;ldfkjasd;lfkj");
         if(collision.gameObject.tag == "Collectable"){
-            Debug.Log(":SLDJFSDL:FJDS:L");
+            Destroy(collision.gameObject);
+            envelopesHeld++;
+        } else if (collision.gameObject.tag == "Mailbox")
+        {
+            mailboxCheck mbc = collision.gameObject.GetComponent<mailboxCheck>();
+            mbc.envelopesInBox += envelopesHeld;
+            envelopesHeld = 0;
             
         }
     }
