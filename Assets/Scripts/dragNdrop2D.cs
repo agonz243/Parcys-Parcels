@@ -6,6 +6,7 @@ public class dragNdrop2D : MonoBehaviour
 {
     public GameObject selectedObject;
     Vector3 offset;
+    Vector3 angle;
     void Update()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -21,6 +22,17 @@ public class dragNdrop2D : MonoBehaviour
         if (selectedObject)
         {
             selectedObject.transform.position = mousePosition + offset;
+            var rotate = 90;
+            if (Input.GetMouseButtonDown(1))
+            {
+                angle = Vector3.forward * rotate;
+                selectedObject.transform.eulerAngles = angle;
+                rotate = rotate * 2;
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                Debug.Log(rotate);
+            }
         }
         if (Input.GetMouseButtonUp(0) && selectedObject)
         {
