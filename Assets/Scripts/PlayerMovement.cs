@@ -35,4 +35,13 @@ public class PlayerMovement : MonoBehaviour
         // Movement (To have same moveSpeed * Time.FixedDeltaTime[amount of time elapsed since function was last called])
         rigidBody.MovePosition(rigidBody.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
+
+    // COLLISION W/ SPRINKLERS
+    private void OnTriggerEnter2D(Collider2D collision){
+        Debug.Log("as;ldfkjasd;lfkj");
+        if(collision.gameObject.tag == "Collectable"){
+            Debug.Log(":SLDJFSDL:FJDS:L");
+            
+        }
+    }
 }
