@@ -17,10 +17,10 @@ public class dragNdrop2D : MonoBehaviour
         }
         //========================================================
 
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0))
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //fetching mouse position relative to camera
+        if (Input.GetMouseButtonDown(0)) //if LMB pressed
         {
-            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
+            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition); //creating the collider of our target, with the overlap
             if (targetObject)
             {
                 selectedObject = targetObject.transform.gameObject;
@@ -30,11 +30,10 @@ public class dragNdrop2D : MonoBehaviour
         if (selectedObject) //if the mouse overlaps woth a draggable object (a collider) we move it 
         {
             selectedObject.transform.position = mousePosition + offset; //doing the moving
-            if (Input.GetMouseButtonDown(1)) //right click controls for rotation
+            if (Input.GetMouseButtonDown(1)) //if RMB pressed
             {
-
+                //doing the actual rotating
                 RotateByDegrees(selectedObject);
-                 //doing the actual rotating
             }
 
         }
