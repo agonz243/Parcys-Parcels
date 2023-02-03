@@ -102,10 +102,10 @@ public class PlayerMovement : MonoBehaviour
             }
             
         } else if (collision.gameObject.tag == "Enemy"){
-            // Debug.Log("Hello");
+            Debug.Log("Hello");
             SceneManager.LoadScene("LoseDogGame");
         } else if (collision.gameObject.tag == "Obstacle"){
-            // Debug.Log("Hello");
+            Debug.Log("Obstacle");
             moveSpeed -= 1;
         }
     }
