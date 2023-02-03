@@ -32,6 +32,9 @@ public class gridManager : MonoBehaviour
                 //REMEMEBER rotation in another script!!!!111!1!1!!!!!!
                 var spawnTile = Instantiate(tilePrefab, new Vector3(x-37, y-4), Quaternion.identity); //need to watch the Quarternion HERE for rotation
                 spawnTile.name = $"Tile {x} {y}";
+
+                var isOffset = (x + y) % 2 == 1;
+                spawnTile.Init(isOffset);
             }
         }
 

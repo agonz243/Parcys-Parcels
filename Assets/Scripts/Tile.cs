@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //declaring the two diff tile colors based on logic in gridManager
+    [SerializeField] private Color baseColor, offsetColor;
 
-    // Update is called once per frame
-    void Update()
+    //need to use sprite renderer for colors
+    [SerializeField] private SpriteRenderer renderah;
+
+    public void Init(bool isOffset)
     {
-        
+        renderah.color = isOffset ? offsetColor : baseColor;
     }
 }
