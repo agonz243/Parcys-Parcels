@@ -10,8 +10,20 @@ public class Tile : MonoBehaviour
     //need to use sprite renderer for colors
     [SerializeField] private SpriteRenderer renderah;
 
+    [SerializeField] private GameObject highlights;
+
     public void Init(bool isOffset)
     {
         renderah.color = isOffset ? offsetColor : baseColor;
+    }
+
+    void OnMouseEnter()
+    {
+        highlights.SetActive(true);
+    }
+
+    void OnMouseExit()
+    {
+        highlights.SetActive(false);
     }
 }
