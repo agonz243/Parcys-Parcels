@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class mailBagGrid : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //private variables for dimensions of grid
+    [SerializeField] private int _width, _height;
 
-    // Update is called once per frame
-    void Update()
+    //making an individual tile
+    [SerializeField] private Tile skware;
+
+    //function for gridding
+    void MakeaDaGrid()
     {
-        
+        //loop over width
+        for(int x = 0; x < _width; x++)
+        {
+            for(int y = 0; y < _height; y++)
+            {
+
+            }
+        }
     }
 }
