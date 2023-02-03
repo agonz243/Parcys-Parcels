@@ -20,6 +20,8 @@ public class dragNdrop2D : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //fetching mouse position relative to camera
         if (Input.GetMouseButtonDown(0)) //if LMB pressed
         {
+            //mouse position finding bounds
+            Debug.Log(mousePosition);
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition); //creating the collider of our target, with the overlap
             if (targetObject)
             {
@@ -40,7 +42,7 @@ public class dragNdrop2D : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && selectedObject) //LMB raised while over movable object, aka dropping it
         {
             var currentPos = selectedObject.transform.position; //fetch the current objects position
-
+            
             //doing grid snapping, rounding to nearest whole, need to scale by grid within bounds of our "bag' rectangle
             selectedObject.transform.position = new Vector3(Mathf.Round(currentPos.x),
                                          Mathf.Round(currentPos.y),
