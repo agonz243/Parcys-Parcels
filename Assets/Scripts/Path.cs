@@ -32,11 +32,11 @@ public class Path : MonoBehaviour
 
     private bool hit = false; // used to check if character has been hit
 
-    private bool camMove = false; // used to translate camera
+    // private bool camMove = false; // used to translate camera
 
-    private bool stop = false;
+    // private bool stop = false;
 
-    private bool v3 = true;
+    // private bool v3 = true;
 
     // private bool moved = true;
 
@@ -59,46 +59,12 @@ public class Path : MonoBehaviour
     {
         // WHILE THERE ARE STILL POINTS TO GET TOWARDS
         if(pointIndex <= Points.Length - 1){
-            // CAM OG 0.88
             
-            
-            
-//             // TESTING CAMERA STUFF
-
-//             if((pointIndex == 5 || pointIndex == 11) && v3 == true){
-//                 camMove = true;
-//                 stop = false;
-//                 // moved = true;
-//             } else{
-//                 stop = false;
-//                 camMove = false;
-//                 // moved = false;
-//             }
-// //moved == false 
-//             if(camMove == true && stop == false && v3 == true){
-//                 cam.transform.position = new Vector3(cam.transform.position.x + 0.02F, cam.transform.position.y, cam.transform.position.z);
-//                 if(((cam.transform.position.x) >= 19) || ((cam.transform.position.x >= 37))){
-//                     Debug.Log("Camera debug: " + cam.transform.position.x);
-//                     camMove = true;
-//                     // if((pointIndex != 5) || (pointIndex != 11)){
-//                         stop = true;
-//                     // }
-//                 }
-//             }
-
-
-
-
             // TIMER STUFF (GAME TIMER)
             if(gameTimer >= 0){ // Decrease game timer
                 gameTimer -= Time.deltaTime;
                 float seconds = Mathf.FloorToInt(gameTimer % 60);
                 timerText.text = string.Format("{0}", seconds);
-            } else if(gameTimer >= 0 && pointIndex == Points.Length){ // Reach the end while there is still time
-                SceneManager.LoadScene("Win");
-            } else{ // Else timer is up and player loses
-                SceneManager.LoadScene("Lose");
-                Debug.Log("Testing switchin scenes");
             }
 
             // CHARACTER IS HIDING
@@ -147,6 +113,7 @@ public class Path : MonoBehaviour
             if(transform.position == Points[pointIndex].transform.position){
                 pointIndex += 1; // change to the next point of travel
                 Debug.Log("pointIndex: " + pointIndex);
+                Debug.Log("Points.Length: " + (Points.Length));
             }
             
             // CHARACTER GOT HIT
@@ -161,6 +128,10 @@ public class Path : MonoBehaviour
                     hitTimer = 2;
                 }
             }
+        } else if((gameTimer >= 0) && (pointIndex == (Points.Length))){ // Reach the end while there is still time
+            SceneManager.LoadScene("Win");
+        } else{ // Else timer is up and player loses
+            SceneManager.LoadScene("Lose");
         }
     }
     
@@ -195,3 +166,27 @@ public class Path : MonoBehaviour
                 //     moveSpeed = 0.15F;
 
 
+            
+               // CAM OG 0.88         
+// //             // TESTING CAMERA STUFF
+
+//             if((pointIndex == 5 || pointIndex == 11) && v3 == true){
+//                 camMove = true;
+//                 stop = false;
+//                 // moved = true;
+//             } else{
+//                 stop = false;
+//                 camMove = false;
+//                 // moved = false;
+//             }
+// //moved == false 
+//             if(camMove == true && stop == false && v3 == true){
+//                 cam.transform.position = new Vector3(cam.transform.position.x + 0.02F, cam.transform.position.y, cam.transform.position.z);
+//                 if(((cam.transform.position.x) >= 19) || ((cam.transform.position.x >= 37))){
+//                     Debug.Log("Camera debug: " + cam.transform.position.x);
+//                     camMove = true;
+//                     // if((pointIndex != 5) || (pointIndex != 11)){
+//                         stop = true;
+//                     // }
+//                 }
+//             }
