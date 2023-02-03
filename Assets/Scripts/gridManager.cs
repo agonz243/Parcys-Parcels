@@ -30,7 +30,7 @@ public class gridManager : MonoBehaviour
             for(int y = 0; y < _height; y++)
             {
                 //REMEMEBER rotation in another script!!!!111!1!1!!!!!!
-                var spawnTile = Instantiate(tilePrefab, new Vector3(x, y), Quaternion.identity); //need to watch the Quarternion HERE for rotation
+                var spawnTile = Instantiate(tilePrefab, new Vector3(x-37, y-4), Quaternion.identity); //need to watch the Quarternion HERE for rotation
                 spawnTile.name = $"Tile {x} {y}";
             }
         }
