@@ -32,11 +32,11 @@ public class Path : MonoBehaviour
 
     private bool hit = false; // used to check if character has been hit
 
-    private bool camMove = false; // used to translate camera
+    // private bool camMove = false; // used to translate camera
 
-    private bool stop = false;
+    // private bool stop = false;
 
-    private bool v3 = true;
+    // private bool v3 = true;
 
     // private bool moved = true;
 
@@ -94,8 +94,6 @@ public class Path : MonoBehaviour
                 gameTimer -= Time.deltaTime;
                 float seconds = Mathf.FloorToInt(gameTimer % 60);
                 timerText.text = string.Format("{0}", seconds);
-            } else if(gameTimer >= 0 && pointIndex == Points.Length){ // Reach the end while there is still time
-                SceneManager.LoadScene("Win");
             } else{ // Else timer is up and player loses
                 SceneManager.LoadScene("Lose");
                 Debug.Log("Testing switchin scenes");
@@ -161,7 +159,9 @@ public class Path : MonoBehaviour
                     hitTimer = 2;
                 }
             }
-        }
+        } else if(gameTimer >= 0 && pointIndex == Points.Length){ // Reach the end while there is still time
+                SceneManager.LoadScene("Win");
+            } 
     }
     
     // COLLISION (W/ SPRINKLERS)
