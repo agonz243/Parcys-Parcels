@@ -12,6 +12,8 @@ public class Path : MonoBehaviour
 
     [SerializeField]private float hideTimer = 2; // how long you can hide for
 
+    [SerializeField]private float hitTimer = 2; // how long you're stunned when hit
+
     [SerializeField]private float gameTimer = 180; // timer for entire minigame
 
     [SerializeField]private GameObject brella; // temp for umbrella?
@@ -24,11 +26,23 @@ public class Path : MonoBehaviour
 
     private bool hide = false; // used to check if character is hidden
 
-    private bool timerisRunning = false; // used to start and stop the timer
+    private bool hideTimerRun = false; // used to start and stop the hiding timer
+
+    private bool hitTimerRun = false; // used to start and stop the hit timer
 
     private bool hit = false; // used to check if character has been hit
 
+    private bool camMove = false; // used to translate camera
+
+    private bool stop = false;
+
+    private bool v3 = true;
+
+    // private bool moved = true;
+
     private Rigidbody2D rb;
+
+    [SerializeField]private Camera cam;
 
 
     
@@ -45,29 +59,60 @@ public class Path : MonoBehaviour
     {
         // WHILE THERE ARE STILL POINTS TO GET TOWARDS
         if(pointIndex <= Points.Length - 1){
+            // CAM OG 0.88
+            
+            
+            
+//             // TESTING CAMERA STUFF
 
-            // TIMER STUFF (USED IN CHARACTER HIDE)
-            if(gameTimer > 0){
+//             if((pointIndex == 5 || pointIndex == 11) && v3 == true){
+//                 camMove = true;
+//                 stop = false;
+//                 // moved = true;
+//             } else{
+//                 stop = false;
+//                 camMove = false;
+//                 // moved = false;
+//             }
+// //moved == false 
+//             if(camMove == true && stop == false && v3 == true){
+//                 cam.transform.position = new Vector3(cam.transform.position.x + 0.02F, cam.transform.position.y, cam.transform.position.z);
+//                 if(((cam.transform.position.x) >= 19) || ((cam.transform.position.x >= 37))){
+//                     Debug.Log("Camera debug: " + cam.transform.position.x);
+//                     camMove = true;
+//                     // if((pointIndex != 5) || (pointIndex != 11)){
+//                         stop = true;
+//                     // }
+//                 }
+//             }
+
+
+
+
+            // TIMER STUFF (GAME TIMER)
+            if(gameTimer >= 0){ // Decrease game timer
                 gameTimer -= Time.deltaTime;
                 float seconds = Mathf.FloorToInt(gameTimer % 60);
                 timerText.text = string.Format("{0}", seconds);
-            } else{
+            } else if(gameTimer >= 0 && pointIndex == Points.Length){ // Reach the end while there is still time
                 SceneManager.LoadScene("Win");
+            } else{ // Else timer is up and player loses
+                SceneManager.LoadScene("Lose");
                 Debug.Log("Testing switchin scenes");
             }
 
             // CHARACTER IS HIDING
 
-            if(hide && timerisRunning){ // character is hidden
+            if(hide && hideTimerRun){ // character is hidden
                 if(hideTimer > 0){ // there is still time to hide
                     hideTimer -= Time.deltaTime; // subtract from the time
                     brella.transform.position = new Vector3(transform.position[0], transform.position[1], 0); // set umbrella position to player position
-                    rb.isKinematic = true; // disables collisions & applied forces for player
+                    // rb.isKinematic = true; // disables collisions & applied forces for player
                 } else{ // otherwise the timer is out
                     hide = false; // set hidden to false
-                    timerisRunning = false; // stop the timer
+                    hideTimerRun = false; // stop the timer
                     hideTimer = 2; // reset the timer
-                    rb.isKinematic = false; // enables collisions & applie dforces for player
+                    // rb.isKinematic = false; // enables collisions & applie dforces for player
                     brella.SetActive(false); // disable the umbrella
                 }
             }
@@ -77,6 +122,7 @@ public class Path : MonoBehaviour
             if(!hide && !hit){
                 // Character moves when alternating the "A" & "D" keys
                 //       - requires the keyAlt variable
+
                 //Position if moved when alternating the keys "A" and "D"
                 if(Input.GetKeyDown(KeyCode.A) && keyAlt == 0){
                     transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex].transform.position, moveSpeed);
@@ -85,24 +131,14 @@ public class Path : MonoBehaviour
                     transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex].transform.position, moveSpeed);
                     keyAlt = 0;
                 }
-
-                // Character moves when presing the "space" key
-                //   - requires the keyAlt variable
-                // if(Input.GetKeyDown("space")){
-                //     transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex].transform.position, moveSpeed);
-                // }
             }
-
-            // Character moves continuously - Time.deltaTime (consistent movement regardless of frame rate)
-            // transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex].transform.position, moveSpeed * Time.deltaTime); 
-            
 
             // CHARACTER HIDE / SHIELD INPUT
 
             if(Input.GetKeyDown(KeyCode.DownArrow)){
                 // GameObject.Find("brella").transform.position = transform.position(transform.position[0], transform.position[1], 0); // might break the code
                 hide = true;
-                timerisRunning = true;
+                hideTimerRun = true;
                 brella.SetActive(true);
             }
 
@@ -110,34 +146,52 @@ public class Path : MonoBehaviour
 
             if(transform.position == Points[pointIndex].transform.position){
                 pointIndex += 1; // change to the next point of travel
-                Debug.Log("Point Index: " + pointIndex);
-                // Debug.Log("Point Index - 1: " + (pointIndex - 1));
+                Debug.Log("pointIndex: " + pointIndex);
             }
             
             // CHARACTER GOT HIT
 
-            if(hit){
-                rb.isKinematic = true;
-                moveSpeed = 5F;
-                transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex - 1].transform.position, moveSpeed * Time.deltaTime);
-                if(transform.position == Points[pointIndex - 1].transform.position){
+            if(hit && hitTimerRun){
+                if(hitTimer > 0){
+                    hitTimer -= Time.deltaTime;
+                    transform.Rotate(new Vector3(0, 0, 360) * Time.deltaTime);
+                } else{
                     hit = false;
-                    rb.isKinematic = false;
-                    moveSpeed = 0.15F;
+                    hitTimerRun = false;
+                    hitTimer = 2;
                 }
             }
-        }else{
-            SceneManager.LoadScene("Win Scene");
         }
     }
-    // COLLISION W/ SPRINKLERS
-    private void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.tag == "Enemy" && !hide){
-            hit = true;
-        }
-    }
-
-
     
+    // COLLISION (W/ SPRINKLERS)
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.tag == "Enemy" && !hide && !hit){
+            hit = true;
+            hitTimerRun = true;
+        }
+    }
 }
+
+// JUNK YARD
+
+            // Character moves continuously - Time.deltaTime (consistent movement regardless of frame rate)
+            // transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex].transform.position, moveSpeed * Time.deltaTime); 
+            
+            // Character moves when presing the "space" key
+                //   - requires the keyAlt variable
+                // if(Input.GetKeyDown("space")){
+                //     transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex].transform.position, moveSpeed);
+                // }
+
+            // Return to previous point when hit
+
+            // rb.isKinematic = true;
+                // moveSpeed = 5F;
+                // transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex - 1].transform.position, moveSpeed * Time.deltaTime);
+                // if(transform.position == Points[pointIndex - 1].transform.position){
+                //     hit = false;
+                //     rb.isKinematic = false;
+                //     moveSpeed = 0.15F;
+
 
