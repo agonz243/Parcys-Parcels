@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 530fdbd6e1f0507489b7c08836d5eb3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _width: 120
-  _height: 90
+  _width: 112
+  _height: 84
   tilePrefab: {fileID: 4164474657024787135}
   camcorder: {fileID: 1573266251}
 --- !u!1 &340143246
@@ -557,7 +557,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1354100571}
   - component: {fileID: 1354100567}
-  - component: {fileID: 1354100569}
   - component: {fileID: 1354100570}
   m_Layer: 0
   m_Name: Mailbag
@@ -618,22 +617,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1354100569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354100566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 530fdbd6e1f0507489b7c08836d5eb3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _width: 0
-  _height: 0
-  tilePrefab: {fileID: 0}
-  camcorder: {fileID: 0}
 --- !u!222 &1354100570
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -821,17 +804,65 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: renderah
+      value: 
+      objectReference: {fileID: 4164474657024787136}
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: baseColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: baseColor.b
+      value: 0.15908688
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: baseColor.g
+      value: 0.32321957
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: baseColor.r
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: offsetColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: offsetColor.b
+      value: 0.23335709
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: offsetColor.g
+      value: 0.40577957
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: offsetColor.r
+      value: 0.7169812
+      objectReference: {fileID: 0}
     - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -495.6
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -26.199997
+      value: -148
       objectReference: {fileID: 0}
     - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -882,3 +913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6912a8eedef3b4ea8a3852c0157593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &4164474657024787136 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3094276826466060435, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+  m_PrefabInstance: {fileID: 4164474657024787134}
+  m_PrefabAsset: {fileID: 0}

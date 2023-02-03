@@ -25,20 +25,22 @@ public class gridManager : MonoBehaviour
     void MakeaDaGrid()
     {
         //loop over width
-        for(int x = 0; x < _width; x++)
+        for(int x = 0; x < _width; x = x+15) //added 15 to x and y for increased size of tiles
         {
-            for(int y = 0; y < _height; y++)
+            for(int y = 0; y < _height; y = y+15)
             {
                 //REMEMEBER rotation in another script!!!!111!1!1!!!!!!
-                var spawnTile = Instantiate(tilePrefab, new Vector3(x-37, y-4), Quaternion.identity); //need to watch the Quarternion HERE for rotation
+                //these numbers are tweaked for tile and board size, ask graham if changes needed :)
+                var spawnTile = Instantiate(tilePrefab, new Vector3(x-40, y-2), Quaternion.identity); //need to watch the Quarternion HERE for rotation
                 spawnTile.name = $"Tile {x} {y}";
 
+                //math here using mods to determine checkerboard coloring for tiles
                 var isOffset = (x + y) % 2 == 1;
                 spawnTile.Init(isOffset);
             }
         }
 
         //actually moving the cam here using reference from above
-        camcorder.transform.position = new Vector3((float)_width / 2 - 0.5f, _height / 2 - 0.5f, -10);
+        camcorder.transform.position = new Vector3((float)_width / 2 - 0.5f, (float)_height / 2 - 0.5f, -10);
     }
 }
