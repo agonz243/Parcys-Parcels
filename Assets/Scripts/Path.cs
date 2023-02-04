@@ -120,22 +120,23 @@ public class Path : MonoBehaviour
             if(!hide && !hit){
                 // Character moves when alternating the "A" & "D" keys
                 //       - requires the keyAlt variable
-
+                // Debug.Log("can move");
                 //Position if moved when alternating the keys "A" and "D"
                 if(Input.GetKeyDown(KeyCode.A) && keyAlt == 0){
                     transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex].transform.position, moveSpeed);
                     keyAlt = 1;
+                    // Debug.Log('A');
                 } else if(Input.GetKeyDown(KeyCode.D) && keyAlt == 1){
                     transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex].transform.position, moveSpeed);
                     keyAlt = 0;
+                    // Debug.Log('D');
                 }
             }
 
             // CHARACTER HIDE / SHIELD INPUT
-
+            //      enables hiding and puts umbrella on screen
             if(Input.GetKeyDown(KeyCode.DownArrow)){
-                // GameObject.Find("brella").transform.position = transform.position(transform.position[0], transform.position[1], 0); // might break the code
-                hide = true;
+                hide = true; 
                 hideTimerRun = true;
                 brella.SetActive(true);
             }
@@ -144,7 +145,7 @@ public class Path : MonoBehaviour
 
             if(transform.position == Points[pointIndex].transform.position){
                 pointIndex += 1; // change to the next point of travel
-                Debug.Log("pointIndex: " + pointIndex);
+                // Debug.Log("pointIndex: " + pointIndex);
             }
             
             // CHARACTER GOT HIT
@@ -193,6 +194,5 @@ public class Path : MonoBehaviour
                 //     hit = false;
                 //     rb.isKinematic = false;
                 //     moveSpeed = 0.15F;
-
 
 

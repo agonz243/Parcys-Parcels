@@ -2666,12 +2666,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa876f142d72e4af4a8cb8c7ed8b67c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points: []
-  moveSpeed: 0
+  Points:
+  - {fileID: 2110258890}
+  - {fileID: 1364934336}
+  - {fileID: 792423870}
+  - {fileID: 279933436}
+  - {fileID: 111497912}
+  - {fileID: 597405886}
+  - {fileID: 1056965991}
+  - {fileID: 1042618168}
+  - {fileID: 527912341}
+  - {fileID: 1666944898}
+  moveSpeed: 0.15
   hideTimer: 2
+  hitTimer: 2
   gameTimer: 180
-  brella: {fileID: 0}
-  timerText: {fileID: 0}
+  brella: {fileID: 862154850}
+  timerText: {fileID: 755611719}
+  cam: {fileID: 194697693}
 --- !u!61 &1350200556
 BoxCollider2D:
   m_ObjectHideFlags: 0
