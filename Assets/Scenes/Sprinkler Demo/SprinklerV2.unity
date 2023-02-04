@@ -2663,9 +2663,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1350200551}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b179046d83ec84f0c91efc5335f78a30, type: 3}
+  m_Script: {fileID: 11500000, guid: aa876f142d72e4af4a8cb8c7ed8b67c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Points: []
+  moveSpeed: 0
+  hideTimer: 2
+  gameTimer: 180
+  brella: {fileID: 0}
+  timerText: {fileID: 0}
 --- !u!61 &1350200556
 BoxCollider2D:
   m_ObjectHideFlags: 0

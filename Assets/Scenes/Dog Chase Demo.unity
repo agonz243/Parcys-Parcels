@@ -992,7 +992,7 @@ RectTransform:
   m_GameObject: {fileID: 667672410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6020047, y: 0.6020047, z: 0.6020047}
+  m_LocalScale: {x: 0.4849389, y: 0.4849389, z: 0.4849389}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1498201485}
@@ -1000,7 +1000,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -228, y: 269}
+  m_AnchoredPosition: {x: -157.48, y: 211.89}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &674083939
@@ -6811,7 +6811,7 @@ RectTransform:
   m_GameObject: {fileID: 1276369200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5949836, y: 0.5949836, z: 0.5949836}
+  m_LocalScale: {x: 0.4792831, y: 0.4792831, z: 0.4792831}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1498201485}
@@ -6819,7 +6819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229, y: 231}
+  m_AnchoredPosition: {x: -158.28, y: 181.27}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1276369202
@@ -7269,7 +7269,7 @@ RectTransform:
   m_GameObject: {fileID: 1741512556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.91358894, y: 0.91358894, z: 0.91358894}
+  m_LocalScale: {x: 0.73593247, y: 0.73593247, z: 0.73593247}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1498201485}
@@ -7277,7 +7277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.6, y: 278.4}
+  m_AnchoredPosition: {x: 35.53, y: 219.46}
   m_SizeDelta: {x: 520.287, y: 47.565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1741512558
