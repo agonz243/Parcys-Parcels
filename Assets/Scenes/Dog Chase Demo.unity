@@ -703,7 +703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37a36fd6df1c46338bb451ba2e9ae68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTimer: 5
+  gameTimer: 30
   timerText: {fileID: 667672411}
 --- !u!4 &521411525
 Transform:
@@ -908,8 +908,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d734a2ed32ec26e40a5fc7d00d0c5327, type: 2}
+  m_sharedMaterial: {fileID: -861100754391115005, guid: d734a2ed32ec26e40a5fc7d00d0c5327, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -992,7 +992,7 @@ RectTransform:
   m_GameObject: {fileID: 667672410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8049842, y: 0.8049842, z: 0.8049842}
+  m_LocalScale: {x: 0.6020047, y: 0.6020047, z: 0.6020047}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1498201485}
@@ -1000,7 +1000,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -285, y: 432}
+  m_AnchoredPosition: {x: -228, y: 269}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &674083939
@@ -6176,7 +6176,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.6
+    width: 0.56
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -6227,7 +6227,6 @@ GameObject:
   - component: {fileID: 990331196}
   - component: {fileID: 990331201}
   - component: {fileID: 990331200}
-  - component: {fileID: 990331202}
   m_Layer: 8
   m_Name: Dog Enemy
   m_TagString: Enemy
@@ -6386,19 +6385,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &990331202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990331195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9406941b1dc7248349743569d0782e99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Rigidbody: {fileID: 0}
 --- !u!1 &1106884235
 GameObject:
   m_ObjectHideFlags: 0
@@ -6825,7 +6811,7 @@ RectTransform:
   m_GameObject: {fileID: 1276369200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8049842, y: 0.8049842, z: 0.8049842}
+  m_LocalScale: {x: 0.5949836, y: 0.5949836, z: 0.5949836}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1498201485}
@@ -6833,7 +6819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -287, y: 383}
+  m_AnchoredPosition: {x: -229, y: 231}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1276369202
@@ -6858,8 +6844,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d734a2ed32ec26e40a5fc7d00d0c5327, type: 2}
+  m_sharedMaterial: {fileID: -861100754391115005, guid: d734a2ed32ec26e40a5fc7d00d0c5327, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7283,7 +7269,7 @@ RectTransform:
   m_GameObject: {fileID: 1741512556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.91358894, y: 0.91358894, z: 0.91358894}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1498201485}
@@ -7291,7 +7277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 246.22}
+  m_AnchoredPosition: {x: 11.6, y: 278.4}
   m_SizeDelta: {x: 520.287, y: 47.565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1741512558

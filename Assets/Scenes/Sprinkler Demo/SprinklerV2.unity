@@ -2140,7 +2140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862154850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.78, y: -7.04, z: -1.1}
+  m_LocalPosition: {x: -2.83, y: -4.16, z: -1.1}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2647,7 +2647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350200551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.14, y: -7.05, z: -0.01}
+  m_LocalPosition: {x: -4.88, y: -1.13, z: -0.01}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2663,27 +2663,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1350200551}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe3da3e4799a834fa17d8c2cdb17578, type: 3}
+  m_Script: {fileID: 11500000, guid: b179046d83ec84f0c91efc5335f78a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points:
-  - {fileID: 2110258890}
-  - {fileID: 1364934336}
-  - {fileID: 792423870}
-  - {fileID: 279933436}
-  - {fileID: 111497912}
-  - {fileID: 597405886}
-  - {fileID: 1056965991}
-  - {fileID: 1042618168}
-  - {fileID: 527912341}
-  - {fileID: 1666944898}
-  moveSpeed: 0.15
-  hideTimer: 2
-  hitTimer: 2
-  gameTimer: 60
-  brella: {fileID: 862154850}
-  timerText: {fileID: 755611719}
-  cam: {fileID: 194697693}
 --- !u!61 &1350200556
 BoxCollider2D:
   m_ObjectHideFlags: 0
