@@ -22,6 +22,7 @@ public class dragNdrop2D : MonoBehaviour
         {
             //mouse position finding bounds
             Debug.Log(mousePosition);
+            //edited here from collider2d to polygoncollider2d (2/6/23)
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition); //creating the collider of our target, with the overlap
             if (targetObject)
             {
