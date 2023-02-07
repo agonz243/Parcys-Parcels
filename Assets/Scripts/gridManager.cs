@@ -32,6 +32,8 @@ public class gridManager : MonoBehaviour
                 //REMEMEBER rotation in another script!!!!111!1!1!!!!!!
                 //these numbers are tweaked for tile and board size, ask graham if changes needed :)
                 var spawnTile = Instantiate(tilePrefab, new Vector3(x-40, y-2), Quaternion.identity); //need to watch the Quarternion HERE for rotation
+                //here want to add the tiles to snap points script, so that shapes can snap to the grid as a whole
+                //snapPoints.Add(spawnTile);
                 spawnTile.name = $"Tile {x} {y}";
 
                 //math here using mods to determine checkerboard coloring for tiles

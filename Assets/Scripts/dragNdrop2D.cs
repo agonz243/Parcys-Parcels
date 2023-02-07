@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class dragNdrop2D : MonoBehaviour
 {
+    
     public GameObject selectedObject;
     Vector3 offset;
 
@@ -12,7 +13,7 @@ public class dragNdrop2D : MonoBehaviour
         //rotating function======================================
         void RotateByDegrees(GameObject wespin)
         {
-            Vector3 rotationToAdd = new Vector3(0, 0, 90); //was 45
+            Vector3 rotationToAdd = new Vector3(0, 0, 45); //was 45
             wespin.transform.Rotate(rotationToAdd);
         }
         //========================================================
@@ -45,11 +46,12 @@ public class dragNdrop2D : MonoBehaviour
             var currentPos = selectedObject.transform.position; //fetch the current objects position
             
             //doing grid snapping, rounding to nearest whole, need to scale by grid within bounds of our "bag' rectangle
-            selectedObject.transform.position = new Vector3(Mathf.Round(currentPos.x),
-                                         Mathf.Round(currentPos.y),
-                                         Mathf.Round(currentPos.z));
+
+            //selectedObject.transform.position = new Vector3(Mathf.Round(currentPos.x ),
+                                        //Mathf.Round(currentPos.y),
+                                         //Mathf.Round(currentPos.z ));
             selectedObject = null;
         }
     }
-
+    
 }
