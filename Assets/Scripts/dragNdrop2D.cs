@@ -8,7 +8,8 @@ public class dragNdrop2D : MonoBehaviour
     //taking instance of grid class, in order to access tile positioning for shape "snapping"
     public gridManager gridCoords;
 
-    oublic List<Vector3> snapPoints = gridCoords.tilesnapXY;
+    //public List<Vector3> snapPoints = new gridCoords.tilesnapXY;
+    
     //defining for later use
     public GameObject selectedObject;
     Vector3 offset;
