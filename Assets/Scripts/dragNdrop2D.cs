@@ -13,7 +13,7 @@ public class dragNdrop2D : MonoBehaviour
         //rotating function======================================
         void RotateByDegrees(GameObject wespin)
         {
-            Vector3 rotationToAdd = new Vector3(0, 0, 45); //was 45
+            Vector3 rotationToAdd = new Vector3(0, 0, 90); //was 45
             wespin.transform.Rotate(rotationToAdd);
         }
         //========================================================
