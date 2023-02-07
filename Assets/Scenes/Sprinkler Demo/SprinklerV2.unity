@@ -2680,10 +2680,9 @@ MonoBehaviour:
   moveSpeed: 0.15
   hideTimer: 2
   hitTimer: 2
-  gameTimer: 180
+  gameTimer: 3
   brella: {fileID: 862154850}
   timerText: {fileID: 755611719}
-  cam: {fileID: 194697693}
 --- !u!61 &1350200556
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -6,19 +6,31 @@ using UnityEngine.SceneManagement;
 
 public class Path : MonoBehaviour
 {
+    // UNITY UI STUFF
+
+    // drag in points from the hierarchy into the array
     [SerializeField] Transform[] Points; // array to hold points
 
-    [SerializeField]private float moveSpeed; // how fast the character moves
+    // amount of distance player travels when a key is pressed, can be adjusted in UI
+    [SerializeField]private float moveSpeed = 0.15F; // how fast the character moves
 
-    [SerializeField]private float hideTimer = 2; // how long you can hide for
+    // was adjusted from 2 --> 1
+    [SerializeField]private float hideTimer = 1; // how long you can hide for
 
-    [SerializeField]private float hitTimer = 2; // how long you're stunned when hit
+    // was adjusted from 2 --> 2.5
+    [SerializeField]private float hitTimer = 2.5F; // how long you're stunned when hit
 
+    // adjusted based on the version / playtesting
     [SerializeField]private float gameTimer = 180; // timer for entire minigame
 
+    // for visuals without assets, drag brella from hierarchy into UI
     [SerializeField]private GameObject brella; // temp for umbrella?
 
+    // drag the text under canvas into UI
     [SerializeField]private Text timerText;
+
+    // drag the camera into UI to reset camera position after scrolling
+    [SerializeField]private Camera cam;
 
     private float keyAlt = 0; // used to check for alternate key press
 
@@ -32,26 +44,16 @@ public class Path : MonoBehaviour
 
     private bool hit = false; // used to check if character has been hit
 
-    // private bool camMove = false; // used to translate camera
-
-    // private bool stop = false;
-
-    // private bool v3 = true;
-
-    // private bool moved = true;
-
     private Rigidbody2D rb;
 
-    [SerializeField]private Camera cam;
-
-
-    
     // Start is called before the first frame update
     void Start()
     {
         transform.position = Points[pointIndex].transform.position; // starting the game goes to the first point
         brella.SetActive(false); // initially disable the umbrella
         rb = GetComponent<Rigidbody2D>();
+        // cam.transform.position = new Vector3(2.81F, cam.transform.position.y, cam.transform.position.z);
+        cam.transform.position = new Vector3(2.81F, cam.transform.position.y, cam.transform.position.z);
     }
 
     // Update is called once per frame
@@ -59,35 +61,6 @@ public class Path : MonoBehaviour
     {
         // WHILE THERE ARE STILL POINTS TO GET TOWARDS
         if(pointIndex <= Points.Length - 1){
-            // CAM OG 0.88
-            
-            
-            
-//             // TESTING CAMERA STUFF
-
-//             if((pointIndex == 5 || pointIndex == 11) && v3 == true){
-//                 camMove = true;
-//                 stop = false;
-//                 // moved = true;
-//             } else{
-//                 stop = false;
-//                 camMove = false;
-//                 // moved = false;
-//             }
-// //moved == false 
-//             if(camMove == true && stop == false && v3 == true){
-//                 cam.transform.position = new Vector3(cam.transform.position.x + 0.02F, cam.transform.position.y, cam.transform.position.z);
-//                 if(((cam.transform.position.x) >= 19) || ((cam.transform.position.x >= 37))){
-//                     Debug.Log("Camera debug: " + cam.transform.position.x);
-//                     camMove = true;
-//                     // if((pointIndex != 5) || (pointIndex != 11)){
-//                         stop = true;
-//                     // }
-//                 }
-//             }
-
-
-
 
             // TIMER STUFF (GAME TIMER)
             if(gameTimer >= 0){ // Decrease game timer
@@ -100,7 +73,6 @@ public class Path : MonoBehaviour
             }
 
             // CHARACTER IS HIDING
-
             if(hide && hideTimerRun){ // character is hidden
                 if(hideTimer > 0){ // there is still time to hide
                     hideTimer -= Time.deltaTime; // subtract from the time
@@ -116,20 +88,17 @@ public class Path : MonoBehaviour
             }
 
             // CHARACTER MOVEMENT
-
             if(!hide && !hit){
                 // Character moves when alternating the "A" & "D" keys
                 //       - requires the keyAlt variable
-                // Debug.Log("can move");
+
                 //Position if moved when alternating the keys "A" and "D"
                 if(Input.GetKeyDown(KeyCode.A) && keyAlt == 0){
                     transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex].transform.position, moveSpeed);
                     keyAlt = 1;
-                    // Debug.Log('A');
                 } else if(Input.GetKeyDown(KeyCode.D) && keyAlt == 1){
                     transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex].transform.position, moveSpeed);
                     keyAlt = 0;
-                    // Debug.Log('D');
                 }
             }
 
@@ -142,14 +111,11 @@ public class Path : MonoBehaviour
             }
 
             // HITTING A POINT MOVES THE INDEX TO THE NEXT ONE
-
             if(transform.position == Points[pointIndex].transform.position){
                 pointIndex += 1; // change to the next point of travel
-                // Debug.Log("pointIndex: " + pointIndex);
             }
             
             // CHARACTER GOT HIT
-
             if(hit && hitTimerRun){
                 if(hitTimer > 0){
                     hitTimer -= Time.deltaTime;
@@ -172,6 +138,12 @@ public class Path : MonoBehaviour
             hitTimerRun = true;
         }
     }
+
+    // private void MoveCam(float stopCam){
+    //     if(cam.transform.position.x < stopCam){
+    //         cam.transform.position = new Vector3(cam.transform.position.x + camMoveSpeed, cam.transform.position.y, cam.transform.position.z);
+    //     }
+    // }
 }
 
 // JUNK YARD
@@ -195,4 +167,34 @@ public class Path : MonoBehaviour
                 //     rb.isKinematic = false;
                 //     moveSpeed = 0.15F;
 
+// CAM OG 0.88
+//             // TESTING CAMERA STUFF
 
+//             if((pointIndex == 5 || pointIndex == 11) && v3 == true){
+//                 camMove = true;
+//                 stop = false;
+//                 // moved = true;
+//             } else{
+//                 stop = false;
+//                 camMove = false;
+//                 // moved = false;
+//             }
+// //moved == false 
+//             if(camMove == true && stop == false && v3 == true){
+//                 cam.transform.position = new Vector3(cam.transform.position.x + 0.02F, cam.transform.position.y, cam.transform.position.z);
+//                 if(((cam.transform.position.x) >= 19) || ((cam.transform.position.x >= 37))){
+//                     Debug.Log("Camera debug: " + cam.transform.position.x);
+//                     camMove = true;
+//                     // if((pointIndex != 5) || (pointIndex != 11)){
+//                         stop = true;
+//                     // }
+//                 }
+//             }
+
+    // private bool camMove = false; // used to translate camera
+
+    // private bool stop = false;
+
+    // private bool v3 = true;
+
+    // private bool moved = true;
