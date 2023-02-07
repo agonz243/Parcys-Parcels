@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class dragNdrop2D : MonoBehaviour
 {
+
+    //taking instance of grid class, in order to access tile positioning for shape "snapping"
+    public gridManager gridCoords;
+
+    //public List<Vector3> snapPoints = new gridCoords.tilesnapXY;
+    
+    //defining for later use
     public GameObject selectedObject;
     Vector3 offset;
 
@@ -22,33 +29,42 @@ public class dragNdrop2D : MonoBehaviour
         {
             //mouse position finding bounds
             Debug.Log(mousePosition);
-            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition); //creating the collider of our target, with the overlap
+
+            //collider reference for mouse overlap
+            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition); 
+            
+            //if we are overlapping with something
             if (targetObject)
             {
+                //if we clicked while overlapping w something, that is now our selected object (being held)
                 selectedObject = targetObject.transform.gameObject;
                 offset = selectedObject.transform.position - mousePosition;
             }
         }
-        if (selectedObject) //if the mouse overlaps woth a draggable object (a collider) we move it 
+        if (selectedObject) //if currently holding an object with mouse click 
         {
             selectedObject.transform.position = mousePosition + offset; //doing the moving
             if (Input.GetMouseButtonDown(1)) //if RMB pressed
             {
-                //doing the actual rotating
+                //doing the actual rotating, function above 
                 RotateByDegrees(selectedObject);
             }
 
         }
-        if (Input.GetMouseButtonUp(0) && selectedObject) //LMB raised while over movable object, aka dropping it
+        if (Input.GetMouseButtonUp(0) && selectedObject) //LMB raised while holding movable object, aka dropping it
         {
             var currentPos = selectedObject.transform.position; //fetch the current objects position
-            
-            //doing grid snapping, rounding to nearest whole, need to scale by grid within bounds of our "bag' rectangle
-            selectedObject.transform.position = new Vector3(Mathf.Round(currentPos.x),
-                                         Mathf.Round(currentPos.y),
-                                         Mathf.Round(currentPos.z));
+
+            //want to implement snap to "bag" grid here
+            //Debug.Log(tilesnapXY);
+
+            //selectedObject.transform.position = new Vector3(Mathf.Round(currentPos.x ),
+                                        //Mathf.Round(currentPos.y),
+                                         //Mathf.Round(currentPos.z ));
+           
+            //selected object set to null, no longer holding something
             selectedObject = null;
         }
     }
-
+    
 }
