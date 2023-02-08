@@ -6,28 +6,30 @@ using UnityEngine.SceneManagement;
 
 public class Path : MonoBehaviour
 {
-    // UNITY UI STUFF
+    // UNITY EDITOR VARIABLES
 
     // drag in points from the hierarchy into the array
     [SerializeField] Transform[] Points; // array to hold points
 
     // amount of distance player travels when a key is pressed, can be adjusted in UI
-    [SerializeField]private float moveSpeed = 0.15F; // how fast the character moves
+    [SerializeField]private float moveSpeed = 0.225F; // how fast the character moves
 
     // was adjusted from 2 --> 1
     [SerializeField]private float hideTimer = 1; // how long you can hide for
 
     // was adjusted from 2 --> 2.5
-    [SerializeField]private float hitTimer = 2.5F; // how long you're stunned when hit
+    [SerializeField]private float hitTimer = 3; // how long you're stunned when hit
 
     // adjusted based on the version / playtesting
-    [SerializeField]private float gameTimer = 180; // timer for entire minigame
+    [SerializeField]private float gameTimer = 45; // timer for entire minigame
 
     // for visuals without assets, drag brella from hierarchy into UI
     [SerializeField]private GameObject brella; // temp for umbrella?
 
     // drag the text under canvas into UI
     [SerializeField]private Text timerText;
+
+    [SerializeField]private Text livesText;
 
     // drag the camera into UI to reset camera position after scrolling
     [SerializeField]private Camera cam;
@@ -44,16 +46,17 @@ public class Path : MonoBehaviour
 
     private bool hit = false; // used to check if character has been hit
 
-    private Rigidbody2D rb;
+    private int lives = 3; // for 
+
+    // private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
         transform.position = Points[pointIndex].transform.position; // starting the game goes to the first point
         brella.SetActive(false); // initially disable the umbrella
-        rb = GetComponent<Rigidbody2D>();
-        // cam.transform.position = new Vector3(2.81F, cam.transform.position.y, cam.transform.position.z);
-        cam.transform.position = new Vector3(2.81F, cam.transform.position.y, cam.transform.position.z);
+        // rb = GetComponent<Rigidbody2D>(); // get player's 
+        cam.transform.position = new Vector3(0.88F, cam.transform.position.y, cam.transform.position.z); // restarting camera position (for V3)
     }
 
     // Update is called once per frame
@@ -63,13 +66,17 @@ public class Path : MonoBehaviour
         if(pointIndex <= Points.Length - 1){
 
             // TIMER STUFF (GAME TIMER)
-            if(gameTimer >= 0){ // Decrease game timer
+            if(gameTimer > 0){ // Decrease game timer
                 gameTimer -= Time.deltaTime;
                 float seconds = Mathf.FloorToInt(gameTimer % 60);
                 timerText.text = string.Format("{0}", seconds);
+                livesText.text = string.Format("{0}", lives);
             } else{ // Else timer is up and player loses
                 SceneManager.LoadScene("Lose");
-                Debug.Log("Testing switchin scenes");
+            }
+
+            if(lives == 0){
+                SceneManager.LoadScene("Lose");
             }
 
             // CHARACTER IS HIDING
@@ -81,7 +88,7 @@ public class Path : MonoBehaviour
                 } else{ // otherwise the timer is out
                     hide = false; // set hidden to false
                     hideTimerRun = false; // stop the timer
-                    hideTimer = 2; // reset the timer
+                    hideTimer = 1; // reset the timer
                     // rb.isKinematic = false; // enables collisions & applie dforces for player
                     brella.SetActive(false); // disable the umbrella
                 }
@@ -104,7 +111,7 @@ public class Path : MonoBehaviour
 
             // CHARACTER HIDE / SHIELD INPUT
             //      enables hiding and puts umbrella on screen
-            if(Input.GetKeyDown(KeyCode.DownArrow)){
+            if(Input.GetKeyDown(KeyCode.S) && !hide && !hit){ // can adjust back to KeyCode.DownArrow
                 hide = true; 
                 hideTimerRun = true;
                 brella.SetActive(true);
@@ -123,7 +130,7 @@ public class Path : MonoBehaviour
                 } else{
                     hit = false;
                     hitTimerRun = false;
-                    hitTimer = 2;
+                    hitTimer = 3;
                 }
             }
         } else if(gameTimer >= 0 && pointIndex == Points.Length){ // Reach the end while there is still time
@@ -134,6 +141,9 @@ public class Path : MonoBehaviour
     // COLLISION (W/ SPRINKLERS)
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.tag == "Enemy" && !hide && !hit){
+            if(lives != 0){
+                lives--;
+            }
             hit = true;
             hitTimerRun = true;
         }
