@@ -5,27 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Dog Chase Demo.unity
-    guid: 96fc5571adbe94a90bededc3a0e2fc30
-  - enabled: 0
-    path: Assets/Scenes/LoseDogGame.unity
-    guid: 95693fb96afbb0c4b9635c1be607cb03
-  - enabled: 0
-    path: Assets/Scenes/WinDogGame.unity
-    guid: 9e418cc370ab5a54fad15347be4dec65
-  - enabled: 0
-    path: Assets/Scenes/Sprinkler Demo/SprinklerV2.unity
-    guid: 777aa78bb3870ae48abd15d7337d0d23
-  - enabled: 0
-    path: Assets/Scenes/Sprinkler Demo/Lose.unity
-    guid: 08ef84d8b0743e04998a573ac1f14106
-  - enabled: 0
-    path: Assets/Scenes/Sprinkler Demo/Win.unity
-    guid: 54c5ae94a998ff243b520c290624a492
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Title Screen.unity
     guid: 5951e1cc722b04a7d988c7fa7c89d132
+  - enabled: 1
+    path: Assets/Scenes/Dog Chase Demo.unity
+    guid: 96fc5571adbe94a90bededc3a0e2fc30
+  - enabled: 1
+    path: Assets/Scenes/LoseDogGame.unity
+    guid: 95693fb96afbb0c4b9635c1be607cb03
+  - enabled: 1
+    path: Assets/Scenes/WinDogGame.unity
+    guid: 9e418cc370ab5a54fad15347be4dec65
+  - enabled: 1
+    path: Assets/Scenes/Sprinkler Demo/SprinklerV2.unity
+    guid: 777aa78bb3870ae48abd15d7337d0d23
+  - enabled: 1
+    path: Assets/Scenes/Sprinkler Demo/Lose.unity
+    guid: 08ef84d8b0743e04998a573ac1f14106
+  - enabled: 1
+    path: Assets/Scenes/Sprinkler Demo/Win.unity
+    guid: 54c5ae94a998ff243b520c290624a492
   - enabled: 1
     path: Assets/Scenes/Mailbag/Mailbag.unity
     guid: c606f1c37399d0c44825afad19fb9012
