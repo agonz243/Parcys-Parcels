@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 44685756}
   - component: {fileID: 44685755}
   - component: {fileID: 44685754}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedRectSm2
   m_TagString: Packages
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44685753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 98.3, y: 34.899998, z: 0}
+  m_LocalPosition: {x: 98.3, y: 34.899998, z: 10}
   m_LocalScale: {x: 30, y: 15, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 222696717}
   - component: {fileID: 222696716}
   - component: {fileID: 222696715}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedPolySm
   m_TagString: Packages
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 411989913}
   - component: {fileID: 411989912}
   - component: {fileID: 411989911}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedPolySq (2)
   m_TagString: Packages
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 687894048}
   - component: {fileID: 687894047}
   - component: {fileID: 687894046}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedPolyL (1)
   m_TagString: Packages
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -856,7 +856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767d6598c5934f94fbae47d18339c43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 90
+  timeLeft: 10
   timerTxt: {fileID: 704440526}
 --- !u!114 &704440526
 MonoBehaviour:
@@ -1038,7 +1038,7 @@ GameObject:
   - component: {fileID: 795688266}
   - component: {fileID: 795688265}
   - component: {fileID: 795688264}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedPolySqSm
   m_TagString: Packages
   m_Icon: {fileID: 0}
@@ -1165,7 +1165,7 @@ GameObject:
   - component: {fileID: 926282555}
   - component: {fileID: 926282554}
   - component: {fileID: 926282553}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedPolyL2
   m_TagString: Packages
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -1417,7 +1417,7 @@ GameObject:
   - component: {fileID: 936336133}
   - component: {fileID: 936336132}
   - component: {fileID: 936336131}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedPolyL
   m_TagString: Packages
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -1649,7 +1649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936336130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 86.9, y: 55, z: 0}
+  m_LocalPosition: {x: 86.9, y: 55, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1669,7 +1669,7 @@ GameObject:
   - component: {fileID: 975135680}
   - component: {fileID: 975135683}
   - component: {fileID: 975135684}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedPolyT
   m_TagString: Packages
   m_Icon: {fileID: 0}
@@ -2043,7 +2043,7 @@ GameObject:
   - component: {fileID: 1219265106}
   - component: {fileID: 1219265105}
   - component: {fileID: 1219265104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedRectSm
   m_TagString: Packages
   m_Icon: {fileID: 0}
@@ -2252,7 +2252,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150.4, y: 50.2}
+  m_AnchoredPosition: {x: 150.9, y: 50.7}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1405460108
@@ -2267,7 +2267,7 @@ GameObject:
   - component: {fileID: 1405460111}
   - component: {fileID: 1405460110}
   - component: {fileID: 1405460109}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedPolySq
   m_TagString: Packages
   m_Icon: {fileID: 0}
@@ -2393,7 +2393,7 @@ GameObject:
   - component: {fileID: 1406718898}
   - component: {fileID: 1406718897}
   - component: {fileID: 1406718896}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedPolySq2
   m_TagString: Packages
   m_Icon: {fileID: 0}
@@ -2519,7 +2519,7 @@ GameObject:
   - component: {fileID: 1496097023}
   - component: {fileID: 1496097022}
   - component: {fileID: 1496097021}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedPolySq (1)
   m_TagString: Packages
   m_Icon: {fileID: 0}
@@ -2626,7 +2626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496097020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 102.7, y: 10.3, z: 0}
+  m_LocalPosition: {x: 102.7, y: 10.3, z: 10}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2818,7 +2818,7 @@ GameObject:
   - component: {fileID: 1799837810}
   - component: {fileID: 1799837809}
   - component: {fileID: 1799837808}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedPolySqSm (1)
   m_TagString: Packages
   m_Icon: {fileID: 0}
@@ -2945,7 +2945,7 @@ GameObject:
   - component: {fileID: 1914774459}
   - component: {fileID: 1914774458}
   - component: {fileID: 1914774457}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: basedPolyT2
   m_TagString: Packages
   m_Icon: {fileID: 0}
@@ -3199,7 +3199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914774456}
   m_LocalRotation: {x: -0, y: -0, z: 0.7087799, w: 0.7054298}
-  m_LocalPosition: {x: 145, y: 64.8, z: 0}
+  m_LocalPosition: {x: 145, y: 64.8, z: 10}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3347,7 +3347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: m_LocalRotation.w

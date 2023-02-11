@@ -30,8 +30,8 @@ public class dragNdrop2D : MonoBehaviour
             //mouse position finding bounds
             Debug.Log(mousePosition);
 
-            //collider reference for mouse overlap
-            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition); 
+            //collider reference for mouse overlap on specific layer
+            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition, -10, 10); 
             
             //if we are overlapping with something
             if (targetObject)
@@ -41,7 +41,7 @@ public class dragNdrop2D : MonoBehaviour
                 offset = selectedObject.transform.position - mousePosition;
             }
         }
-        if (selectedObject && selectedObject.tag == "Packages") //if currently holding an object with mouse click 
+        if (selectedObject) //if currently holding an object with mouse click 
         {
             selectedObject.transform.position = mousePosition + offset; //doing the moving WAS PLUS OFFSET
             if (Input.GetMouseButtonDown(1)) //if RMB pressed
