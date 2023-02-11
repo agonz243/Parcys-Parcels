@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class dragNdrop2D : MonoBehaviour
 {
-
+    
     //taking instance of grid class, in order to access tile positioning for shape "snapping"
     public gridManager gridCoords;
 
@@ -41,7 +41,7 @@ public class dragNdrop2D : MonoBehaviour
                 offset = selectedObject.transform.position - mousePosition;
             }
         }
-        if (selectedObject) //if currently holding an object with mouse click 
+        if (selectedObject && selectedObject.tag == "Packages") //if currently holding an object with mouse click 
         {
             selectedObject.transform.position = mousePosition + offset; //doing the moving WAS PLUS OFFSET
             if (Input.GetMouseButtonDown(1)) //if RMB pressed
@@ -65,5 +65,6 @@ public class dragNdrop2D : MonoBehaviour
             selectedObject = null;
         }
     }
-    
+
+
 }
