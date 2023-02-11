@@ -18,10 +18,12 @@ public class Path : MonoBehaviour
     [SerializeField]private float hideTimer = 1; // how long you can hide for
 
     // was adjusted from 2 --> 2.5
-    [SerializeField]private float hitTimer = 3; // how long you're stunned when hit
+    [SerializeField]private float hitTimer = 2.5F; // how long you're stunned when hit
 
     // adjusted based on the version / playtesting
     [SerializeField]private float gameTimer = 45; // timer for entire minigame
+    
+    [SerializeField]private int brellaUse = 5; // how many times the umbrella can be used
 
     // for visuals without assets, drag brella from hierarchy into UI
     [SerializeField]private GameObject brella; // temp for umbrella?
@@ -31,10 +33,14 @@ public class Path : MonoBehaviour
 
     [SerializeField]private Text livesText;
 
+    [SerializeField]private Text brellaText;
+
     // drag the camera into UI to reset camera position after scrolling
     [SerializeField]private Camera cam;
 
-    private float keyAlt = 0; // used to check for alternate key press
+    private float keyAlt = 0; // used to check for alternate key press forwards
+
+    private float backKeyAlt = 0; // used to check for alternate key press backwards
 
     private int pointIndex; // for counting the points in the array
 
@@ -46,16 +52,13 @@ public class Path : MonoBehaviour
 
     private bool hit = false; // used to check if character has been hit
 
-    private int lives = 3; // for 
-
-    // private Rigidbody2D rb;
+    private int lives = 3; // for player live 
 
     // Start is called before the first frame update
     void Start()
     {
         transform.position = Points[pointIndex].transform.position; // starting the game goes to the first point
         brella.SetActive(false); // initially disable the umbrella
-        // rb = GetComponent<Rigidbody2D>(); // get player's 
         cam.transform.position = new Vector3(0.88F, cam.transform.position.y, cam.transform.position.z); // restarting camera position (for V3)
     }
 
@@ -65,12 +68,15 @@ public class Path : MonoBehaviour
         // WHILE THERE ARE STILL POINTS TO GET TOWARDS
         if(pointIndex <= Points.Length - 1){
 
-            // TIMER STUFF (GAME TIMER)
+            // TIMER STUFF (GAME TIMER) & SCENE WIN / LOSE TRANSITION
             if(gameTimer > 0){ // Decrease game timer
                 gameTimer -= Time.deltaTime;
                 float seconds = Mathf.FloorToInt(gameTimer % 60);
+
+                // TEXT STUFF (TIMER, LIVES, UMBRELLA USES)
                 timerText.text = string.Format("{0}", seconds);
                 livesText.text = string.Format("{0}", lives);
+                brellaText.text = string.Format("{0}", brellaUse);
             } else{ // Else timer is up and player loses
                 SceneManager.LoadScene("Lose");
             }
@@ -84,12 +90,10 @@ public class Path : MonoBehaviour
                 if(hideTimer > 0){ // there is still time to hide
                     hideTimer -= Time.deltaTime; // subtract from the time
                     brella.transform.position = new Vector3(transform.position[0], transform.position[1], 0); // set umbrella position to player position
-                    // rb.isKinematic = true; // disables collisions & applied forces for player
                 } else{ // otherwise the timer is out
                     hide = false; // set hidden to false
                     hideTimerRun = false; // stop the timer
                     hideTimer = 1; // reset the timer
-                    // rb.isKinematic = false; // enables collisions & applie dforces for player
                     brella.SetActive(false); // disable the umbrella
                 }
             }
@@ -107,14 +111,24 @@ public class Path : MonoBehaviour
                     transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex].transform.position, moveSpeed);
                     keyAlt = 0;
                 }
+
+                //Position if moved when alternating the keys "Z" and "C"
+                if(Input.GetKeyDown(KeyCode.Z) && backKeyAlt == 0){
+                    transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex - 1].transform.position, moveSpeed);
+                    backKeyAlt = 1;
+                } else if(Input.GetKeyDown(KeyCode.C) && backKeyAlt == 1){
+                    transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex - 1].transform.position, moveSpeed);
+                    backKeyAlt = 0;
+                }
             }
 
             // CHARACTER HIDE / SHIELD INPUT
             //      enables hiding and puts umbrella on screen
-            if(Input.GetKeyDown(KeyCode.S) && !hide && !hit){ // can adjust back to KeyCode.DownArrow
+            if(Input.GetKeyDown(KeyCode.W) && !hide && !hit && (brellaUse != 0)){ // can adjust back to KeyCode.DownArrow
                 hide = true; 
                 hideTimerRun = true;
                 brella.SetActive(true);
+                brellaUse --;
             }
 
             // HITTING A POINT MOVES THE INDEX TO THE NEXT ONE
@@ -133,10 +147,10 @@ public class Path : MonoBehaviour
                     hitTimer = 3;
                 }
             }
-        } else if(gameTimer >= 0 && pointIndex == Points.Length){ // Reach the end while there is still time
+        }   else if(gameTimer >= 0 && pointIndex == Points.Length){ // Reach the end while there is still time
                 SceneManager.LoadScene("Win");
-            } 
-    }
+            }
+}
     
     // COLLISION (W/ SPRINKLERS)
     private void OnTriggerEnter2D(Collider2D collision){
