@@ -43,7 +43,7 @@ public class dragNdrop2D : MonoBehaviour
         }
         if (selectedObject) //if currently holding an object with mouse click 
         {
-            selectedObject.transform.position = mousePosition + offset; //doing the moving
+            selectedObject.transform.position = mousePosition + offset; //doing the moving WAS PLUS OFFSET
             if (Input.GetMouseButtonDown(1)) //if RMB pressed
             {
                 //doing the actual rotating, function above 
@@ -58,9 +58,8 @@ public class dragNdrop2D : MonoBehaviour
             //want to implement snap to "bag" grid here
             //Debug.Log(tilesnapXY);
 
-            //selectedObject.transform.position = new Vector3(Mathf.Round(currentPos.x ),
-                                        //Mathf.Round(currentPos.y),
-                                         //Mathf.Round(currentPos.z ));
+           // selectedObject.transform.position = new Vector3(Mathf.Round(mousePosition.x),
+            //                            Mathf.Round(mousePosition.y));
            
             //selected object set to null, no longer holding something
             selectedObject = null;
