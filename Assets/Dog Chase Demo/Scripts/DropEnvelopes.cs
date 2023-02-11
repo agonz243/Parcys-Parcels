@@ -13,7 +13,6 @@ public class DropEnvelopes : MonoBehaviour
     private Camera cam;
     public int envelopeCount; // The number of envelopes to drop
     public GameObject envelope;
-    //private GameObject[] envelopes;
 
     // Start is called before the first frame update
     void Start()
@@ -25,21 +24,45 @@ public class DropEnvelopes : MonoBehaviour
         float halfHeight = cam.orthographicSize;
         float halfWidth = cam.aspect * halfHeight;
 
+        // Bounds for spawining envelopes
         horizontalMin = -halfWidth + camEdgeOffset;
         horizontalMax =  halfWidth - camEdgeOffset;
         verticalMin = -halfHeight + camEdgeOffset;
         verticalMax = halfHeight - camEdgeOffset;
 
 
+        // Spawn envelopes at random locations within bounds
         for (int i = 0; i < envelopeCount; i++) {
+            // Create envelope clone
             GameObject currEnvelope = Instantiate(envelope);
-            currEnvelope.transform.position = new Vector2(Random.Range(horizontalMin, horizontalMax), Random.Range(verticalMin, verticalMax));
+
+            // Generate random location
+            Vector2 randomPos = randomVec();
+            //currEnvelope.transform.position = 
+
+        // If an object exists at that position, regenerate a new one
+         RaycastHit2D hit = Physics2D.Raycast(randomPos, -Vector2.up, 0f);
+         int debugCheck = 0;
+         while (hit.collider != null) 
+         {
+            debugCheck++;
+            randomPos = randomVec();
+            if (debugCheck >= 20)
+            {
+                Debug.Log("Failed to generate position");
+                break;
+            }
+         }
+
+         currEnvelope.transform.position = randomPos;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    Vector2 randomVec() 
     {
-        
+        float randomX = Random.Range(horizontalMin, horizontalMax);
+        float randomY = Random.Range(verticalMin, verticalMax);
+        Vector2 randomPosition = new Vector2(randomX, randomY);
+        return randomPosition;
     }
 }
