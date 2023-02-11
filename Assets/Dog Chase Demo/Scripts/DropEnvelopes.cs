@@ -37,21 +37,16 @@ public class DropEnvelopes : MonoBehaviour
             GameObject currEnvelope = Instantiate(envelope);
 
             // Generate random location
-            Vector2 randomPos = randomVec();
-            //currEnvelope.transform.position = 
+            Vector2 randomPos = randomVec(); 
 
-        // If an object exists at that position, regenerate a new one
+        // If an object exists at that position, regenerate a new position
          RaycastHit2D hit = Physics2D.Raycast(randomPos, -Vector2.up, 0f);
          int debugCheck = 0;
          while (hit.collider != null) 
          {
-            debugCheck++;
             randomPos = randomVec();
-            if (debugCheck >= 20)
-            {
-                Debug.Log("Failed to generate position");
-                break;
-            }
+            hit = Physics2D.Raycast(randomPos, -Vector2.up, 0f);
+            debugCheck++;
          }
 
          currEnvelope.transform.position = randomPos;
