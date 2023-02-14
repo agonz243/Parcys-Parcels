@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class DogGameButton : MonoBehaviour
 {
     public void LoadDogGame() {
-        SceneManager.LoadScene("Dog Chase Demo");
+        SceneManager.LoadScene("DogChaseDemo");
         // Scene dogGameScene = SceneManager.GetSceneByName("Dog Chase Demo");
         // SceneManager.SetActiveScene(dogGameScene);
-        SceneManager.UnloadSceneAsync("Title Screen");
+        // SceneManager.UnloadSceneAsync("TitleScreen");
     }
 
     public void LoadSprinklerGame(){

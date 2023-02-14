@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Title Screen.unity
+    path: Assets/Scenes/TitleScreen.unity
     guid: 5951e1cc722b04a7d988c7fa7c89d132
   - enabled: 1
-    path: Assets/Scenes/Dog Chase Demo.unity
+    path: Assets/Scenes/DogChaseDemo.unity
     guid: 96fc5571adbe94a90bededc3a0e2fc30
   - enabled: 1
     path: Assets/Scenes/LoseDogGame.unity
