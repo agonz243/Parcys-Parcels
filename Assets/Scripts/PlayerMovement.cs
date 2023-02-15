@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     // private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     
     public Rigidbody2D rigidBody;
-    // public Animator animator; (will be used when sprites are done!) 
+    public Animator animator; //(will be used when sprites are done!) 
 
     Vector2 movement; // can store horizontal and verticle
 
@@ -41,9 +41,9 @@ public class PlayerMovement : MonoBehaviour
 
 
         // Lines below used for changing the sprite during player movement!
-        // animator.SetFloat("Horizontal", movement.x);
-        // animator.SetFloat("Vertical", movement.y);
-        // animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     void FixedUpdate()
