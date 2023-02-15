@@ -25,6 +25,6 @@ public class sceneChanger : MonoBehaviour
         } else { 
             Debug.Log("Loading nothing :(");
         }
-        // test
+        // testing
     }
 }
