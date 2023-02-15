@@ -13,12 +13,23 @@ public class DropEnvelopes : MonoBehaviour
     private Camera cam;
     public int envelopeCount; // The number of envelopes to drop
     public GameObject envelope;
+    public GameObject[] envelopes;
+    
+    private Vector3 scaleUpVec;
+    private Vector3 scaleDownVec;
+    private float scaleTime;
 
     // Start is called before the first frame update
     void Start()
     {
         cam  = Camera.main; // Get the main camera
         camEdgeOffset = 10;
+        envelopeCount = 10;
+        scaleUpVec = new Vector3(10.0f, 10.0f, 0.0f);
+        scaleDownVec = new Vector3(-0.009f, -0.009f, 0.0f);
+        scaleTime = 0.0f;
+        envelopes = new GameObject[envelopeCount];
+
 
         // Calculate the min and max size of camera in world units
         float halfHeight = cam.orthographicSize;
@@ -35,6 +46,10 @@ public class DropEnvelopes : MonoBehaviour
         for (int i = 0; i < envelopeCount; i++) {
             // Create envelope clone
             GameObject currEnvelope = Instantiate(envelope);
+            envelopes[i] = currEnvelope;
+
+            // Scale envelope to largest size
+            currEnvelope.transform.localScale += scaleUpVec;
 
             // Generate random location
             Vector2 randomPos = randomVec(); 
@@ -50,6 +65,18 @@ public class DropEnvelopes : MonoBehaviour
          }
 
          currEnvelope.transform.position = randomPos;
+        }
+    }
+
+    void Update() 
+    {
+        scaleTime += Time.deltaTime;
+        if (scaleTime < 2.0f) 
+        {
+            for (int n = 0; n < envelopeCount; n++) 
+            {
+                envelopes[n].transform.localScale += scaleDownVec;
+            }
         }
     }
 
