@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mailbag/Mailbag.unity
     guid: c606f1c37399d0c44825afad19fb9012
+  - enabled: 1
+    path: Assets/Scenes/MailbagInstructions.unity
+    guid: 6c3d0c0a48bdfe442abc499968ce198a
+  - enabled: 1
+    path: Assets/Scenes/SprinklerInstructions.unity
+    guid: 08ecaf3c5adcee045ba47bbd959c3a57
+  - enabled: 1
+    path: Assets/Scenes/DogInstructions.unity
+    guid: 32ab9cbc8871e1347a37ea11f3bd63fa
   m_configObjects: {}

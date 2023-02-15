@@ -17,10 +17,16 @@ public class sceneChanger : MonoBehaviour
 
         Debug.Log(currentScene.name);
         if (currentScene.name == "TitleScreen") {
+            SceneManager.LoadScene("DogInstructions");
+        } else if (currentScene.name == "DogInstructions") {
             SceneManager.LoadScene("DogChaseDemo");
         } else if (currentScene.name == "LoseDogGame" || currentScene.name == "WinDogGame") {
-    		SceneManager.LoadScene("SprinklerV2");
-    	} else if (currentScene.name == "Win" || currentScene.name == "Lose") {
+    		SceneManager.LoadScene("SprinklerInstructions");
+    	} else if (currentScene.name == "SprinklerInstructions") {
+            SceneManager.LoadScene("SprinklerV2");
+        } else if (currentScene.name == "Win" || currentScene.name == "Lose") {
+            SceneManager.LoadScene("MailbagInstructions");
+        } else if (currentScene.name == "MailbagInstructions") {
             SceneManager.LoadScene("Mailbag");
         } else { 
             Debug.Log("Loading nothing :(");
