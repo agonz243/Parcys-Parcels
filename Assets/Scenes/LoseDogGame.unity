@@ -361,7 +361,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12, y: 81}
+  m_AnchoredPosition: {x: 0.00000095367, y: 96}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &392116793
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 2138118080}
   - component: {fileID: 2138118079}
   m_Layer: 5
-  m_Name: DogButt
+  m_Name: NextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -697,10 +697,10 @@ RectTransform:
   m_Father: {fileID: 499906273}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 318, y: -204}
-  m_SizeDelta: {x: 197.88, y: 47.82}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -108, y: 35}
+  m_SizeDelta: {x: 197.88, y: 47.820007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2138118079
 MonoBehaviour:
