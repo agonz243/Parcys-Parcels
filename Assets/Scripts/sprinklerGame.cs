@@ -14,12 +14,12 @@ public class sprinklerGame : MonoBehaviour
     [SerializeField] private GameObject sTimer;
     
     // General game / scene timers
-    private float hideTimer = 1;
+    private float hideTimer = 1.5F;
     private float hitTimer = 2.5F;
 
     // Flags to start / stop timers
     private bool hideTimerRun = false;
-    private bool hitTimerRun = false;
+    // private bool hitTimerRun = false;
 
     // Text objects to display: game timer, lives, umbrella uses
     [SerializeField] private TextMeshProUGUI livesText;
@@ -35,6 +35,8 @@ public class sprinklerGame : MonoBehaviour
         private bool backKeyAlt;
         private bool hide;
         private bool hit;
+        private bool hitTimerRun;
+        private float hitTimer;
         private int lives;
 
         // Player attributes
@@ -49,6 +51,8 @@ public class sprinklerGame : MonoBehaviour
             backKeyAlt = false;
             hide = false;
             hit = false;
+            hitTimerRun = false;
+            // hitTimer = 2.5F;
         }
 
         // Player methods
@@ -68,8 +72,24 @@ public class sprinklerGame : MonoBehaviour
             return lives;
         }
 
+        public void decLives(){
+            lives--;
+        }
+
         public bool getHit(){
             return hit;
+        }
+
+        public void setHit(bool state){
+            hit = state;
+        }
+
+        public bool getHitTimerRun(){
+            return hitTimerRun;
+        }
+
+        public void setHitTimerRun(bool state){
+            hitTimerRun = state;
         }
 
         public bool getHide(){
@@ -104,10 +124,6 @@ public class sprinklerGame : MonoBehaviour
             pointIndex = pv;
         }
 
-        public void playerHit(){
-            hit = true;
-            lives --;
-        }
         
     }
     public Player myPlayer;
@@ -130,14 +146,20 @@ public class sprinklerGame : MonoBehaviour
         movement();
         hide();
         textDisplay();
+
+        if(myPlayer.getHit() == true){
+            stun();
+        }
         
         if(SprinklerTimer.getTimer() > 1 && myPlayer.getPointIndex() == Points.Length){
             SceneManager.LoadScene("Win");
+        } else if(myPlayer.getLives() == 0){
+            SceneManager.LoadScene("Lose");
         }
     }
 
     void movement(){
-        Debug.Log("here");
+        // Debug.Log("here");
         if(transform.position == Points[myPlayer.getPointIndex()].transform.position){
             myPlayer.setPointIndex(myPlayer.getPointIndex() + 1);
         }
@@ -147,24 +169,24 @@ public class sprinklerGame : MonoBehaviour
            
            // Forward Movement "A" <-- --> "D"
            if(Input.GetKeyDown(KeyCode.A) && myPlayer.getKeyAlt() == false){
-                Debug.Log("keyCode.A");
+                // Debug.Log("keyCode.A");
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setKeyAlt(true);
             } else if(Input.GetKeyDown(KeyCode.D) && myPlayer.getKeyAlt() == true){
-                Debug.Log("keyCode.D");
+                // Debug.Log("keyCode.D");
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setKeyAlt(false);
             }  
         
             // Backwards Movement "Z" <-- --> "C"
             if(Input.GetKeyDown(KeyCode.Z) && myPlayer.getBackKeyAlt() == false){
-                Debug.Log("keyCode.Z");
-                Debug.Log("v2 pointIndex: " + myPlayer.getPointIndex());
+                // Debug.Log("keyCode.Z");
+                // Debug.Log("v2 pointIndex: " + myPlayer.getPointIndex());
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex() - 1].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setBackKeyAlt(true);
             } else if(Input.GetKeyDown(KeyCode.C) && myPlayer.getBackKeyAlt() == true){ 
-                Debug.Log("keyCode.C");
-                Debug.Log("v2 pointIndex: " + myPlayer.getPointIndex());
+                // Debug.Log("keyCode.C");
+                // Debug.Log("v2 pointIndex: " + myPlayer.getPointIndex());
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex() - 1].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setBackKeyAlt(false);
             } 
@@ -179,7 +201,7 @@ public class sprinklerGame : MonoBehaviour
             hideTimerRun = true;
             myPlayer.setUmbrellaUse(myPlayer.getUmbrellaUse() - 1);
             brella.SetActive(true);
-            Debug.Log("keyCode.W");
+            // Debug.Log("keyCode.W");
         }
 
         // Hide Funcionality
@@ -190,9 +212,22 @@ public class sprinklerGame : MonoBehaviour
             } else{ // otherwise the timer is out
                 myPlayer.setHide(false);
                 hideTimerRun = false; // stop the timer
-                hideTimer = 1; // reset the timer
+                hideTimer = 1.5F; // reset the timer
                 brella.SetActive(false); // disable the umbrella
             } 
+        }
+    }
+
+    public void stun(){
+        if(myPlayer.getHit() == true && myPlayer.getHitTimerRun() == true){
+            if(hitTimer > 0){
+                hitTimer -= Time.deltaTime;
+                transform.Rotate(new Vector3(0, 0, 360) * Time.deltaTime);
+            } else{
+                myPlayer.setHit(false);
+                myPlayer.setHitTimerRun(false);
+                hitTimer = 2.5F;
+            }
         }
     }
 
@@ -200,5 +235,19 @@ public class sprinklerGame : MonoBehaviour
         // Connecting variables to text on screen
         livesText.text = string.Format("{0}", myPlayer.getLives());
         umbrellaUseText.text = string.Format("{0}", myPlayer.getUmbrellaUse());
+    }
+
+    public void playerHit(){
+        if(myPlayer.getHide() == true){
+            return;
+        }
+        if(myPlayer.getHit() == true){
+            return;
+        }
+        if(myPlayer.getLives() != 0){
+            myPlayer.decLives();
+        }
+        myPlayer.setHit(true);
+        myPlayer.setHitTimerRun(true);
     }
 }

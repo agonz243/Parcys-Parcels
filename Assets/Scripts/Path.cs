@@ -74,9 +74,9 @@ public class Path : MonoBehaviour
                 float seconds = Mathf.FloorToInt(gameTimer % 60);
 
                 // TEXT STUFF (TIMER, LIVES, UMBRELLA USES)
-                timerText.text = string.Format("{0}", seconds);
-                livesText.text = string.Format("{0}", lives);
-                brellaText.text = string.Format("{0}", brellaUse);
+                // timerText.text = string.Format("{0}", seconds);
+                // livesText.text = string.Format("{0}", lives);
+                // brellaText.text = string.Format("{0}", brellaUse);
             } else{ // Else timer is up and player loses
                 SceneManager.LoadScene("Lose");
             }
@@ -163,5 +163,16 @@ public class Path : MonoBehaviour
             hit = true;
             hitTimerRun = true;
         }
+    }
+
+    public void playerHit(){
+        if(hit){
+            return;
+        }
+        if(lives != 0){
+                lives--;
+            }
+            hit = true;
+            hitTimerRun = true;
     }
 }
