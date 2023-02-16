@@ -12,13 +12,21 @@ public class Tile : MonoBehaviour
 
     [SerializeField] private GameObject highlights;
 
-    public void Init(bool isOffset)
+    [SerializeField] public Collider2D bonk;
+
+    [SerializeField] public bool isSolved = false;
+
+     public void Init(bool isOffset)
     {
         renderah.color = isOffset ? offsetColor : baseColor;
     }
 
-    void OnMouseEnter()
+    private void OnTriggerEnter(Collider other)
     {
+        if(other.tag == "Packages")
+        {
+            //highlights.SetActive(true);
+        }
         highlights.SetActive(true);
     }
 
