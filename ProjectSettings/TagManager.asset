@@ -18,7 +18,7 @@ TagManager:
   - Obstacles
   - Collectables
   - Enemies
-  - 
+  - SpawnBlocker
   - 
   - 
   - 
@@ -51,14 +51,14 @@ TagManager:
   - name: bg-middle
     uniqueID: 1321321073
     locked: 0
-  - name: bg-top
-    uniqueID: 2319707543
+  - name: bg-mail
+    uniqueID: 1157859395
     locked: 0
   - name: bg-obstacles
     uniqueID: 307642523
     locked: 0
-  - name: bg-mail
-    uniqueID: 1157859395
+  - name: bg-top
+    uniqueID: 2319707543
     locked: 0
   - name: bg-dog
     uniqueID: 2187815801

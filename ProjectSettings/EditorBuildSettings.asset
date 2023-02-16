@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Sprinkler Demo/Lose.unity
     guid: 08ef84d8b0743e04998a573ac1f14106
   - enabled: 1
-    path: Assets/Scenes/Sprinkler Demo/Win.unity
+    path: Assets/Scenes/WinPuzzleGame.unity
     guid: 54c5ae94a998ff243b520c290624a492
   - enabled: 1
     path: Assets/Scenes/Mailbag/Mailbag.unity

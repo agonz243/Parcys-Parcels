@@ -13,6 +13,7 @@ public class DropEnvelopes : MonoBehaviour
     private Camera cam;
     public int envelopeCount; // The number of envelopes to drop
     public GameObject envelope;
+    private Vector2 envelopeSize;
     public GameObject[] envelopes;
     
     private Vector3 scaleUpVec;
@@ -26,9 +27,10 @@ public class DropEnvelopes : MonoBehaviour
         camEdgeOffset = 10;
         envelopeCount = 10;
         scaleUpVec = new Vector3(10.0f, 10.0f, 0.0f);
-        scaleDownVec = new Vector3(-0.009f, -0.009f, 0.0f);
+        scaleDownVec = new Vector3(-0.04f, -0.04f, 0.0f);
         scaleTime = 0.0f;
         envelopes = new GameObject[envelopeCount];
+        envelopeSize = envelope.GetComponent<BoxCollider2D>().size;
 
 
         // Calculate the min and max size of camera in world units
@@ -55,7 +57,7 @@ public class DropEnvelopes : MonoBehaviour
             Vector2 randomPos = randomVec(); 
 
         // If an object exists at that position, regenerate a new position
-         RaycastHit2D hit = Physics2D.Raycast(randomPos, -Vector2.up, 0f);
+         RaycastHit2D hit = Physics2D.BoxCast(randomPos, envelopeSize, 0f, Vector2.down);
          int debugCheck = 0;
          while (hit.collider != null) 
          {
@@ -71,7 +73,7 @@ public class DropEnvelopes : MonoBehaviour
     void Update() 
     {
         scaleTime += Time.deltaTime;
-        if (scaleTime < 2.0f) 
+        if (scaleTime < 1.5f) 
         {
             for (int n = 0; n < envelopeCount; n++) 
             {
