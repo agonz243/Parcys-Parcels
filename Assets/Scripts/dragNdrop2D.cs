@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class dragNdrop2D : MonoBehaviour
 {
-
+    
     //taking instance of grid class, in order to access tile positioning for shape "snapping"
     public gridManager gridCoords;
 
@@ -30,8 +30,8 @@ public class dragNdrop2D : MonoBehaviour
             //mouse position finding bounds
             Debug.Log(mousePosition);
 
-            //collider reference for mouse overlap
-            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition); 
+            //collider reference for mouse overlap on specific layer
+            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition, -10, 10); 
             
             //if we are overlapping with something
             if (targetObject)
@@ -43,7 +43,7 @@ public class dragNdrop2D : MonoBehaviour
         }
         if (selectedObject) //if currently holding an object with mouse click 
         {
-            selectedObject.transform.position = mousePosition + offset; //doing the moving
+            selectedObject.transform.position = mousePosition + offset; //doing the moving WAS PLUS OFFSET
             if (Input.GetMouseButtonDown(1)) //if RMB pressed
             {
                 //doing the actual rotating, function above 
@@ -58,13 +58,13 @@ public class dragNdrop2D : MonoBehaviour
             //want to implement snap to "bag" grid here
             //Debug.Log(tilesnapXY);
 
-            //selectedObject.transform.position = new Vector3(Mathf.Round(currentPos.x ),
-                                        //Mathf.Round(currentPos.y),
-                                         //Mathf.Round(currentPos.z ));
+           // selectedObject.transform.position = new Vector3(Mathf.Round(mousePosition.x),
+            //                            Mathf.Round(mousePosition.y));
            
             //selected object set to null, no longer holding something
             selectedObject = null;
         }
     }
-    
+
+
 }

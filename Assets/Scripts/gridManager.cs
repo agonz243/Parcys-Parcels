@@ -23,6 +23,9 @@ public class gridManager : MonoBehaviour
     //list of the tilepoints vector3s for xy values
     public List<Vector3> tilesnapXY = new List<Vector3>();
 
+    //to fetch tiles colliders
+    public List<Collider2D> tileColliders = new List<Collider2D>();
+
     //start method here
     void Start()
     {
@@ -54,7 +57,12 @@ public class gridManager : MonoBehaviour
 
                 //here we have the (x, y,z) vector 3 of each tile's position, want to use for snapping
                 tilesnapXY.Add(spawnTile.transform.position);
-                
+
+                Collider2D currTile = spawnTile.bonk;
+
+                //add in tiles colliders to list for win condition
+                tileColliders.Add(currTile);
+
                 //math here using mods to determine checkerboard coloring for tiles
                 var isOffset = (x + y) % 2 == 1;
                 spawnTile.Init(isOffset);
@@ -70,6 +78,28 @@ public class gridManager : MonoBehaviour
 
 
         //actually moving the cam here using reference from above
-        camcorder.transform.position = new Vector3((float)_width / 2 - 0.5f, (float)_height / 2 - 0.5f, -10);
+        camcorder.transform.position = new Vector3((float)_width / 2 - 0.5f -10, (float)_height / 2 - 0.5f, -10);
+    }
+
+
+
+    void SolveaDaPuzzle()
+    {
+        foreach(var spawnTile in tilesnapPoints)
+        {
+            //want to see if colliding here
+
+            if (spawnTile.bonk)
+            {
+
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+       // bool isSolved = false;
+       // foreach(var spawnTile in tilesnapPoints){
+          //  isSolved;
     }
 }
