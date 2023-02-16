@@ -28,6 +28,8 @@ public class sceneChanger : MonoBehaviour
             SceneManager.LoadScene("MailbagInstructions");
         } else if (currentScene.name == "MailbagInstructions") {
             SceneManager.LoadScene("Mailbag");
+        } else if (currentScene.name == "LosePuzzleGame" || currentScene.name == "WinPuzzleGame") {
+            SceneManager.LoadScene("TitleScreen");
         } else { 
             Debug.Log("Loading nothing :(");
         }
