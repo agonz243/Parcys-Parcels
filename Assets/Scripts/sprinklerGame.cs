@@ -143,8 +143,11 @@ public class sprinklerGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement();
-        hide();
+        if(myPlayer.getPointIndex() != Points.Length){
+            movement();
+            hide();
+        }
+        
         textDisplay();
 
         if(myPlayer.getHit() == true){
