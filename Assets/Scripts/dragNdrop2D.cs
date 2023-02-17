@@ -14,6 +14,9 @@ public class dragNdrop2D : MonoBehaviour
     public GameObject selectedObject;
     Vector3 offset;
 
+    public Vector3 targetPos;
+    public float gridSize = 15f;
+
     void Update()
     {
         //rotating function======================================
@@ -24,7 +27,25 @@ public class dragNdrop2D : MonoBehaviour
         }
         //========================================================
 
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //fetching mouse position relative to camera
+
+    //grid snapping fucntion PLEASE GOD WORK IM GOING TO DO IT====================
+
+
+
+    float RoundToNearestGrid(float pos)
+    {
+        float xDiff = pos % gridSize;
+        pos -= xDiff;
+        if (xDiff > (gridSize / 2))
+        {
+            pos += gridSize;
+        }
+        return pos;
+    }
+    //=============================================================================
+
+
+    Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //fetching mouse position relative to camera
         if (Input.GetMouseButtonDown(0)) //if LMB pressed
         {
             //mouse position finding bounds
@@ -58,9 +79,14 @@ public class dragNdrop2D : MonoBehaviour
             //want to implement snap to "bag" grid here
             //Debug.Log(tilesnapXY);
 
-           // selectedObject.transform.position = new Vector3(Mathf.Round(mousePosition.x),
+            //selectedObject.transform.position = new Vector3(
+            //RoundToNearestGrid(currentPos.x),
+            //RoundToNearestGrid(currentPos.y),
+            //RoundToNearestGrid(currentPos.z));
+
+            // selectedObject.transform.position = new Vector3(Mathf.Round(mousePosition.x),
             //                            Mathf.Round(mousePosition.y));
-           
+
             //selected object set to null, no longer holding something
             selectedObject = null;
         }
