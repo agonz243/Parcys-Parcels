@@ -163,8 +163,11 @@ public class sprinklerGame : MonoBehaviour
 
     void movement(){
         // Debug.Log("here");
+        // Debug.Log("player index: " + myPlayer.getPointIndex());
         if(transform.position == Points[myPlayer.getPointIndex()].transform.position){
             myPlayer.setPointIndex(myPlayer.getPointIndex() + 1);
+        } else if(transform.position == Points[myPlayer.getPointIndex() - 1].transform.position){
+            myPlayer.setPointIndex(myPlayer.getPointIndex() - 1);
         }
 
         // If player isn't currently hiding or hit
@@ -192,7 +195,7 @@ public class sprinklerGame : MonoBehaviour
                 // Debug.Log("v2 pointIndex: " + myPlayer.getPointIndex());
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex() - 1].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setBackKeyAlt(false);
-            } 
+            }
         }
         
     }
