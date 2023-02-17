@@ -42,7 +42,7 @@ public class Path : MonoBehaviour
 
     private float backKeyAlt = 0; // used to check for alternate key press backwards
 
-    private int pointIndex; // for counting the points in the array
+    private int pointIndex = 0; // for counting the points in the array
 
     private bool hide = false; // used to check if character is hidden
 
@@ -77,9 +77,9 @@ public class Path : MonoBehaviour
                 float seconds = Mathf.FloorToInt(gameTimer % 60);
 
                 // TEXT STUFF (TIMER, LIVES, UMBRELLA USES)
-                timerText.text = string.Format("{0}", seconds);
-                livesText.text = string.Format("{0}", lives);
-                brellaText.text = string.Format("{0}", brellaUse);
+                // timerText.text = string.Format("{0}", seconds);
+                // livesText.text = string.Format("{0}", lives);
+                // brellaText.text = string.Format("{0}", brellaUse);
             } else{ // Else timer is up and player loses
                 SceneManager.LoadScene("Lose");
             }
@@ -118,8 +118,10 @@ public class Path : MonoBehaviour
                 //Position if moved when alternating the keys "Z" and "C"
                 if(Input.GetKeyDown(KeyCode.Z) && backKeyAlt == 0){
                     transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex - 1].transform.position, moveSpeed);
+                    Debug.Log("pointIndex: " + pointIndex);
                     backKeyAlt = 1;
                 } else if(Input.GetKeyDown(KeyCode.C) && backKeyAlt == 1){
+                    Debug.Log("pointIndex: " + pointIndex);
                     transform.position = Vector2.MoveTowards(transform.position, Points[pointIndex - 1].transform.position, moveSpeed);
                     backKeyAlt = 0;
                 }
@@ -166,5 +168,16 @@ public class Path : MonoBehaviour
             hit = true;
             hitTimerRun = true;
         }
+    }
+
+    public void playerHit(){
+        if(hit){
+            return;
+        }
+        if(lives != 0){
+                lives--;
+            }
+            hit = true;
+            hitTimerRun = true;
     }
 }
