@@ -27,7 +27,7 @@ public class DropEnvelopes : MonoBehaviour
         camEdgeOffset = 10;
         envelopeCount = 10;
         scaleUpVec = new Vector3(10.0f, 10.0f, 0.0f);
-        scaleDownVec = new Vector3(-0.04f, -0.04f, 0.0f);
+        scaleDownVec = new Vector3(-0.25f, -0.25f, 0.0f);
         scaleTime = 0.0f;
         envelopes = new GameObject[envelopeCount];
         envelopeSize = envelope.GetComponent<BoxCollider2D>().size;
@@ -73,7 +73,7 @@ public class DropEnvelopes : MonoBehaviour
     void Update() 
     {
         scaleTime += Time.deltaTime;
-        if (scaleTime < 1.5f) 
+        if (scaleTime < 1.0f) 
         {
             for (int n = 0; n < envelopeCount; n++) 
             {
