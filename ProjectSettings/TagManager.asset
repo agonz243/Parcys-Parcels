@@ -8,6 +8,7 @@ TagManager:
   - Collectable
   - Mailbox
   - Obstacle
+  - BGMusic
   layers:
   - Default
   - TransparentFX

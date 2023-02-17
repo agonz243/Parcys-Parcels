@@ -23,8 +23,8 @@ public class sceneChanger : MonoBehaviour
     void Update(){
         Debug.Log(timer);
         if (startTimer == true){
-            Debug.Log(timer);
-            Debug.Log("Delay: " + delay);
+            // Debug.Log(timer);
+            // Debug.Log("Delay: " + delay);
             // LoadNextScene();
             timer += Time.deltaTime;
             if (timer > 1f){
@@ -38,7 +38,7 @@ public class sceneChanger : MonoBehaviour
     public void Wait(){
         // source.PlayOneShot(clip);
         startTimer = true;
-        Debug.Log("Real delay: " + delay);
+        // Debug.Log("Real delay: " + delay);
     }
 
     public void LoadNextScene() {

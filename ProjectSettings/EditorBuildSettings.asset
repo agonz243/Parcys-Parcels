@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LosePuzzleGame.unity
     guid: 13f94472ce7dd4e1e854e4b8b6e90a55
+  - enabled: 1
+    path: Assets/Scenes/LoseDogGame.unity
+    guid: 31c7ffedc8b0d4ac892165eb76aea930
   m_configObjects: {}
