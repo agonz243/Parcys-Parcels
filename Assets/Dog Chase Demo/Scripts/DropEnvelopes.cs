@@ -73,7 +73,7 @@ public class DropEnvelopes : MonoBehaviour
     void Update() 
     {
         scaleTime += Time.deltaTime;
-        if (scaleTime < 1.0f) 
+        if (scaleTime < 0.8f) 
         {
             for (int n = 0; n < envelopeCount; n++) 
             {
