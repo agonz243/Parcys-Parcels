@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DogChaseDemo.unity
     guid: 96fc5571adbe94a90bededc3a0e2fc30
   - enabled: 1
-    path: Assets/Scenes/LoseDogGame.unity
+    path: Assets/Scenes/WinPuzzleGame.unity
     guid: 95693fb96afbb0c4b9635c1be607cb03
   - enabled: 1
     path: Assets/Scenes/WinDogGame.unity
@@ -24,17 +24,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Sprinkler Demo/Lose.unity
     guid: 08ef84d8b0743e04998a573ac1f14106
   - enabled: 1
-    path: Assets/Scenes/WinPuzzleGame.unity
-    guid: 54c5ae94a998ff243b520c290624a492
-  - enabled: 1
     path: Assets/Scenes/Mailbag/Mailbag.unity
     guid: c606f1c37399d0c44825afad19fb9012
   - enabled: 1
     path: Assets/Scenes/DogInstructions.unity
     guid: 32ab9cbc8871e1347a37ea11f3bd63fa
-  - enabled: 1
-    path: Assets/Scenes/LosePuzzleGame.unity
-    guid: 8bb3197ad557cf54ba7035f58e336446
   - enabled: 1
     path: Assets/Scenes/MailbagInstructions.unity
     guid: 6c3d0c0a48bdfe442abc499968ce198a
@@ -44,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sprinkler Demo/Win.unity
     guid: 7848745d75027fc4391bf5960a5f93a0
+  - enabled: 1
+    path: Assets/Scenes/LosePuzzleGame.unity
+    guid: 13f94472ce7dd4e1e854e4b8b6e90a55
   m_configObjects: {}
