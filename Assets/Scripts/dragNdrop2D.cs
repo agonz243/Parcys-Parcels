@@ -15,7 +15,7 @@ public class dragNdrop2D : MonoBehaviour
     Vector3 offset;
 
     public Vector3 targetPos;
-    public float gridSize = 15f;
+    public float gridSize = 10f;
 
     void Update()
     {
@@ -79,10 +79,10 @@ public class dragNdrop2D : MonoBehaviour
             //want to implement snap to "bag" grid here
             //Debug.Log(tilesnapXY);
 
-            //selectedObject.transform.position = new Vector3(
-            //RoundToNearestGrid(currentPos.x),
-            //RoundToNearestGrid(currentPos.y),
-            //RoundToNearestGrid(currentPos.z));
+            selectedObject.transform.position = new Vector3(
+            RoundToNearestGrid(currentPos.x),
+            RoundToNearestGrid(currentPos.y),
+            RoundToNearestGrid(currentPos.z));
 
             // selectedObject.transform.position = new Vector3(Mathf.Round(mousePosition.x),
             //                            Mathf.Round(mousePosition.y));
