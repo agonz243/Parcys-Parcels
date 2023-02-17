@@ -54,6 +54,9 @@ public class Path : MonoBehaviour
 
     private int lives = 3; // for player live 
 
+    public AudioSource wetSource;
+    public AudioSource umbrellaSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -125,6 +128,7 @@ public class Path : MonoBehaviour
             // CHARACTER HIDE / SHIELD INPUT
             //      enables hiding and puts umbrella on screen
             if(Input.GetKeyDown(KeyCode.W) && !hide && !hit && (brellaUse != 0)){ // can adjust back to KeyCode.DownArrow
+                umbrellaSource.Play();
                 hide = true; 
                 hideTimerRun = true;
                 brella.SetActive(true);
@@ -155,6 +159,7 @@ public class Path : MonoBehaviour
     // COLLISION (W/ SPRINKLERS)
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.tag == "Enemy" && !hide && !hit){
+            wetSource.Play();
             if(lives != 0){
                 lives--;
             }

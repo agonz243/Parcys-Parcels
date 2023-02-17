@@ -22,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
 
     private int envelopesHeld; // The amount of envelopes currently held for the dog minigame
 
+    public AudioSource squeakSource;
+    public AudioSource envCollectSource;
+
     void Start()
     {
         envelopesHeld = 0;
@@ -90,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
     // COLLISION W/ SPRINKLERS
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.gameObject.tag == "Collectable"){
+            envCollectSource.Play();
             Destroy(collision.gameObject);
             envelopesHeld++;
         } else if (collision.gameObject.tag == "Mailbox"){
@@ -102,9 +106,9 @@ public class PlayerMovement : MonoBehaviour
             }
             
         } else if (collision.gameObject.tag == "Enemy"){
-            Debug.Log("Hello");
             SceneManager.LoadScene("LoseDogGame");
         } else if (collision.gameObject.tag == "Obstacle"){
+            squeakSource.Play();
             Debug.Log("Obstacle");
             moveSpeed -= 1;
         }
