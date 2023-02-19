@@ -8,7 +8,7 @@ public class dragNdrop2D : MonoBehaviour
     //taking instance of grid class, in order to access tile positioning for shape "snapping"
     public gridManager gridCoords;
 
-    //public List<Vector3> snapPoints = new gridCoords.tilesnapXY;
+    public List<Transform> snapPoints = new List<Transform>();
     
     //defining for later use
     public GameObject selectedObject;
@@ -16,9 +16,15 @@ public class dragNdrop2D : MonoBehaviour
 
     public Vector3 targetPos;
     public float gridSize = 10f;
+        
+    public int gridWidth = 104;
+    public int gridHeight = 72;
+
 
     void Update()
     {
+
+
         //rotating function======================================
         void RotateByDegrees(GameObject wespin)
         {
@@ -32,16 +38,16 @@ public class dragNdrop2D : MonoBehaviour
 
 
 
-    float RoundToNearestGrid(float pos)
-    {
-        float xDiff = pos % gridSize;
-        pos -= xDiff;
-        if (xDiff > (gridSize / 2))
-        {
-            pos += gridSize;
-        }
-        return pos;
-    }
+    //float RoundToNearestGrid(float pos)
+ //   {
+   //         float closestDistance = -1;
+   //         Transform closestSnap = null;
+   //         foreach(Transform snapPoint in snapPoints)
+   //         {
+                //float currentDistance = Vector2.Distance()
+  //          }
+
+  //  }
     //=============================================================================
 
 
@@ -76,14 +82,17 @@ public class dragNdrop2D : MonoBehaviour
         {
             var currentPos = selectedObject.transform.position; //fetch the current objects position
 
+            //taking instance of our gridManager to access the list of our vertices for each tile instantiated, using as snap points
+            //snapPoints = gridCoords.tilesnapXY;
             //want to implement snap to "bag" grid here
             //Debug.Log(tilesnapXY);
 
-            selectedObject.transform.position = new Vector3(
-            RoundToNearestGrid(currentPos.x),
-            RoundToNearestGrid(currentPos.y),
-            RoundToNearestGrid(currentPos.z));
-
+            //selectedObject.transform.position = new Vector3(
+            //RoundToNearestGrid(currentPos.x),
+            // RoundToNearestGrid(currentPos.y),
+            //RoundToNearestGrid(currentPos.z));
+            currentPos.x = Mathf.Round(currentPos.x / gridWidth) * gridWidth;
+            currentPos.y = Mathf.Round(currentPos.y / gridHeight) * gridHeight;
             // selectedObject.transform.position = new Vector3(Mathf.Round(mousePosition.x),
             //                            Mathf.Round(mousePosition.y));
 

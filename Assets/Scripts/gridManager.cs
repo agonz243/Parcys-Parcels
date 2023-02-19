@@ -21,7 +21,7 @@ public class gridManager : MonoBehaviour
     public List<Tile> tilesnapPoints = new List<Tile>();
 
     //list of the tilepoints vector3s for xy values
-    public List<Vector3> tilesnapXY = new List<Vector3>();
+    public List<Transform> tilesnapXY = new List<Transform>();
 
     //to fetch tiles colliders
     public List<Collider2D> tileColliders = new List<Collider2D>();
@@ -40,12 +40,12 @@ public class gridManager : MonoBehaviour
     void MakeaDaGrid()
     {
         //loop over width
-        for(int x = 0; x < _width; x = x+15) //added 15 to x and y for increased size of tiles
+        for(int x = 0; x < _width; x = x+10) //added 15 to x and y for increased size of tiles
         {
-            for(int y = 0; y < _height; y = y+15)
+            for(int y = 0; y < _height; y = y+10)
             {
                 //these numbers are tweaked for tile and board size, ask graham if changes needed :)
-                var spawnTile = Instantiate(tilePrefab, new Vector3(x-40, y-2), Quaternion.identity); //need to watch the Quarternion HERE for rotation
+                var spawnTile = Instantiate(tilePrefab, new Vector3(x-45, y-5), Quaternion.identity); //need to watch the Quarternion HERE for rotation
                
                 
                 //snapPoints.Add(spawnTile);
@@ -56,7 +56,7 @@ public class gridManager : MonoBehaviour
                 tilesnapPoints.Add(spawnTile);
 
                 //here we have the (x, y,z) vector 3 of each tile's position, want to use for snapping
-                tilesnapXY.Add(spawnTile.transform.position);
+                tilesnapXY.Add(spawnTile.transform);
 
                 Collider2D currTile = spawnTile.bonk;
 
@@ -71,7 +71,7 @@ public class gridManager : MonoBehaviour
 
 
         //put the coordinates in the bag and nobody gets hurt
-        foreach (Vector3 pair in tilesnapXY)
+        foreach (Transform pair in tilesnapXY)
         {
             Debug.Log(pair);
         }

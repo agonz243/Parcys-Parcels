@@ -155,9 +155,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!61 &44685755
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -223,7 +226,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9254902, g: 0.92156863, b: 0.14117648, a: 1}
@@ -295,8 +298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 530fdbd6e1f0507489b7c08836d5eb3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _width: 112
-  _height: 84
+  _width: 104
+  _height: 72
   tilePrefab: {fileID: 4164474657024787135}
   camcorder: {fileID: 1573266251}
   snapRange: 0.5
@@ -361,9 +364,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!212 &222696717
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -403,7 +409,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9254902, g: 0.92156863, b: 0.14117648, a: 1}
@@ -463,9 +469,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!61 &411989912
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -531,7 +540,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9254902, g: 0.92156863, b: 0.14117648, a: 1}
@@ -626,9 +635,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!114 &687894048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,7 +792,7 @@ SpriteShapeRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Color: {r: 0.9254902, g: 0.9228265, b: 0.14117648, a: 1}
   m_MaskInteraction: 0
@@ -966,7 +978,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.77254903}
@@ -1007,9 +1019,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!61 &795554383
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1094,9 +1109,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!212 &795688266
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1136,7 +1154,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9254902, g: 0.92156863, b: 0.14117648, a: 1}
@@ -1231,9 +1249,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!114 &926282555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,7 +1406,7 @@ SpriteShapeRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Color: {r: 0.9254902, g: 0.9228265, b: 0.14117648, a: 1}
   m_MaskInteraction: 0
@@ -1485,9 +1506,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!114 &936336133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1639,7 +1663,7 @@ SpriteShapeRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Color: {r: 0.9254902, g: 0.9228265, b: 0.14117648, a: 1}
   m_MaskInteraction: 0
@@ -1863,7 +1887,7 @@ SpriteShapeRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Color: {r: 0.9254902, g: 0.9228265, b: 0.14117648, a: 1}
   m_MaskInteraction: 0
@@ -1909,9 +1933,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!60 &975135684
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2081,9 +2108,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!61 &1219265105
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2149,7 +2179,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9254902, g: 0.92156863, b: 0.14117648, a: 1}
@@ -2307,9 +2337,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!61 &1405460110
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2375,7 +2408,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9254902, g: 0.92156863, b: 0.14117648, a: 1}
@@ -2435,9 +2468,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!61 &1406718897
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2503,7 +2539,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9254902, g: 0.92156863, b: 0.14117648, a: 1}
@@ -2563,9 +2599,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!61 &1496097022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2631,7 +2670,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9254902, g: 0.92156863, b: 0.14117648, a: 1}
@@ -2890,9 +2929,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!212 &1799837810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2932,7 +2974,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9254902, g: 0.92156863, b: 0.14117648, a: 1}
@@ -3029,9 +3071,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
+  snapPoints: []
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 15
+  gridWidth: 104
+  gridHeight: 72
 --- !u!114 &1914774459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3203,7 +3248,7 @@ SpriteShapeRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975259753
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Color: {r: 0.9254902, g: 0.9228265, b: 0.14117648, a: 1}
   m_MaskInteraction: 0
@@ -3357,11 +3402,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: m_LocalScale.z
