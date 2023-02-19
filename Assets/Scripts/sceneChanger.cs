@@ -21,11 +21,7 @@ public class sceneChanger : MonoBehaviour
     }
 
     void Update(){
-        Debug.Log(timer);
         if (startTimer == true){
-            Debug.Log(timer);
-            Debug.Log("Delay: " + delay);
-            // LoadNextScene();
             timer += Time.deltaTime;
             if (timer > 1f){
                 LoadNextScene();
@@ -36,14 +32,11 @@ public class sceneChanger : MonoBehaviour
     }
 
     public void Wait(){
-        // source.PlayOneShot(clip);
         startTimer = true;
-        Debug.Log("Real delay: " + delay);
     }
 
     public void LoadNextScene() {
 
-        Debug.Log(currentScene.name);
         if (currentScene.name == "TitleScreen") {
             SceneManager.LoadScene("DogInstructions");
         } else if (currentScene.name == "DogInstructions") {

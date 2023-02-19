@@ -8,6 +8,7 @@ TagManager:
   - Collectable
   - Mailbox
   - Obstacle
+  - BGMusic
   layers:
   - Default
   - TransparentFX
@@ -54,12 +55,12 @@ TagManager:
   - name: bg-mail
     uniqueID: 1157859395
     locked: 0
-  - name: bg-obstacles
-    uniqueID: 307642523
-    locked: 0
   - name: bg-top
     uniqueID: 2319707543
     locked: 0
   - name: bg-dog
     uniqueID: 2187815801
+    locked: 0
+  - name: bg-obstacles
+    uniqueID: 307642523
     locked: 0
