@@ -16,7 +16,7 @@ public class GridBuildingSystem : MonoBehaviour
 
     private Package temp;
     private Vector3 prevPos;
-
+    private BoundsInt prevArea;
 
     #region Unity Methods
 
@@ -59,6 +59,7 @@ public class GridBuildingSystem : MonoBehaviour
                 {
                     temp.transform.localPosition = gridLayout.CellToLocalInterpolated(cellPos + new Vector3(.5f, .5f, 0f));
                     prevPos = cellPos;
+                    FollowBuilding();
                 }
             }
         }
@@ -105,6 +106,44 @@ public class GridBuildingSystem : MonoBehaviour
     public void InitializeWithPackage(GameObject package)
     {
         temp = Instantiate(package, Vector3.zero, Quaternion.identity).GetComponent<Package>();
+        FollowBuilding();
+    }
+
+
+    private void ClearArea()
+    {
+        TileBase[] toClear = new TileBase[prevArea.size.x * prevArea.size.y * prevArea.size.z];
+        FillTiles(toClear, TileType.Empty);
+        TempTilemap.SetTilesBlock(prevArea, toClear);
+    }
+
+    private void FollowBuilding()
+    {
+        ClearArea();
+
+        temp.area.position = gridLayout.WorldToCell(temp.gameObject.transform.position);
+        BoundsInt buildingArea = temp.area;
+
+        TileBase[] baseArray = GetTilesBlock(buildingArea, MainTilemap);
+
+        int size = baseArray.Length;
+        TileBase[] tileArray = new TileBase[size];
+
+        for(int i = 0; i < baseArray.Length; i++)
+        {
+            if(baseArray[i] == tileBases[TileType.White])
+            {
+                tileArray[i] = tileBases[TileType.Green];
+            }
+            else
+            {
+                FillTiles(tileArray, TileType.Red);
+                break;
+            }
+        }
+
+        TempTilemap.SetTilesBlock(buildingArea, tileArray);
+        prevArea = buildingArea;
     }
     #endregion
 
