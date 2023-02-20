@@ -64,7 +64,7 @@ public class gridManager : MonoBehaviour
                 tileColliders.Add(currTile);
 
                 //math here using mods to determine checkerboard coloring for tiles
-                var isOffset = (x + y) % 2 == 1;
+                var isOffset = (x + y) % 3 == 2;
                 spawnTile.Init(isOffset);
             }
         }
