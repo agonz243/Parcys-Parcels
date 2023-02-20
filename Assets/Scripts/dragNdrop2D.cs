@@ -37,17 +37,18 @@ public class dragNdrop2D : MonoBehaviour
     //grid snapping fucntion PLEASE GOD WORK IM GOING TO DO IT====================
 
 
-
-    //float RoundToNearestGrid(float pos)
- //   {
-   //         float closestDistance = -1;
-   //         Transform closestSnap = null;
-   //         foreach(Transform snapPoint in snapPoints)
-   //         {
+/*
+    float RoundToNearestGrid(float pos)
+    {
+            float closestDistance = -1;
+            Transform closestSnap = null;
+            foreach(Transform snapPoint in snapPoints)
+            {
                 //float currentDistance = Vector2.Distance()
-  //          }
+            }
 
-  //  }
+    }
+*/
     //=============================================================================
 
 

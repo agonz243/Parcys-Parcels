@@ -25,7 +25,7 @@ public class Tile : MonoBehaviour
     {
         if(other.tag == "Packages")
         {
-            //highlights.SetActive(true);
+            highlights.SetActive(true);
         }
         highlights.SetActive(true);
     }

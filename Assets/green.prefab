@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3094276826466060435}
   - component: {fileID: 1047423125673775449}
   m_Layer: 0
-  m_Name: TileGrn
+  m_Name: green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
