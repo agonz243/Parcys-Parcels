@@ -361,8 +361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.94, y: -24.35}
-  m_SizeDelta: {x: 437.12, y: 134.59}
+  m_AnchoredPosition: {x: 0, y: -87}
+  m_SizeDelta: {x: 382.99, y: 131.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &139948089
 MonoBehaviour:
@@ -388,11 +388,7 @@ MonoBehaviour:
 
 
     Click
-    and Drag each package onto the mailbox.
-
-
-    Be careful and pay attention to
-    the messages on the packages!'
+    and Drag each package onto the mailbox.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f65839469ec57194a88273e2638db1c5, type: 2}
   m_sharedMaterial: {fileID: -6841993266531392055, guid: f65839469ec57194a88273e2638db1c5, type: 2}
