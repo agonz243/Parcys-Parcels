@@ -47,7 +47,6 @@ public class gridManager : MonoBehaviour
                 //these numbers are tweaked for tile and board size, ask graham if changes needed :)
                 var spawnTile = Instantiate(tilePrefab, new Vector3(x-45, y-5), Quaternion.identity); //need to watch the Quarternion HERE for rotation
                
-                
                 //snapPoints.Add(spawnTile);
                 
                 spawnTile.name = $"Tile {x} {y}";
@@ -64,7 +63,9 @@ public class gridManager : MonoBehaviour
                 tileColliders.Add(currTile);
 
                 //math here using mods to determine checkerboard coloring for tiles
-                var isOffset = (x + y) % 3 == 2;
+                //var isOffset = (x + y) / 10;
+                //lil magic math of my own design
+                var isOffset = ((x + y) / 10) % 2 == 0;
                 spawnTile.Init(isOffset);
             }
         }
@@ -73,7 +74,7 @@ public class gridManager : MonoBehaviour
         //put the coordinates in the bag and nobody gets hurt
         foreach (Transform pair in tilesnapXY)
         {
-            Debug.Log(pair);
+            //Debug.Log(pair);
         }
 
 

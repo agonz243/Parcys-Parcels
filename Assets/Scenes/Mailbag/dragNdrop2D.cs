@@ -21,38 +21,40 @@ public class dragNdrop2D : MonoBehaviour
     public int gridHeight = 72;
 
 
+
+    IEnumerator RotateMe(GameObject pckg, Vector3 byAngles, float inTime)
+    {
+        var fromAngle = pckg.transform.rotation;
+        var toAngle = Quaternion.Euler(pckg.transform.eulerAngles + byAngles);
+        for (var t = 0f; t < 1; t += Time.deltaTime / inTime)
+        {
+            pckg.transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
+            yield return null;
+        }
+    }
+
+
     void Update()
     {
+        //grid snapping fucntion PLEASE GOD WORK IM GOING TO DO IT====================
 
 
-        //rotating function======================================
-        void RotateByDegrees(GameObject wespin)
-        {
-            Vector3 rotationToAdd = new Vector3(0, 0, 90); //was 45
-            wespin.transform.Rotate(rotationToAdd);
-        }
-        //========================================================
-
-
-    //grid snapping fucntion PLEASE GOD WORK IM GOING TO DO IT====================
-
-
-/*
-    float RoundToNearestGrid(float pos)
-    {
-            float closestDistance = -1;
-            Transform closestSnap = null;
-            foreach(Transform snapPoint in snapPoints)
+        /*
+            float RoundToNearestGrid(float pos)
             {
-                //float currentDistance = Vector2.Distance()
+                    float closestDistance = -1;
+                    Transform closestSnap = null;
+                    foreach(Transform snapPoint in snapPoints)
+                    {
+                        //float currentDistance = Vector2.Distance()
+                    }
+
             }
-
-    }
-*/
-    //=============================================================================
+        */
+        //=============================================================================
 
 
-    Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //fetching mouse position relative to camera
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //fetching mouse position relative to camera
         if (Input.GetMouseButtonDown(0)) //if LMB pressed
         {
             //mouse position finding bounds
@@ -71,11 +73,17 @@ public class dragNdrop2D : MonoBehaviour
         }
         if (selectedObject) //if currently holding an object with mouse click 
         {
-            selectedObject.transform.position = mousePosition + offset; //doing the moving WAS PLUS OFFSET
+            selectedObject.transform.position = mousePosition + offset; //doing the moving PLUS OFFSET
             if (Input.GetMouseButtonDown(1)) //if RMB pressed
             {
                 //doing the actual rotating, function above 
-                RotateByDegrees(selectedObject);
+                //Vector3 currRotash = selectedObject.transform.eulerAngles;
+
+                //always going to start at a rotation of zero, REMEMBER TO ZERO THIS OUT AT PICK UP TIME
+                //RotateByDegreesZeroto90(selectedObject, selectedObject.transform.eulerAngles);
+
+                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 0.8f));
+
             }
 
         }
@@ -88,10 +96,6 @@ public class dragNdrop2D : MonoBehaviour
             //want to implement snap to "bag" grid here
             //Debug.Log(tilesnapXY);
 
-            //selectedObject.transform.position = new Vector3(
-            //RoundToNearestGrid(currentPos.x),
-            // RoundToNearestGrid(currentPos.y),
-            //RoundToNearestGrid(currentPos.z));
             currentPos.x = Mathf.Round(currentPos.x / gridWidth) * gridWidth;
             currentPos.y = Mathf.Round(currentPos.y / gridHeight) * gridHeight;
             // selectedObject.transform.position = new Vector3(Mathf.Round(mousePosition.x),
