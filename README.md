@@ -21,7 +21,7 @@ Run down the path using the A and D keys while avoiding the sprinklers!
 Run backwards with the Z and C keys!
 
 Press W to momentarily pull out your umbrella!
-# Team members
+# The Team
 **Anika Mahajan** - Lead Producer & Artist  
   
 **Eden Hou** - Lead Artist & Sound Designer  
