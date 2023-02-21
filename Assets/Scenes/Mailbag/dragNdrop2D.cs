@@ -33,9 +33,102 @@ public class dragNdrop2D : MonoBehaviour
         }
     }
 
-
     void Update()
     {
+        /*
+
+        //rotating function============================================================================================================
+        void RotateByDegreesZeroto90(GameObject wespin, Vector3 wespinAngle)
+        {
+            Vector3 zero = new Vector3(0f, 0f, 0f);
+            Vector3 ninety = new Vector3(0f, 0f, 90f);
+            Vector3 one80 = new Vector3(0f, 0f, 180f);
+            Vector3 two70 = new Vector3(0f, 0f, 270f);
+            Vector3 three60 = new Vector3(0f, 0f, 360f);
+            Vector3 rotationToAdd = new Vector3(0f, 0f, 0f);
+            if (wespinAngle.z >= zero.z && wespinAngle.z < ninety.z)
+            {
+                 rotationToAdd = new Vector3(0f, 0f, 90f); //was 45
+            }else if (wespinAngle.z >= ninety.z && wespinAngle.z < one80.z)
+            {
+                 rotationToAdd = new Vector3(0f, 0f, 180f);
+            } else if (wespinAngle.z >= one80.z && wespinAngle.z < two70.z)
+            {
+                 rotationToAdd = new Vector3(0f, 0f, 270f);
+            } else if (wespinAngle.z >= two70.z && wespinAngle.z < three60.z)
+            {
+                 rotationToAdd = new Vector3(0f, 0f, 360f);
+            }
+
+            //Vector3 rotationToAdd = new Vector3(0f, 0f, 90f); //was 45
+            //might need to take an entire vector here not just .z?
+            //need localRotation? dont think needed
+            Vector3 currentRotation = wespin.transform.eulerAngles; //see if x y or z with the values
+
+            currentRotation = new Vector3(Mathf.LerpAngle(currentRotation.x, rotationToAdd.x, Time.deltaTime),
+                Mathf.LerpAngle(currentRotation.y, rotationToAdd.y, Time.deltaTime),
+                Mathf.LerpAngle(currentRotation.z, rotationToAdd.z, Time.deltaTime));
+
+            wespin.transform.eulerAngles = currentRotation;
+        }
+
+        //===============================================================================================================================
+        /*
+        void RotateByDegrees90to180(GameObject wespin)
+        {
+            Vector3 rotationToAdd = new Vector3(0f, 0f, 180f); //was 45
+            //might need to take an entire vector here not just .z?
+            //need localRotation? dont think needed
+            Vector3 currentRotation = wespin.transform.eulerAngles; //see if x y or z with the values
+
+            currentRotation = new Vector3(Mathf.LerpAngle(currentRotation.x, rotationToAdd.x, Time.deltaTime * 3),
+                Mathf.LerpAngle(currentRotation.y, rotationToAdd.y, Time.deltaTime * 3),
+                Mathf.LerpAngle(currentRotation.z, rotationToAdd.z, Time.deltaTime * 3));
+
+            wespin.transform.eulerAngles = currentRotation;
+        }
+
+        void RotateByDegrees180to270(GameObject wespin)
+        {
+            Vector3 rotationToAdd = new Vector3(0f, 0f, 270f); //was 45
+            //might need to take an entire vector here not just .z?
+            //need localRotation? dont think needed
+            Vector3 currentRotation = wespin.transform.eulerAngles; //see if x y or z with the values
+
+            currentRotation = new Vector3(Mathf.LerpAngle(currentRotation.x, rotationToAdd.x, Time.deltaTime * 3),
+                Mathf.LerpAngle(currentRotation.y, rotationToAdd.y, Time.deltaTime * 3),
+                Mathf.LerpAngle(currentRotation.z, rotationToAdd.z, Time.deltaTime * 3));
+
+            wespin.transform.eulerAngles = currentRotation;
+        }
+
+
+        void RotateByDegrees270to360(GameObject wespin)
+        {
+            Vector3 rotationToAdd = new Vector3(0f, 0f, 360f); //was 45
+            //might need to take an entire vector here not just .z?
+            //need localRotation? dont think needed
+            Vector3 currentRotation = wespin.transform.eulerAngles; //see if x y or z with the values
+
+            currentRotation = new Vector3(Mathf.LerpAngle(currentRotation.x, rotationToAdd.x, Time.deltaTime * 3),
+                Mathf.LerpAngle(currentRotation.y, rotationToAdd.y, Time.deltaTime * 3),
+                Mathf.LerpAngle(currentRotation.z, rotationToAdd.z, Time.deltaTime * 3));
+
+            wespin.transform.eulerAngles = currentRotation;
+        }
+
+        */
+
+
+        //==================================================================================================================================
+
+
+
+
+
+
+
+
         //grid snapping fucntion PLEASE GOD WORK IM GOING TO DO IT====================
 
 
@@ -53,7 +146,7 @@ public class dragNdrop2D : MonoBehaviour
         */
         //=============================================================================
 
-
+        
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //fetching mouse position relative to camera
         if (Input.GetMouseButtonDown(0)) //if LMB pressed
         {
@@ -82,7 +175,7 @@ public class dragNdrop2D : MonoBehaviour
                 //always going to start at a rotation of zero, REMEMBER TO ZERO THIS OUT AT PICK UP TIME
                 //RotateByDegreesZeroto90(selectedObject, selectedObject.transform.eulerAngles);
 
-                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 0.8f));
+                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 1.0f));
 
             }
 
