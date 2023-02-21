@@ -40,7 +40,7 @@ public class sceneChanger : MonoBehaviour
         if (currentScene.name == "TitleScreen") {
             SceneManager.LoadScene("DogInstructions");
         } else if (currentScene.name == "DogInstructions") {
-            SceneManager.LoadScene("DogChaseDemo");
+            SceneManager.LoadScene("DogChase");
         } else if (currentScene.name == "LoseDogGame" || currentScene.name == "WinDogGame") {
             SceneManager.LoadScene("SprinklerInstructions");
         } else if (currentScene.name == "SprinklerInstructions") {
