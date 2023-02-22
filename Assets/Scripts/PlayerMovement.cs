@@ -96,13 +96,7 @@ public class PlayerMovement : MonoBehaviour
             envCollectSource.Play();
             Destroy(collision.gameObject);
             envelopesHeld++;
-        } else if (collision.gameObject.tag == "Enemy"){
-            SceneManager.LoadScene("LoseDogGame");
-        } else if (collision.gameObject.tag == "Obstacle"){
-            squeakSource.Play();
-            Debug.Log("Obstacle");
-            moveSpeed -= 1;
-        }
+        } 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -116,6 +110,12 @@ public class PlayerMovement : MonoBehaviour
             if (mbc.envelopesInBox == 10){
                 SceneManager.LoadScene("WinDogGame");
             }
+        } else if (collision.gameObject.tag == "Enemy"){
+            SceneManager.LoadScene("LoseDogGame");
+        } else if (collision.gameObject.tag == "Obstacle"){
+            squeakSource.Play();
+            Debug.Log("Obstacle");
+            moveSpeed -= 1;
         }
     }
 }
