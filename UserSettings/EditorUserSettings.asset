@@ -18,6 +18,7 @@ EditorUserSettings:
       value: 5a07520550005e0a0c0a0e2749775e4946151d2e292c25632c791861e4e36768
       flags: 0
     RecentlyUsedSceneGuid-4:
+<<<<<<< HEAD
       value: 545405035057500d555a587312270a4446154128747d73327a284c35b1e5666c
       flags: 0
     RecentlyUsedSceneGuid-5:
@@ -28,12 +29,31 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedSceneGuid-7:
       value: 5000575103530c5f0e560e7214775e134e4e4a7b7a7d23327a7f1c36e3b96768
+=======
+      value: 555207025556595a59560e2616260b4444161a2978717f697b711e36b3b96c39
+      flags: 0
+    RecentlyUsedSceneGuid-5:
+      value: 545405035057500d555a587312270a4446154128747d73327a284c35b1e5666c
+      flags: 0
+    RecentlyUsedSceneGuid-6:
+      value: 500355045c560b5855565b7315720c4441164b7d292977612b7a1f37b4b33239
+      flags: 0
+    RecentlyUsedSceneGuid-7:
+      value: 5409005e52015c5f5a5b5c7047255c44454e49282a7d7f667d284835bbb33568
+      flags: 0
+    RecentlyUsedSceneGuid-8:
+      value: 5309510504535a58580f082115260f444315197e7b2a2434747c4430b1e1616f
+>>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
       flags: 0
     RecentlyUsedSceneGuid-8:
       value: 5309510504535a58580f082115260f444315197e7b2a2434747c4430b1e1616f
       flags: 0
     RecentlyUsedSceneGuid-9:
+<<<<<<< HEAD
       value: 555207025556595a59560e2616260b4444161a2978717f697b711e36b3b96c39
+=======
+      value: 5000575103530c5f0e560e7214775e134e4e4a7b7a7d23327a7f1c36e3b96768
+>>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
