@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 public class DoNotDestroy : MonoBehaviour
 {
 
-    Scene currentScene;
-	string sceneName;
+    // Scene currentScene;
+	// string sceneName;
 
-    private void Start() {
-    	currentScene = SceneManager.GetActiveScene();
-    }
+    // AudioSource ParcysTheme;
+
+    // bool themePlay;
+    // bool toggleChange;
+
+    // private void Start() {
+    // 	currentScene = SceneManager.GetActiveScene();
+    // }
 
     void Awake()
     {
@@ -21,13 +26,18 @@ public class DoNotDestroy : MonoBehaviour
         // We destroy the GameObject if there's more than one music object
         if (musicObj.Length > 1){
             Destroy(this.gameObject);
-        } else if (currentScene.name == "DogChaseDemo") {
-            Debug.Log("please");
-            Destroy(this.gameObject);
-            Destroy(GameObject.Find("BackgroundMusic"));
-        } else {
-            DontDestroyOnLoad(this.gameObject);
         }
+        // else if (currentScene.name == "DogChaseDemo") {
+        //     Debug.Log("please");
+        //     Destroy(this.gameObject);
+        //     Destroy(GameObject.Find("BackgroundMusic"));
+        // } else {
+        //     DontDestroyOnLoad(this.gameObject);
+        // }
+        DontDestroyOnLoad(this.gameObject);
+
+        // SceneManager.GetActiveScene().name
+        // Debug.Log(currentScene.name);
         // else if (currentScene.name == "SprinklerInstructions") {
         //     SceneManager.LoadScene("SprinklerV2");
         // } else if (currentScene.name == "Win" || currentScene.name == "Lose") {
