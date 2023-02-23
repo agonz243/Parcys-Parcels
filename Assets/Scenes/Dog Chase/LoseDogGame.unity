@@ -514,7 +514,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'YOU LOSE
 
-    </3'
+    >:('
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d734a2ed32ec26e40a5fc7d00d0c5327, type: 2}
   m_sharedMaterial: {fileID: -861100754391115005, guid: d734a2ed32ec26e40a5fc7d00d0c5327, type: 2}
@@ -709,6 +709,8 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
+  clip: {fileID: 0}
+  source: {fileID: 0}
 --- !u!1 &562559252
 GameObject:
   m_ObjectHideFlags: 0

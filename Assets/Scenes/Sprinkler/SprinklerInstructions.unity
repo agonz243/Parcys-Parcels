@@ -2102,11 +2102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 1
-=======
-  m_IsActive: 0
->>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
 --- !u!212 &1448381941
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2148,11 +2144,7 @@ SpriteRenderer:
   m_SortingLayerID: 2048872099
   m_SortingLayer: -2
   m_SortingOrder: 0
-<<<<<<< HEAD
   m_Sprite: {fileID: 21300000, guid: b72ae37573f3aec4eac416fc82df1a4a, type: 3}
-=======
-  m_Sprite: {fileID: 21300000, guid: f0bc2ac6f1dff3849b50fc6bab83b202, type: 3}
->>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2171,13 +2163,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448381940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: -0.18, y: 0.1508, z: 0.32787463}
   m_LocalScale: {x: -0.7, y: -0.7, z: -0.7}
-=======
-  m_LocalPosition: {x: 0.2643, y: 0.1508, z: 0.32787463}
-  m_LocalScale: {x: 0.5184993, y: 0.5184993, z: 0.5184993}
->>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -2418,11 +2405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 0
-=======
-  m_IsActive: 1
->>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
 --- !u!212 &1891716621
 SpriteRenderer:
   m_ObjectHideFlags: 0

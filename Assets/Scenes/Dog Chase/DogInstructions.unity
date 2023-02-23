@@ -350,11 +350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 0
-=======
-  m_IsActive: 1
->>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
 --- !u!212 &284096584
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -761,7 +757,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &999035809
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,8 +841,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
 --- !u!1 &1199727317
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,11 +963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-<<<<<<< HEAD
   m_AnchoredPosition: {x: 288.54, y: 241.79999}
-=======
-  m_AnchoredPosition: {x: 288.54, y: 241.8}
->>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
   m_SizeDelta: {x: 670.36, y: 173.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1312616483

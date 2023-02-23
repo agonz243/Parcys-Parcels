@@ -191,11 +191,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &88797351
-=======
---- !u!1 &491514851
->>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,33 +199,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 88797353}
   - component: {fileID: 88797352}
   m_Layer: 0
   m_Name: newBG
-=======
-  - component: {fileID: 491514853}
-  - component: {fileID: 491514852}
-  m_Layer: 0
-  m_Name: parcyRight_close
->>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 --- !u!212 &88797352
-=======
---- !u!212 &491514852
->>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 88797351}
   m_Enabled: 1
   m_CastShadows: 0
@@ -314,8 +298,6 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
   m_GameObject: {fileID: 491514851}
   m_Enabled: 1
   m_CastShadows: 0
@@ -731,11 +713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 0
-=======
-  m_IsActive: 1
->>>>>>> parent of bd64588 (Revert "made all instructions n games have the same ui")
 --- !u!212 &1437608370
 SpriteRenderer:
   m_ObjectHideFlags: 0
