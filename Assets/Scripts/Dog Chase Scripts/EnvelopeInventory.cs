@@ -18,6 +18,6 @@ public class EnvelopeInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        envelopesCount.text = "Envelopes in Bag: " + envelopesInInventory.ToString();
+        envelopesCount.text = envelopesInInventory.ToString();
     }
 }
