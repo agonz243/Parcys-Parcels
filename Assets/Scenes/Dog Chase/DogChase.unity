@@ -1423,8 +1423,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548385505}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 82, y: -29.5, z: 0}
-  m_LocalScale: {x: 31.076887, y: 39.167534, z: 14.42105}
+  m_LocalPosition: {x: 72.9, y: -29.5, z: 0}
+  m_LocalScale: {x: 49.990086, y: 39.167534, z: 14.42105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1862,7 +1862,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 114, y: -75.7}
+  m_AnchoredPosition: {x: 114, y: -75.70001}
   m_SizeDelta: {x: 54.663, y: 47.489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &674083939
@@ -7580,7 +7580,7 @@ GameObject:
   - component: {fileID: 990331197}
   - component: {fileID: 990331196}
   - component: {fileID: 990331201}
-  - component: {fileID: 990331200}
+  - component: {fileID: 990331202}
   m_Layer: 8
   m_Name: Dog Enemy
   m_TagString: Enemy
@@ -7615,7 +7615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 5.5
+  radius: 6.87
   height: 2
   canMove: 1
   maxSpeed: 20
@@ -7688,36 +7688,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &990331200
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990331195}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.05789566, y: 3.4316483}
-      - {x: -2.9774237, y: -1.6594546}
-      - {x: -0.8772673, y: -1.6774634}
-      - {x: 0.58778536, y: -1.735359}
-      - {x: 3.151122, y: -1.7752495}
 --- !u!50 &990331201
 Rigidbody2D:
   serializedVersion: 4
@@ -7739,6 +7709,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &990331202
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990331195}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.18, y: -0.35}
+  m_Size: {x: 6.18, y: 14.93}
+  m_Direction: 0
 --- !u!1 &1082661657
 GameObject:
   m_ObjectHideFlags: 0
@@ -10198,6 +10184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2026862766}
   - component: {fileID: 2026862765}
+  - component: {fileID: 2026862767}
   m_Layer: 8
   m_Name: DogGFX
   m_TagString: Untagged
@@ -10246,8 +10233,8 @@ SpriteRenderer:
   m_SortingLayerID: -2107151495
   m_SortingLayer: 5
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.41509432, g: 0.29773363, b: 0.15076537, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 76222cb6bcc1e4daabfd372e80b8ab69, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10265,13 +10252,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026862764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.012877, y: 6.012877, z: 6.012877}
+  m_LocalPosition: {x: 0.48, y: 1.24, z: 0}
+  m_LocalScale: {x: 2.5203, y: 2.5203, z: 2.5203}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 990331199}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2026862767
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026862764}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 303df549e25da42678ab9591ac8f5f45, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2086307456
 GameObject:
   m_ObjectHideFlags: 0
