@@ -73,6 +73,8 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.tag == "Collectable"){
             envCollectSource.Play();
             Destroy(collision.gameObject);
+            EnvelopeInventory envI = collision.gameObject.GetComponent<EnvelopeInventory>();
+            envI.envelopesInInventory ++;
             envelopesHeld++;
             if (envelopesHeld > 3){
                 moveSpeed --;
@@ -86,8 +88,10 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Mailbox")
         {
             mailboxCheck mbc = collision.gameObject.GetComponent<mailboxCheck>();
+            EnvelopeInventory envI = collision.gameObject.GetComponent<EnvelopeInventory>();
             mbc.envelopesInBox += envelopesHeld;
             envelopesHeld = 0;
+            envI.envelopesInInventory = 0;
             if (speedDecreased == true){
                 speedDecreased = false;
                 moveSpeed = 25f;
