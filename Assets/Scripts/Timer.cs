@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 public class Timer : MonoBehaviour
 {
     //initializing timer variables for updating
     public float timeLeft;
-    public Text timerTxt;
+    public TextMeshProUGUI timerTxt;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -37,6 +39,6 @@ public class Timer : MonoBehaviour
         float minutes = Mathf.FloorToInt(currentTime / 60);
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
-        timerTxt.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+        timerTxt.text = string.Format("{0}", seconds);
     }
 }
