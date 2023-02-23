@@ -14,8 +14,11 @@ public class sprinklerGame : MonoBehaviour
     [SerializeField] private GameObject sTimer;
     
     // General game / scene timers
-    private float hideTimer = 1.5F;
-    private float hitTimer = 2.5F;
+    private float hideTimer = 1F;
+    private float hitTimer = 2F;
+
+    private float hideTimerSet = 1F;
+    private float hitTimerSet = 2F;
 
     // Flags to start / stop timers
     private bool hideTimerRun = false;
@@ -135,7 +138,9 @@ public class sprinklerGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myPlayer = new Player(0.225F, 5, 3);  
+        // moveSpeed, umbrella uses, lives
+        // myPlayer = new Player(0.225F, 5, 3);  
+        myPlayer = new Player(0.35F, 5, 100);  
         transform.position = Points[myPlayer.getPointIndex()].transform.position; // starting the game goes to the first point
         brella.SetActive(false); // initially disable the umbrella
     }
@@ -163,10 +168,15 @@ public class sprinklerGame : MonoBehaviour
 
     void movement(){
         // Debug.Log("here");
-        // Debug.Log("player index: " + myPlayer.getPointIndex());
+        Debug.Log("player index: " + myPlayer.getPointIndex());
+        // Debug.Log("next point: " + Points[myPlayer.getPointIndex()]);
+        Debug.Log("Player Position: " + transform.position + " , Point Position: " + Points[myPlayer.getPointIndex()].transform.position);
         if(transform.position == Points[myPlayer.getPointIndex()].transform.position){
+            // Debug.Log("player index: " + myPlayer.getPointIndex());
+            // Debug.Log("Increase Point Index");
             myPlayer.setPointIndex(myPlayer.getPointIndex() + 1);
-        } else if(transform.position == Points[myPlayer.getPointIndex() - 1].transform.position){
+        } else if(transform.position == Points[myPlayer.getPointIndex() - 1].transform.position ){ //(myPlayer.getPointIndex() != 1 || myPlayer.getPointIndex() != 0)
+            // Debug.Log("player index: " + myPlayer.getPointIndex());
             myPlayer.setPointIndex(myPlayer.getPointIndex() - 1);
         }
 
@@ -218,7 +228,7 @@ public class sprinklerGame : MonoBehaviour
             } else{ // otherwise the timer is out
                 myPlayer.setHide(false);
                 hideTimerRun = false; // stop the timer
-                hideTimer = 1.5F; // reset the timer
+                hideTimer = hideTimerSet; // reset the timer
                 brella.SetActive(false); // disable the umbrella
             } 
         }
@@ -232,7 +242,7 @@ public class sprinklerGame : MonoBehaviour
             } else{
                 myPlayer.setHit(false);
                 myPlayer.setHitTimerRun(false);
-                hitTimer = 2.5F;
+                hitTimer = hitTimerSet;
             }
         }
     }

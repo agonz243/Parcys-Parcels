@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class sprinklerTimer : MonoBehaviour
 {
-    [SerializeField] private float gameTimer = 45;
+    [SerializeField] private float gameTimer = 30;
     [SerializeField] private TextMeshProUGUI timerText;
 
     // Start is called before the first frame update
