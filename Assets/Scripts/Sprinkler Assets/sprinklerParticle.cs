@@ -16,14 +16,7 @@ public class sprinklerParticle : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         int numCollisionEvents = part.GetCollisionEvents(other, colEvents);
-        // Debug.Log("Hit");
 
-        // for(int i = 0; i < numCollisionEvents; i++){
-
-        // }
-        // if(other.TryGetComponent(out Path pl)){
-        //     pl.playerHit();
-        // }
         if(other.TryGetComponent(out sprinklerGame pl)){
             pl.playerHit();
         }

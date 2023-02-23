@@ -9,6 +9,9 @@ public class sprinklerGame : MonoBehaviour
     // Array to hold traversal points
     [SerializeField] Transform[] Points;
 
+    // Function to change sprite?
+    [SerializeField] sprinklerSpriteChange spriteChange;
+
     // Getting timer from sprinklerTimer.cs
     sprinklerTimer SprinklerTimer;
     [SerializeField] private GameObject sTimer;
@@ -22,7 +25,6 @@ public class sprinklerGame : MonoBehaviour
 
     // Flags to start / stop timers
     private bool hideTimerRun = false;
-    // private bool hitTimerRun = false;
 
     // Text objects to display: game timer, lives, umbrella uses
     [SerializeField] private TextMeshProUGUI livesText;
@@ -37,6 +39,7 @@ public class sprinklerGame : MonoBehaviour
     public class Player{
         private float moveSpeed;
         private int umbrellaUse;
+        private int prevPointIndex;
         private int pointIndex;
         private bool keyAlt;
         private bool backKeyAlt;
@@ -54,12 +57,13 @@ public class sprinklerGame : MonoBehaviour
             lives = liv;
 
             pointIndex = 0;
+            prevPointIndex = 1;
+
             keyAlt = false;
             backKeyAlt = false;
             hide = false;
             hit = false;
             hitTimerRun = false;
-            // hitTimer = 2.5F;
         }
 
         // Player methods
@@ -111,6 +115,10 @@ public class sprinklerGame : MonoBehaviour
             return pointIndex;
         }
 
+        public int getPrevPointIndex(){
+            return prevPointIndex;
+        }
+
         public bool getKeyAlt(){
             return keyAlt;
         }
@@ -131,6 +139,10 @@ public class sprinklerGame : MonoBehaviour
             pointIndex = pv;
         }
 
+        public void setPrevPointIndex(int pv){
+            prevPointIndex = pv;
+        }
+
         
     }
     public Player myPlayer;
@@ -142,9 +154,11 @@ public class sprinklerGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // moveSpeed, umbrella uses, lives
+        //    (moveSpeed, umbrella uses, lives)
         // myPlayer = new Player(0.225F, 5, 3);  
-        myPlayer = new Player(0.35F, 5, 100);  
+
+        // Create new Player from class above
+        myPlayer = new Player(0.3F, 5, 100);  
         transform.position = Points[myPlayer.getPointIndex()].transform.position; // starting the game goes to the first point
         brella.SetActive(false); // initially disable the umbrella
     }
@@ -172,16 +186,20 @@ public class sprinklerGame : MonoBehaviour
 
     void movement(){
         // Debug.Log("here");
-        Debug.Log("player index: " + myPlayer.getPointIndex());
+        // Debug.Log("player index: " + myPlayer.getPointIndex());
         // Debug.Log("next point: " + Points[myPlayer.getPointIndex()]);
-        Debug.Log("Player Position: " + transform.position + " , Point Position: " + Points[myPlayer.getPointIndex()].transform.position);
+        // Debug.Log("Player Position: " + transform.position + " , Point Position: " + Points[myPlayer.getPointIndex()].transform.position);
+        Debug.Log("Point Index: " + myPlayer.getPointIndex() + " , Prev Point Index: " + myPlayer.getPrevPointIndex());
+
+        // Player's location is the same as the next point
         if(transform.position == Points[myPlayer.getPointIndex()].transform.position){
-            // Debug.Log("player index: " + myPlayer.getPointIndex());
-            // Debug.Log("Increase Point Index");
+            myPlayer.setPrevPointIndex(myPlayer.getPointIndex());
             myPlayer.setPointIndex(myPlayer.getPointIndex() + 1);
-        } else if(transform.position == Points[myPlayer.getPointIndex() - 1].transform.position ){ //(myPlayer.getPointIndex() != 1 || myPlayer.getPointIndex() != 0)
-            // Debug.Log("player index: " + myPlayer.getPointIndex());
-            myPlayer.setPointIndex(myPlayer.getPointIndex() - 1);
+        
+        // Player's location is equal to prev point
+        } else if(transform.position == Points[myPlayer.getPrevPointIndex()].transform.position && myPlayer.getPrevPointIndex() >= 1){ //(myPlayer.getPointIndex() != 1 || myPlayer.getPointIndex() != 0)
+            myPlayer.setPointIndex(myPlayer.getPrevPointIndex());
+            myPlayer.setPrevPointIndex(myPlayer.getPrevPointIndex() - 1);
         }
 
         // If player isn't currently hiding or hit
@@ -189,26 +207,24 @@ public class sprinklerGame : MonoBehaviour
            
            // Forward Movement "A" <-- --> "D"
            if(Input.GetKeyDown(KeyCode.A) && myPlayer.getKeyAlt() == false){
-                // Debug.Log("keyCode.A");
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setKeyAlt(true);
+                spriteChange.ChangeSprite("r1");
             } else if(Input.GetKeyDown(KeyCode.D) && myPlayer.getKeyAlt() == true){
-                // Debug.Log("keyCode.D");
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setKeyAlt(false);
+                spriteChange.ChangeSprite("r2");
             }  
         
             // Backwards Movement "Z" <-- --> "C"
             if(Input.GetKeyDown(KeyCode.Z) && myPlayer.getBackKeyAlt() == false){
-                // Debug.Log("keyCode.Z");
-                // Debug.Log("v2 pointIndex: " + myPlayer.getPointIndex());
-                transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex() - 1].transform.position, myPlayer.getMoveSpeed());
+                transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setBackKeyAlt(true);
+                spriteChange.ChangeSprite("l1");
             } else if(Input.GetKeyDown(KeyCode.C) && myPlayer.getBackKeyAlt() == true){ 
-                // Debug.Log("keyCode.C");
-                // Debug.Log("v2 pointIndex: " + myPlayer.getPointIndex());
-                transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex() - 1].transform.position, myPlayer.getMoveSpeed());
+                transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setBackKeyAlt(false);
+                spriteChange.ChangeSprite("l2");
             }
         }
         
@@ -221,7 +237,6 @@ public class sprinklerGame : MonoBehaviour
             hideTimerRun = true;
             myPlayer.setUmbrellaUse(myPlayer.getUmbrellaUse() - 1);
             brella.SetActive(true);
-            // Debug.Log("keyCode.W");
             if (!umbrellaSource.isPlaying){
                 umbrellaSource.Play();
 
@@ -262,9 +277,6 @@ public class sprinklerGame : MonoBehaviour
     }
 
     public void playerHit(){
-        if (!shakeSource.isPlaying){
-            shakeSource.Play();
-        }
         if(myPlayer.getHide() == true){
             return;
         }
@@ -273,6 +285,9 @@ public class sprinklerGame : MonoBehaviour
         }
         if(myPlayer.getLives() != 0){
             myPlayer.decLives();
+        }
+        if (!shakeSource.isPlaying){
+            shakeSource.Play();
         }
         myPlayer.setHit(true);
         myPlayer.setHitTimerRun(true);
