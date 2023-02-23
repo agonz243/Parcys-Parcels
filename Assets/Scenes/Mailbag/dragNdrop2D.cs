@@ -20,7 +20,9 @@ public class dragNdrop2D : MonoBehaviour
     public int gridWidth = 104;
     public int gridHeight = 72;
 
-
+    // Audio Sources
+    public AudioSource clickSource;
+    public AudioSource dropSource;
 
     IEnumerator RotateMe(GameObject pckg, Vector3 byAngles, float inTime)
     {
@@ -159,6 +161,11 @@ public class dragNdrop2D : MonoBehaviour
             //if we are overlapping with something
             if (targetObject)
             {
+                // Play click sound when piece is clicked
+                if (!clickSource.isPlaying){
+                    clickSource.Play();
+                }
+                
                 //if we clicked while overlapping w something, that is now our selected object (being held)
                 selectedObject = targetObject.transform.gameObject;
                 offset = selectedObject.transform.position - mousePosition;
@@ -182,6 +189,9 @@ public class dragNdrop2D : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0) && selectedObject) //LMB raised while holding movable object, aka dropping it
         {
+            if (!dropSource.isPlaying){
+                dropSource.Play();
+            }
             var currentPos = selectedObject.transform.position; //fetch the current objects position
 
             //taking instance of our gridManager to access the list of our vertices for each tile instantiated, using as snap points

@@ -6,21 +6,21 @@ using UnityEngine.SceneManagement;
 public class sceneChanger : MonoBehaviour
 {
 
+    // Initialize variables for scene
 	Scene currentScene;
 	string sceneName;
 
+    // Initialize variables to have a delay when a button is pressed -- so click sound can play
     public float delay = 0.0f;
     public float timer;
     public bool startTimer = false;
-
-    // public AudioClip clip;
-    // public AudioSource source;
     
+    // Set current scene variable
     private void Start() {
     	currentScene = SceneManager.GetActiveScene();
-        // GameObject.FindGameObjectWithTag("BGMusic").GetComponent<Music>().PlayMusic();
     }
 
+    // Wait for timer before loading next scene
     void Update(){
         if (startTimer == true){
             timer += Time.deltaTime;
@@ -29,81 +29,41 @@ public class sceneChanger : MonoBehaviour
                 timer = 0;
             }
         }
-        
     }
 
-    // void Awake(){
-        
-    // }
-    //     // Find audiosource with this tag: "BGMusic"
-    //     GameObject[] musicObj = GameObject.FindGameObjectsWithTag("BGMusic");
-    //     DontDestroyOnLoad(transform.gameObject);
-
-    //     source = GetComponent<AudioSource>();
-
-    //     // We destroy the GameObject if there's more than one music object
-    //     // if (musicObj.Length > 1){
-    //     //     Destroy(this.gameObject);
-    //     // } else if (currentScene.name == "DogChaseDemo") {
-    //     //     Debug.Log("please");
-    //     //     Destroy(this.gameObject);
-    //     //     Destroy(GameObject.Find("BackgroundMusic"));
-    //     // } else {
-    //     //     DontDestroyOnLoad(this.gameObject);
-    //     // }
-    //     // Debug.Log(currentScene.name);
-    //     // else if (currentScene.name == "SprinklerInstructions") {
-    //     //     SceneManager.LoadScene("SprinklerV2");
-    //     // } else if (currentScene.name == "Win" || currentScene.name == "Lose") {
-    //     //     SceneManager.LoadScene("MailbagInstructions");
-    //     // } else if (currentScene.name == "MailbagInstructions") {
-    //     //     SceneManager.LoadScene("Mailbag");
-    //     // } else if (currentScene.name == "LosePuzzleGame" || currentScene.name == "WinPuzzleGame") {
-    //     //     SceneManager.LoadScene("TitleScreen");
-    //     // } else { 
-    //     //     Debug.Log("Loading nothing :(");
-    //     // }
-
-    //     // Otherwise, we don't destroy it
-        
-    // }
-
-    // public void PlayMusic(){
-    //     if (source.isPlaying) return;
-    //     source.Play();
-    // }
-
-    // public void StopMusic(){
-    //     source.Stop();
-    // }
-
+    // Function to start timer
     public void Wait(){
         startTimer = true;
     }
 
+    // Load scenes
     public void LoadNextScene() {
-
         if (currentScene.name == "TitleScreen") {
             SceneManager.LoadScene("DogInstructions");
-            // Music.instance.GetComponent<AudioSource>().Pause();
-            // GameObject.FindGameObjectWithTag("BGMusic").GetComponent<Music>().StopMusic();
-            // GameObject[] musicObj = GameObject.FindGameObjectsWithTag("BGMusic");
-            // Destroy(this.gameObject);
         } else if (currentScene.name == "DogInstructions") {
-            Music.instance.GetComponent<AudioSource>().Pause();
+            // Pause music during Dog Chase Minigame
             SceneManager.LoadScene("DogChase");
+            Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "LoseDogGame" || currentScene.name == "WinDogGame") {
+            // Play music during instructions
             SceneManager.LoadScene("SprinklerInstructions");
             Music.instance.GetComponent<AudioSource>().Play();
         } else if (currentScene.name == "SprinklerInstructions") {
+            // Pause music during Sprinkler Minigame
             SceneManager.LoadScene("Sprinkler-1");
+            Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "Win" || currentScene.name == "Lose") {
+            // Play music during instructions
             SceneManager.LoadScene("MailbagInstructions");
             Music.instance.GetComponent<AudioSource>().Play();
         } else if (currentScene.name == "MailbagInstructions") {
+            // Pause music during Mailbag Minigame
             SceneManager.LoadScene("Mailbag");
+            Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "LosePuzzleGame" || currentScene.name == "WinPuzzleGame") {
+            // Play music in title screen
             SceneManager.LoadScene("TitleScreen");
+            Music.instance.GetComponent<AudioSource>().Play();
         } else { 
             Debug.Log("Loading nothing :(");
         }

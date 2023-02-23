@@ -8,12 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     // Start method deleted
-    [SerializeField]public float moveSpeed = 5f;
-
-    // public float collisionOffset = 0.05f;
-    // public ContactFilter2D movementFilter;
-    // private Vector2 moveInput;
-    // private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    [SerializeField]public float moveSpeed = 25f;
     
     public Rigidbody2D rigidBody;
     public Animator animator; //(will be used when sprites are done!) 
@@ -21,14 +16,23 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement; // can store horizontal and verticle
 
     private int envelopesHeld; // The amount of envelopes currently held for the dog minigame
+    private bool speedDecreased; // Speed decreased when holding more than 3 envelopes
 
     public AudioSource squeakSource;
     public AudioSource envCollectSource;
+    public AudioSource barkSource;
+    public AudioSource mailboxSource;
+
+    // Initialize variables to have the dog bark randomly
+    public float timer;
+    public float randomNum;
 
     void Start()
     {
         envelopesHeld = 0;
-        // rigidBody = GetComponent<Rigidbody2D>();
+        randomNum = Random.Range(1.0f, 6.0f);
+        timer = 0.0f;
+        speedDecreased = false;
     }
 
     // Update is called once per frame
@@ -47,48 +51,22 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        timer += Time.deltaTime;
+
+        if (timer > randomNum){
+            barkSource.Play();
+            randomNum = Random.Range(1.0f, 6.0f);
+            timer = 0.0f;
+        }
+
     }
 
     void FixedUpdate()
     {
         // Movement (To have same moveSpeed * Time.FixedDeltaTime[amount of time elapsed since function was last called])
         rigidBody.MovePosition(rigidBody.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-        // Try to move player in input direction, followed by left right and up down input if failed
-        // bool success = MovePlayer(moveInput);
-
-        // if (!success){
-        //     // Try Left / Right
-        //     success = MovePlayer(new Vector2(moveInput.x , 0));
-
-        //     if (!success){
-        //         success = MovePlayer(new Vector2(0, moveInput.y));
-        //     }
-        // }
     }
-
-    // public bool MovePlayer(Vector2 direction){
-    //     // Check for potential collisions
-    //     int count = rigidBody.Cast(
-    //         direction,      // X and Y values b/w -1 and 1 that represent the direction from the body to look for collisions
-    //         movementFilter, // The settings that determine where a colliusion can occur on such as layers to collide with
-    //         castCollisions, // List of collisions to store the found collisions into after the Cast is finished
-    //         moveSpeed * Time.fixedDeltaTime + collisionOffset);     // The amount to cast equal to the movement plus
-        
-    //     if (count == 0){
-    //         Vector2 moveVector = direction * moveSpeed * Time.fixedDeltaTime;
-
-    //         // No collisions
-    //         rigidBody.MovePosition(rigidBody.position + moveVector);
-    //         return true;
-    //     }
-    //     // } else {
-    //     //     // Print collisions
-    //     //     foreach (RaycastHit2D hit in castCollisions){
-                
-    //     //     }
-    //     // }
-    // }
 
     // COLLISION W/ SPRINKLERS
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -96,6 +74,10 @@ public class PlayerMovement : MonoBehaviour
             envCollectSource.Play();
             Destroy(collision.gameObject);
             envelopesHeld++;
+            if (envelopesHeld > 3){
+                moveSpeed --;
+                speedDecreased = true;
+            }
         } 
     }
 
@@ -106,6 +88,11 @@ public class PlayerMovement : MonoBehaviour
             mailboxCheck mbc = collision.gameObject.GetComponent<mailboxCheck>();
             mbc.envelopesInBox += envelopesHeld;
             envelopesHeld = 0;
+            if (speedDecreased == true){
+                speedDecreased = false;
+                moveSpeed = 25f;
+            }
+            mailboxSource.Play();
 
             if (mbc.envelopesInBox == 10){
                 SceneManager.LoadScene("WinDogGame");
@@ -115,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
         } else if (collision.gameObject.tag == "Obstacle"){
             squeakSource.Play();
             Debug.Log("Obstacle");
-            moveSpeed -= 1;
+            // moveSpeed -= 1;
         }
     }
 }

@@ -13,10 +13,11 @@ public class Draggable : MonoBehaviour
     private Vector3 spriteDragStartPos;
 
     private void OnMouseDown()
-    {
+    {   
         isDragged = true;
         mouseDragStartPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         spriteDragStartPos = transform.localPosition;
+        
     }
 
     private void OnMouseDrag()

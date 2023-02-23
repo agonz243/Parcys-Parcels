@@ -29,6 +29,10 @@ public class sprinklerGame : MonoBehaviour
     [SerializeField] private TextMeshProUGUI umbrellaUseText;
     [SerializeField] private GameObject brella; // temp for umbrella?
 
+    // Audio Sources
+    public AudioSource umbrellaSource;
+    public AudioSource shakeSource;
+
     // Player class
     public class Player{
         private float moveSpeed;
@@ -218,6 +222,10 @@ public class sprinklerGame : MonoBehaviour
             myPlayer.setUmbrellaUse(myPlayer.getUmbrellaUse() - 1);
             brella.SetActive(true);
             // Debug.Log("keyCode.W");
+            if (!umbrellaSource.isPlaying){
+                umbrellaSource.Play();
+
+            }
         }
 
         // Hide Funcionality
@@ -254,6 +262,9 @@ public class sprinklerGame : MonoBehaviour
     }
 
     public void playerHit(){
+        if (!shakeSource.isPlaying){
+            shakeSource.Play();
+        }
         if(myPlayer.getHide() == true){
             return;
         }
