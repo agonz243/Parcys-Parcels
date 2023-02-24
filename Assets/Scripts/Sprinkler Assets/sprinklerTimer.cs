@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class sprinklerTimer : MonoBehaviour
 {
-    [SerializeField] private float gameTimer = 30;
+    public float totalTime = 30;
+    private float gameTimer;
     [SerializeField] private TextMeshProUGUI timerText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameTimer = totalTime;
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class sprinklerTimer : MonoBehaviour
         if(gameTimer > 1){
             gameTimer -= Time.deltaTime;
             float seconds = Mathf.FloorToInt(gameTimer % 60);
+            scoreTracker.sprinklerTime = (totalTime % 60) - seconds;
             timerText.text = string.Format("{0}", seconds);
         } else{
             SceneManager.LoadScene("Lose");
@@ -31,3 +33,4 @@ public class sprinklerTimer : MonoBehaviour
         return gameTimer;
     }
 }
+

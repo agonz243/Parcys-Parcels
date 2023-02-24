@@ -10,6 +10,13 @@ public class Timer : MonoBehaviour
     //initializing timer variables for updating
     public float timeLeft;
     public TextMeshProUGUI timerTxt;
+    private float totalTime;
+
+    void Start()
+    {
+        // Set to initial time for use with score tracking
+        totalTime = timeLeft % 60; 
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -38,6 +45,9 @@ public class Timer : MonoBehaviour
 
         float minutes = Mathf.FloorToInt(currentTime / 60);
         float seconds = Mathf.FloorToInt(currentTime % 60);
+
+        // Keep track of how much time it takes player to finish level
+        scoreTracker.mailbagTime = totalTime - seconds;
 
         timerTxt.text = string.Format("{0}", seconds);
     }

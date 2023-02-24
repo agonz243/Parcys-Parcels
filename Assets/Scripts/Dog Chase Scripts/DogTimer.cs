@@ -7,14 +7,15 @@ using UnityEngine.SceneManagement;
 public class DogTimer : MonoBehaviour
 {
 
-    [SerializeField]private float gameTimer = 90; // timer for entire minigame
+    public float totalTime = 30;
+    private float gameTimer; // timer for entire minigame
 
     [SerializeField]private TextMeshProUGUI timerText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameTimer = totalTime;
     }
 
     // Update is called once per frame
@@ -25,6 +26,8 @@ public class DogTimer : MonoBehaviour
             gameTimer -= Time.deltaTime;
             float seconds = Mathf.FloorToInt(gameTimer % 60);
             timerText.text = string.Format("{0}", seconds);
+
+            scoreTracker.dogTime = (totalTime % 60) - seconds;
         } else {
             SceneManager.LoadScene("LoseDogGame");
             Debug.Log("Testing switchin scenes");
