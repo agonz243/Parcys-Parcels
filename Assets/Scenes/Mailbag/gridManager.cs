@@ -14,11 +14,11 @@ public class gridManager : MonoBehaviour
     [SerializeField] private Transform camcorder;
 
     //float for where to snap for grid squares
-    public float snapRange = 0.5f;
+    public float snapRange = 1.0f;
 
     //list of coordinates for each tile on grid to snap to
     //i think a vector3 here
-    public List<Tile> tilesnapPoints = new List<Tile>();
+    public List<GameObject> tilesnapPoints = new List<GameObject>();
 
     //list of the tilepoints vector3s for xy values
     public List<Transform> tilesnapXY = new List<Transform>();
@@ -30,6 +30,8 @@ public class gridManager : MonoBehaviour
     void Start()
     {
         MakeaDaGrid();
+        //testing here for now
+        SolveaDaPuzzle();
     }
 
 
@@ -37,7 +39,7 @@ public class gridManager : MonoBehaviour
     //function for gridd(y)ing
 
     //note: tiles populate from left to right, bottom to top
-    void MakeaDaGrid()
+    public void MakeaDaGrid()
     {
         //loop over width
         for(int x = 0; x < _width; x = x+10) //added 15 to x and y for increased size of tiles
@@ -45,18 +47,19 @@ public class gridManager : MonoBehaviour
             for(int y = 0; y < _height; y = y+10)
             {
                 //these numbers are tweaked for tile and board size, ask graham if changes needed :)
-                var spawnTile = Instantiate(tilePrefab, new Vector3(x-45, y-5), Quaternion.identity); //need to watch the Quarternion HERE for rotation
+                var spawnTile = Instantiate(tilePrefab, new Vector3(x-50, y), Quaternion.identity); //need to watch the Quarternion HERE for rotation
                
                 //snapPoints.Add(spawnTile);
                 
                 spawnTile.name = $"Tile {x} {y}";
                 
-                //have the tile pbjects in a list, do not think needed
-                tilesnapPoints.Add(spawnTile);
+                //have the tile objects in a list, do not think needed?
+                tilesnapPoints.Add(spawnTile.gameObject);
 
-                //here we have the (x, y,z) vector 3 of each tile's position, want to use for snapping
+                //here we have the transform (vector 3) of each tile's position, want to use for snapping
                 tilesnapXY.Add(spawnTile.transform);
 
+                //adding the colliders to a separate list for endgame checks
                 Collider2D currTile = spawnTile.bonk;
 
                 //add in tiles colliders to list for win condition
@@ -84,23 +87,37 @@ public class gridManager : MonoBehaviour
 
 
 
-    void SolveaDaPuzzle()
+    public void SolveaDaPuzzle()
     {
         foreach(var spawnTile in tilesnapPoints)
         {
             //want to see if colliding here
-
-            if (spawnTile.bonk)
-            {
-
-            }
+            //TileColl = spawnTile.GetComponent<Collider>();
+            //if()
+            HandleCollision(spawnTile);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    public void OnTriggerEnter(Collider col)
     {
-       // bool isSolved = false;
-       // foreach(var spawnTile in tilesnapPoints){
-          //  isSolved;
+        Debug.Log("Package HIT ME");
+    }
+
+
+    public void HandleCollision(GameObject obj)
+    {
+        if (obj.tag == "Packages")
+        {
+            Debug.Log("Package HIT ME");
+        }
+    }
+
+
+
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        HandleCollision(collision.gameObject);
     }
 }
