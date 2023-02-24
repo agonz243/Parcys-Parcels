@@ -183,7 +183,7 @@ public class dragNdrop2D : MonoBehaviour
                 //always going to start at a rotation of zero, REMEMBER TO ZERO THIS OUT AT PICK UP TIME
                 //RotateByDegreesZeroto90(selectedObject, selectedObject.transform.eulerAngles);
 
-                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 1.0f));
+                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 0.4f));
 
             }
 
@@ -200,10 +200,10 @@ public class dragNdrop2D : MonoBehaviour
             //want to implement snap to "bag" grid here
             //Debug.Log(tilesnapXY);
 
-            currentPos.x = Mathf.Round(currentPos.x / gridWidth) * gridWidth;
-            currentPos.y = Mathf.Round(currentPos.y / gridHeight) * gridHeight;
-            // selectedObject.transform.position = new Vector3(Mathf.Round(mousePosition.x),
-            //                            Mathf.Round(mousePosition.y));
+            //currentPos.x = Mathf.Round(currentPos.x / gridWidth) * gridWidth;
+            //currentPos.y = Mathf.Round(currentPos.y / gridHeight) * gridHeight;
+             //selectedObject.transform.position = new Vector3(Mathf.Round(mousePosition.x),
+                                        //Mathf.Round(mousePosition.y));
 
             //selected object set to null, no longer holding something
             selectedObject = null;
