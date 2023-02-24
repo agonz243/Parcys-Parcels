@@ -216,8 +216,10 @@ public class sprinklerGame : MonoBehaviour
         if(transform.position == Points[myPlayer.getPointIndex()].transform.position && myPlayer.getMoving()){
             myPlayer.setPrevPointIndex(myPlayer.getPointIndex());
             myPlayer.setPointIndex(myPlayer.getPointIndex() + 1);
-            transform.up = Points[myPlayer.getPointIndex()].transform.position - transform.position;
-        
+            if(myPlayer.getPointIndex() < Points.Length) {
+                transform.up = Points[myPlayer.getPointIndex()].transform.position - transform.position;
+            }
+            
         // Player's location is equal to prev point
         } else if(transform.position == Points[myPlayer.getPrevPointIndex()].transform.position && myPlayer.getPrevPointIndex() >= 1 && myPlayer.getMoving()){ //(myPlayer.getPointIndex() != 1 || myPlayer.getPointIndex() != 0)
             myPlayer.setPointIndex(myPlayer.getPrevPointIndex());
@@ -279,7 +281,7 @@ public class sprinklerGame : MonoBehaviour
         if(myPlayer.getHide() == true && hideTimerRun == true){
            if(hideTimer > 0){ // there is still time to hide
                 hideTimer -= Time.deltaTime; // subtract from the time
-                brella.transform.position = new Vector3(transform.position[0], transform.position[1], 0); // set umbrella position to player position
+                brella.transform.position = new Vector3(transform.position[0], transform.position[1], -1); // set umbrella position to player position
             } else{ // otherwise the timer is out
                 myPlayer.setHide(false);
                 hideTimerRun = false; // stop the timer
