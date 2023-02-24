@@ -50,7 +50,7 @@ public class sceneChanger : MonoBehaviour
             Music.instance.GetComponent<AudioSource>().Play();
         } else if (currentScene.name == "SprinklerInstructions") {
             // Pause music during Sprinkler Minigame
-            SceneManager.LoadScene("Sprinkler-1");
+            SceneManager.LoadScene("Sprinkler-2");
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "Win" || currentScene.name == "Lose") {
             // Play music during instructions
