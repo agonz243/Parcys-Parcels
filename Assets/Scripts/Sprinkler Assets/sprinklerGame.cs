@@ -48,6 +48,7 @@ public class sprinklerGame : MonoBehaviour
         private bool hitTimerRun;
         private float hitTimer;
         private int lives;
+        private bool moving;
 
         // Player attributes
         public Player(float ms, int umb, int liv)
@@ -64,6 +65,7 @@ public class sprinklerGame : MonoBehaviour
             hide = false;
             hit = false;
             hitTimerRun = false;
+            moving = false;
         }
 
         // Player methods
@@ -142,6 +144,12 @@ public class sprinklerGame : MonoBehaviour
         public void setPrevPointIndex(int pv){
             prevPointIndex = pv;
         }
+        public bool getMoving(){
+            return moving;
+        }
+        public void setMoving(bool state){
+            moving = state;
+        }
 
         
     }
@@ -189,42 +197,66 @@ public class sprinklerGame : MonoBehaviour
         // Debug.Log("player index: " + myPlayer.getPointIndex());
         // Debug.Log("next point: " + Points[myPlayer.getPointIndex()]);
         // Debug.Log("Player Position: " + transform.position + " , Point Position: " + Points[myPlayer.getPointIndex()].transform.position);
-        Debug.Log("Point Index: " + myPlayer.getPointIndex() + " , Prev Point Index: " + myPlayer.getPrevPointIndex());
+        // Debug.Log("Point Index: " + myPlayer.getPointIndex() + " , Prev Point Index: " + myPlayer.getPrevPointIndex());
+
+        // Rotating Player Sprite
+        // if(transform.localRotation.z != Vector3.Angle(transform.position,Points[myPlayer.getPointIndex()].transform.position)){
+                //     // transform.localRotation.z = Vector3.Angle(transform.position,Points[myPlayer.getPointIndex()].transform.position);
+                //     transform.Rotate(0, 0, Vector3.Angle(transform.position,Points[myPlayer.getPointIndex()].transform.position));
+                // }
+        // Debug.Log("Angle: " + Vector3.Angle((Points[myPlayer.getPointIndex()].transform.position), Points[myPlayer.getPrevPointIndex()].transform.position));
+        
+        // float difY = Points[myPlayer.getPrevPointIndex()].transform.position.y - Points[myPlayer.getPointIndex()].transform.position.y;
+        // float difX = Points[myPlayer.getPrevPointIndex()].transform.position.x - Points[myPlayer.getPointIndex()].transform.position.x;
+        // // Debug.Log("Inverse Tan: " + (Mathf.Rad2Deg*Mathf.Atan((difY/difX) - 90)));
+        // float atan = (Mathf.Rad2Deg*Mathf.Atan((difY/difX))); //- 90
+        // Debug.Log("Atan: " + atan);
 
         // Player's location is the same as the next point
-        if(transform.position == Points[myPlayer.getPointIndex()].transform.position){
+        if(transform.position == Points[myPlayer.getPointIndex()].transform.position && myPlayer.getMoving()){
             myPlayer.setPrevPointIndex(myPlayer.getPointIndex());
             myPlayer.setPointIndex(myPlayer.getPointIndex() + 1);
+            transform.up = Points[myPlayer.getPointIndex()].transform.position - transform.position;
         
         // Player's location is equal to prev point
-        } else if(transform.position == Points[myPlayer.getPrevPointIndex()].transform.position && myPlayer.getPrevPointIndex() >= 1){ //(myPlayer.getPointIndex() != 1 || myPlayer.getPointIndex() != 0)
+        } else if(transform.position == Points[myPlayer.getPrevPointIndex()].transform.position && myPlayer.getPrevPointIndex() >= 1 && myPlayer.getMoving()){ //(myPlayer.getPointIndex() != 1 || myPlayer.getPointIndex() != 0)
             myPlayer.setPointIndex(myPlayer.getPrevPointIndex());
             myPlayer.setPrevPointIndex(myPlayer.getPrevPointIndex() - 1);
+            transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
         }
 
         // If player isn't currently hiding or hit
         if(myPlayer.getHide() == false && myPlayer.getHit() == false){
-           
            // Forward Movement "A" <-- --> "D"
            if(Input.GetKeyDown(KeyCode.A) && myPlayer.getKeyAlt() == false){
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setKeyAlt(true);
-                spriteChange.ChangeSprite("r1");
+                spriteChange.ChangeSprite("u1");
+                myPlayer.setMoving(true);
+                transform.up = Points[myPlayer.getPointIndex()].transform.position - transform.position;
             } else if(Input.GetKeyDown(KeyCode.D) && myPlayer.getKeyAlt() == true){
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setKeyAlt(false);
-                spriteChange.ChangeSprite("r2");
-            }  
+                spriteChange.ChangeSprite("u2");
+                myPlayer.setMoving(true);
+                transform.up = Points[myPlayer.getPointIndex()].transform.position - transform.position;
+            }
         
             // Backwards Movement "Z" <-- --> "C"
-            if(Input.GetKeyDown(KeyCode.Z) && myPlayer.getBackKeyAlt() == false){
+            else if(Input.GetKeyDown(KeyCode.Z) && myPlayer.getBackKeyAlt() == false){
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setBackKeyAlt(true);
-                spriteChange.ChangeSprite("l1");
+                spriteChange.ChangeSprite("u1");
+                myPlayer.setMoving(true);
+                transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
             } else if(Input.GetKeyDown(KeyCode.C) && myPlayer.getBackKeyAlt() == true){ 
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setBackKeyAlt(false);
-                spriteChange.ChangeSprite("l2");
+                spriteChange.ChangeSprite("u2");
+                myPlayer.setMoving(true);
+                transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
+            } else {
+                myPlayer.setMoving(false);
             }
         }
         

@@ -6773,7 +6773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20f1db6da0738841a19dcf8c86c2b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 55
+  rotationSpeed: -55
 --- !u!114 &272430508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12259,7 +12259,7 @@ MonoBehaviour:
   - {fileID: 580708588}
   - {fileID: 1167988154}
   - {fileID: 1166082810}
-  spriteChange: {fileID: 0}
+  spriteChange: {fileID: 409766385}
   sTimer: {fileID: 1956163897}
   livesText: {fileID: 1362311730}
   umbrellaUseText: {fileID: 1054167370}
@@ -12392,8 +12392,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b359150a6e85824ba763cfd93a77ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  spriteArray: []
+  spriteRenderer: {fileID: 409766383}
+  spriteArray:
+  - {fileID: 21300000, guid: faa0afaa0b1464a4787af03468e1f53d, type: 3}
+  - {fileID: 21300000, guid: 85c34b5f6b9a530458d41a0ab27c5d4a, type: 3}
+  - {fileID: 21300000, guid: 0519ff725c4f0ab40a2424cc13d6217b, type: 3}
+  - {fileID: 21300000, guid: 427e85e7b6501894ca10cf03b8b2b692, type: 3}
+  - {fileID: 21300000, guid: 28fc22e2d0435224c90ce48c69f7f93b, type: 3}
+  - {fileID: 21300000, guid: 9f1a28ac72e310449b1710e47572e45a, type: 3}
+  - {fileID: 21300000, guid: 9f520762d71c944439e0ea2dcbe1350c, type: 3}
+  - {fileID: 21300000, guid: c1463ab09cd09034496afa2660d468fd, type: 3}
 --- !u!1 &411533781
 GameObject:
   m_ObjectHideFlags: 0
@@ -36682,7 +36690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20f1db6da0738841a19dcf8c86c2b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 55
+  rotationSpeed: -55
 --- !u!114 &1816613582
 MonoBehaviour:
   m_ObjectHideFlags: 0
