@@ -166,7 +166,7 @@ public class sprinklerGame : MonoBehaviour
         // myPlayer = new Player(0.225F, 5, 3);  
 
         // Create new Player from class above
-        myPlayer = new Player(0.3F, 5, 100);  
+        myPlayer = new Player(0.3F, 5, 5);  
         transform.position = Points[myPlayer.getPointIndex()].transform.position; // starting the game goes to the first point
         brella.SetActive(false); // initially disable the umbrella
     }
