@@ -158,9 +158,10 @@ public class dragNdrop2D : MonoBehaviour
             //collider reference for mouse overlap on specific layer
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition, -10, 10); 
             
-            //if we are overlapping with something
+            //if we are overlapping (aka clicked on) with something
             if (targetObject)
             {
+
                 // Play click sound when piece is clicked
                 if (!clickSource.isPlaying){
                     clickSource.Play();
