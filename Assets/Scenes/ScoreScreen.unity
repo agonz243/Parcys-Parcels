@@ -2163,7 +2163,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 499906274}
         m_TargetAssemblyTypeName: sceneChanger, Assembly-CSharp
-        m_MethodName: Wait
+        m_MethodName: LoadNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
