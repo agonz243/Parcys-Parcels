@@ -183,7 +183,7 @@ public class dragNdrop2D : MonoBehaviour
                 //always going to start at a rotation of zero, REMEMBER TO ZERO THIS OUT AT PICK UP TIME
                 //RotateByDegreesZeroto90(selectedObject, selectedObject.transform.eulerAngles);
 
-                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 0.4f));
+                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 1.0f));
 
             }
 
