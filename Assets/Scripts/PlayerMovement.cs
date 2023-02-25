@@ -99,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
             mailboxSource.Play();
 
             if (mbc.envelopesInBox == 10){
+                scoreTracker.dogWin = true;
                 SceneManager.LoadScene("WinDogGame");
             }
         } else if (collision.gameObject.tag == "Enemy"){

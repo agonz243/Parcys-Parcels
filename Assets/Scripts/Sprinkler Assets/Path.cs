@@ -154,6 +154,7 @@ public class Path : MonoBehaviour
                 }
             }
         }   else if(gameTimer >= 0 && pointIndex == Points.Length){ // Reach the end while there is still time
+                scoreTracker.sprinklerWin = true;
                 SceneManager.LoadScene("Win");
             }
 }
