@@ -30,11 +30,12 @@ public class gridManager : MonoBehaviour
     void Start()
     {
         MakeaDaGrid();
-        //testing here for now
-        SolveaDaPuzzle();
     }
 
-
+    void Update()
+    {
+       // SolveaDaPuzzle();
+    }
 
     //function for gridd(y)ing
 
@@ -94,20 +95,13 @@ public class gridManager : MonoBehaviour
             //want to see if colliding here
             //TileColl = spawnTile.GetComponent<Collider>();
             //if()
-            HandleCollision(spawnTile);
+            //HandleCollision(spawnTile);
         }
     }
-
-
-    public void OnTriggerEnter(Collider col)
-    {
-        Debug.Log("Package HIT ME");
-    }
-
-
+    /*
     public void HandleCollision(GameObject obj)
     {
-        if (obj.tag == "Packages")
+        if (obj.tag == "Tile/Grid")
         {
             Debug.Log("Package HIT ME");
         }
@@ -116,8 +110,16 @@ public class gridManager : MonoBehaviour
 
 
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        HandleCollision(collision.gameObject);
+        if(collision.gameObject.tag == "Tile/Grid")
+        {
+            Destroy(collision.gameObject);
+        }
+
+
+
+        //HandleCollision(collision.gameObject);
     }
+    */
 }

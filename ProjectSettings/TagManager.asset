@@ -10,6 +10,7 @@ TagManager:
   - Obstacle
   - BGMusic
   - Packages
+  - Tile/Grid
   layers:
   - Default
   - TransparentFX

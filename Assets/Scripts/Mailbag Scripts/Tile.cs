@@ -21,13 +21,24 @@ public class Tile : MonoBehaviour
         renderah.color = isOffset ? offsetColor : baseColor;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Packages")
+        if(other.gameObject.tag == "Packages")
         {
-            highlights.SetActive(true);
+            isSolved = true;
+            Debug.Log("yoinkies");
         }
-        highlights.SetActive(true);
+       
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Packages")
+        {
+            isSolved = false;
+            Debug.Log("NO YOINKIES");
+        }
+
     }
 
     void OnMouseExit()
