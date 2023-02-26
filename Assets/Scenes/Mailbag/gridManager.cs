@@ -18,7 +18,7 @@ public class gridManager : MonoBehaviour
 
     //list of coordinates for each tile on grid to snap to
     //i think a vector3 here
-    public List<GameObject> tilesnapPoints = new List<GameObject>();
+    public List<Tile> tilesnapPoints = new List<Tile>();
 
     //list of the tilepoints vector3s for xy values
     public List<Transform> tilesnapXY = new List<Transform>();
@@ -26,6 +26,8 @@ public class gridManager : MonoBehaviour
     //to fetch tiles colliders
     public List<Collider2D> tileColliders = new List<Collider2D>();
 
+    //need for number of tiles
+    public int tileNum = 0;
     //start method here
     void Start()
     {
@@ -55,7 +57,7 @@ public class gridManager : MonoBehaviour
                 spawnTile.name = $"Tile {x} {y}";
                 
                 //have the tile objects in a list, do not think needed?
-                tilesnapPoints.Add(spawnTile.gameObject);
+                tilesnapPoints.Add(spawnTile);
 
                 //here we have the transform (vector 3) of each tile's position, want to use for snapping
                 tilesnapXY.Add(spawnTile.transform);
@@ -71,6 +73,9 @@ public class gridManager : MonoBehaviour
                 //lil magic math of my own design
                 var isOffset = ((x + y) / 10) % 2 == 0;
                 spawnTile.Init(isOffset);
+
+                //increment the number of tiles here for looping thru array later
+                tileNum++;
             }
         }
 
@@ -81,36 +86,17 @@ public class gridManager : MonoBehaviour
 
 
 
-    public void SolveaDaPuzzle()
+    public bool SolveaDaPuzzle()
     {
-        foreach(var spawnTile in tilesnapPoints)
+        for(int i = 0; i < tileNum; i++)
         {
             //want to see if colliding here
+            if(tilesnapPoints[i].isSolved == false)
+            {
+                return false;
+            }
             
         }
+        return true;
     }
-    /*
-    public void HandleCollision(GameObject obj)
-    {
-        if (obj.tag == "Tile/Grid")
-        {
-            Debug.Log("Package HIT ME");
-        }
-    }
-
-
-
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Tile/Grid")
-        {
-            Destroy(collision.gameObject);
-        }
-
-
-
-        //HandleCollision(collision.gameObject);
-    }
-    */
 }
