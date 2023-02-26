@@ -163,10 +163,11 @@ public class dragNdrop2D : MonoBehaviour
             {
 
                 // Play click sound when piece is clicked
+                /*
                 if (!clickSource.isPlaying){
                     clickSource.Play();
                 }
-                
+                */
                 //if we clicked while overlapping w something, that is now our selected object (being held)
                 selectedObject = targetObject.transform.gameObject;
                 offset = selectedObject.transform.position - mousePosition;
@@ -183,18 +184,28 @@ public class dragNdrop2D : MonoBehaviour
                 //always going to start at a rotation of zero, REMEMBER TO ZERO THIS OUT AT PICK UP TIME
                 //RotateByDegreesZeroto90(selectedObject, selectedObject.transform.eulerAngles);
 
-                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 0.4f));
+                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 1.0f));
 
             }
 
         }
         if (Input.GetMouseButtonUp(0) && selectedObject) //LMB raised while holding movable object, aka dropping it
         {
+            /*
             if (!dropSource.isPlaying){
                 dropSource.Play();
-            }
+            }*/
             var currentPos = selectedObject.transform.position; //fetch the current objects position
 
+            //end state here
+            bool winnered;
+            var test = FindObjectOfType<gridManager>();
+            winnered = test.SolveaDaPuzzle();
+            if(winnered == true)
+            {
+                Debug.Log("WE WON");
+            }
+            //SolveaDaPuzzle();
             //taking instance of our gridManager to access the list of our vertices for each tile instantiated, using as snap points
             //snapPoints = gridCoords.tilesnapXY;
             //want to implement snap to "bag" grid here

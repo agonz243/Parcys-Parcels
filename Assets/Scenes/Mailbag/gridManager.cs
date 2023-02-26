@@ -18,7 +18,7 @@ public class gridManager : MonoBehaviour
 
     //list of coordinates for each tile on grid to snap to
     //i think a vector3 here
-    public List<GameObject> tilesnapPoints = new List<GameObject>();
+    public List<Tile> tilesnapPoints = new List<Tile>();
 
     //list of the tilepoints vector3s for xy values
     public List<Transform> tilesnapXY = new List<Transform>();
@@ -26,15 +26,18 @@ public class gridManager : MonoBehaviour
     //to fetch tiles colliders
     public List<Collider2D> tileColliders = new List<Collider2D>();
 
+    //need for number of tiles
+    public int tileNum = 0;
     //start method here
     void Start()
     {
         MakeaDaGrid();
-        //testing here for now
-        SolveaDaPuzzle();
     }
 
-
+    void Update()
+    {
+       // SolveaDaPuzzle();
+    }
 
     //function for gridd(y)ing
 
@@ -54,7 +57,7 @@ public class gridManager : MonoBehaviour
                 spawnTile.name = $"Tile {x} {y}";
                 
                 //have the tile objects in a list, do not think needed?
-                tilesnapPoints.Add(spawnTile.gameObject);
+                tilesnapPoints.Add(spawnTile);
 
                 //here we have the transform (vector 3) of each tile's position, want to use for snapping
                 tilesnapXY.Add(spawnTile.transform);
@@ -70,14 +73,10 @@ public class gridManager : MonoBehaviour
                 //lil magic math of my own design
                 var isOffset = ((x + y) / 10) % 2 == 0;
                 spawnTile.Init(isOffset);
+
+                //increment the number of tiles here for looping thru array later
+                tileNum++;
             }
-        }
-
-
-        //put the coordinates in the bag and nobody gets hurt
-        foreach (Transform pair in tilesnapXY)
-        {
-            //Debug.Log(pair);
         }
 
 
@@ -87,37 +86,17 @@ public class gridManager : MonoBehaviour
 
 
 
-    public void SolveaDaPuzzle()
+    public bool SolveaDaPuzzle()
     {
-        foreach(var spawnTile in tilesnapPoints)
+        for(int i = 0; i < tileNum; i++)
         {
             //want to see if colliding here
-            //TileColl = spawnTile.GetComponent<Collider>();
-            //if()
-            HandleCollision(spawnTile);
+            if(tilesnapPoints[i].isSolved == false)
+            {
+                return false;
+            }
+            
         }
-    }
-
-
-    public void OnTriggerEnter(Collider col)
-    {
-        Debug.Log("Package HIT ME");
-    }
-
-
-    public void HandleCollision(GameObject obj)
-    {
-        if (obj.tag == "Packages")
-        {
-            Debug.Log("Package HIT ME");
-        }
-    }
-
-
-
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        HandleCollision(collision.gameObject);
+        return true;
     }
 }
