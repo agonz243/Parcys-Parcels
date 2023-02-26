@@ -75,13 +75,6 @@ public class gridManager : MonoBehaviour
         }
 
 
-        //put the coordinates in the bag and nobody gets hurt
-        foreach (Transform pair in tilesnapXY)
-        {
-            //Debug.Log(pair);
-        }
-
-
         //actually moving the cam here using reference from above
         camcorder.transform.position = new Vector3((float)_width / 2 - 0.5f -10, (float)_height / 2 - 0.5f, -10);
     }
@@ -93,9 +86,7 @@ public class gridManager : MonoBehaviour
         foreach(var spawnTile in tilesnapPoints)
         {
             //want to see if colliding here
-            //TileColl = spawnTile.GetComponent<Collider>();
-            //if()
-            //HandleCollision(spawnTile);
+            
         }
     }
     /*
