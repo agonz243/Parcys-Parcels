@@ -197,6 +197,15 @@ public class dragNdrop2D : MonoBehaviour
             }*/
             var currentPos = selectedObject.transform.position; //fetch the current objects position
 
+            //end state here
+            bool winnered;
+            var test = FindObjectOfType<gridManager>();
+            winnered = test.SolveaDaPuzzle();
+            if(winnered == true)
+            {
+                Debug.Log("WE WON");
+            }
+            //SolveaDaPuzzle();
             //taking instance of our gridManager to access the list of our vertices for each tile instantiated, using as snap points
             //snapPoints = gridCoords.tilesnapXY;
             //want to implement snap to "bag" grid here
