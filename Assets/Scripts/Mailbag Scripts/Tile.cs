@@ -37,7 +37,6 @@ public class Tile : MonoBehaviour
             isSolved = true;
             tileCount++;
             coll.otherCollider.GetContacts(bonkArray);
-            Debug.Log("yoinkies");
         }
        
     }
@@ -64,8 +63,6 @@ public class Tile : MonoBehaviour
             {
                 isSolved = false;
             }
-            //isSolved = false;
-            Debug.Log(tileCount);
         }
 
     }
