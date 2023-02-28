@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class dragNdrop2D : MonoBehaviour
 {
@@ -123,7 +124,8 @@ public class dragNdrop2D : MonoBehaviour
             //Debug.Log(mousePosition);
 
             //collider reference for mouse overlap on specific layer
-            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition, -10, 10); 
+            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition, -10, 10);
+            Debug.Log("HOVERING OBJ");
             
             //if we are overlapping (aka clicked on) with something
             if (targetObject)
@@ -137,11 +139,13 @@ public class dragNdrop2D : MonoBehaviour
                 */
                 //if we clicked while overlapping w something, that is now our selected object (being held)
                 selectedObject = targetObject.transform.gameObject;
+                Debug.Log("SELECTING OBJ");
                 offset = selectedObject.transform.position - mousePosition;
             }
         }
         if (selectedObject) //if currently holding an object with mouse click 
         {
+            Debug.Log("OBJ HELD");
             selectedObject.transform.position = mousePosition + offset; //doing the moving PLUS OFFSET
             if (Input.GetMouseButtonDown(1)) //if RMB pressed
             {
@@ -169,7 +173,7 @@ public class dragNdrop2D : MonoBehaviour
             
             //taking instance of our gridManager to access the list of our vertices for each tile instantiated, using as snap points
             snapPoints = gridCoords.tilesnapXY;
-            //snapFncn(selectedObject, snapPoints);
+            snapFncn(selectedObject, snapPoints);
             
             //end state here
             bool winnered;
@@ -178,7 +182,7 @@ public class dragNdrop2D : MonoBehaviour
             
             if(winnered == true)
             {
-                Debug.Log("WE WON");
+                SceneManager.LoadScene("WinPuzzleGame");
             }
 
             //currentPos.x = Mathf.Round(currentPos.x / gridWidth) * gridWidth;
@@ -189,6 +193,7 @@ public class dragNdrop2D : MonoBehaviour
 
             //selected object set to null, no longer holding something
             selectedObject = null;
+            Debug.Log("OBJ NULL");
         }
     }
 
