@@ -1486,11 +1486,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Fit all the mail into the mailbox before the time runs out
+  m_text: 'Fit all the mail into the mailbox before the time runs out!
 
 
     Click
-    and Drag each package onto the mailbox.'
+    and Drag each package onto the mailbox,
+
+    using LMB! Rotate the package with
+    RMB!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f65839469ec57194a88273e2638db1c5, type: 2}
   m_sharedMaterial: {fileID: -6841993266531392055, guid: f65839469ec57194a88273e2638db1c5, type: 2}
