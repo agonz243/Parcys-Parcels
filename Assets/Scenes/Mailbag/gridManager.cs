@@ -90,6 +90,7 @@ public class gridManager : MonoBehaviour
     {
         for(int i = 0; i < tileNum; i++)
         {
+
             //want to see if colliding here
             if(tilesnapPoints[i].isSolved == false)
             {

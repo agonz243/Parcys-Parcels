@@ -14,29 +14,58 @@ public class Tile : MonoBehaviour
 
     [SerializeField] public Collider2D bonk;
 
+    [SerializeField] public ContactPoint2D[] bonkArray = new ContactPoint2D[9]; //here can tweak size of array for number of pieces
+
     [SerializeField] public bool isSolved = false;
+
+    [SerializeField] public int tileCount = 0;
 
      public void Init(bool isOffset)
     {
         renderah.color = isOffset ? offsetColor : baseColor;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
-        if(other.gameObject.tag == "Packages")
+
+        if(coll.gameObject.tag == "Tile/Grid")
+        {
+            Physics2D.IgnoreCollision( GetComponent<Collider2D>(), this.GetComponent<Collider2D>()); //switched order of operands
+        }
+        if(coll.collider.gameObject.tag == "Packages")
         {
             isSolved = true;
+            tileCount++;
+            coll.otherCollider.GetContacts(bonkArray);
             Debug.Log("yoinkies");
         }
        
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnCollisionExit2D(Collision2D coll)
     {
-        if (other.gameObject.tag == "Packages")
+        bonk = gameObject.GetComponent<Collider2D>();
+
+
+        if (coll.gameObject.tag == "Tile/Grid")
         {
-            isSolved = false;
-            Debug.Log("NO YOINKIES");
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
+        }
+
+        if (coll.gameObject.tag == "Packages")//AND THERE IS NOT ANOTHER PACKAGE ON THE SQUARE bonk.GetContacts(bonkArray) == 0
+        {
+            int numCollisions = this.GetComponent<Rigidbody2D>().GetContacts(bonkArray);
+            tileCount--;
+            if(tileCount != 0)
+            {
+                isSolved = true;
+            }
+            else
+            {
+                isSolved = false;
+            }
+            //isSolved = false;
+            Debug.Log(tileCount);
         }
 
     }
