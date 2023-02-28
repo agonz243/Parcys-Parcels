@@ -186,6 +186,7 @@ public class sprinklerGame : MonoBehaviour
         }
         
         if(SprinklerTimer.getTimer() > 1 && myPlayer.getPointIndex() == Points.Length){
+            scoreTracker.sprinklerWin = true;
             SceneManager.LoadScene("Win");
         } else if(myPlayer.getLives() == 0){
             SceneManager.LoadScene("Lose");
