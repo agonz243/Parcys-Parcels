@@ -153,7 +153,7 @@ public class dragNdrop2D : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) //if LMB pressed
         {
             //mouse position finding bounds
-            Debug.Log(mousePosition);
+            //Debug.Log(mousePosition);
 
             //collider reference for mouse overlap on specific layer
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition, -10, 10); 
