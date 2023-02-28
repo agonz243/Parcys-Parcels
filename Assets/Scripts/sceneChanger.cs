@@ -63,7 +63,7 @@ public class sceneChanger : MonoBehaviour
         } else if (currentScene.name == "LosePuzzleGame" || currentScene.name == "WinPuzzleGame") {
             // Play music in title screen
             SceneManager.LoadScene("TitleScreen");
-            Music.instance.GetComponent<AudioSource>().Play();
+            //Music.instance.GetComponent<AudioSource>().Play();
         } else { 
             Debug.Log("Loading nothing :(");
         }
