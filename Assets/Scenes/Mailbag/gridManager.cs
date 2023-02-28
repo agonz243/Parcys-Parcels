@@ -13,9 +13,6 @@ public class gridManager : MonoBehaviour
     //want to center camera on our grid, solve problem of "origin"
     [SerializeField] private Transform camcorder;
 
-    //float for where to snap for grid squares
-    public float snapRange = 1.0f;
-
     //list of coordinates for each tile on grid to snap to
     //i think a vector3 here
     public List<Tile> tilesnapPoints = new List<Tile>();
@@ -32,6 +29,7 @@ public class gridManager : MonoBehaviour
     void Start()
     {
         MakeaDaGrid();
+
     }
 
     void Update()
