@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37a36fd6df1c46338bb451ba2e9ae68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 30
+  totalTime: 40
   timerText: {fileID: 667672411}
 --- !u!4 &521411525
 Transform:
@@ -7549,7 +7549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4c0d7b6318ce04395dc90101c121c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 25
+  moveSpeed: 35
   rigidBody: {fileID: 850454276}
   animator: {fileID: 230225066}
   squeakSource: {fileID: 1128558302}
