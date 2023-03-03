@@ -66,6 +66,8 @@ public class sceneChanger : MonoBehaviour
             Music.instance.GetComponent<AudioSource>().Play();
         } else if (currentScene.name == "ScoreScreen") {
             SceneManager.LoadScene("TitleScreen");
+        } else if (currentScene.name == "CreditScreen") {
+            SceneManager.LoadScene("TitleScreen");
         } else { 
             Debug.Log("Loading nothing :(");
         }
