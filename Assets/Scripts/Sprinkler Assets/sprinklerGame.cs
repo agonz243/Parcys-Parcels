@@ -12,6 +12,10 @@ public class sprinklerGame : MonoBehaviour
     // Function to change sprite?
     [SerializeField] sprinklerSpriteChange spriteChange;
 
+    // Stuff for Particle System
+    [SerializeField] private ParticleSystem mailParticles;
+    private bool dropMail = false;
+
     // Getting timer from sprinklerTimer.cs
     sprinklerTimer SprinklerTimer;
     [SerializeField] private GameObject sTimer;
@@ -24,8 +28,7 @@ public class sprinklerGame : MonoBehaviour
     private float hitTimerSet = 2F;
 
     // Flags to start / stop timers
-    private bool hideTimerRun = false;
-    private bool prevHold = false;
+    // private bool hideTimerRun = false;
 
     // Text objects to display: game timer, lives, umbrella uses
     [SerializeField] private TextMeshProUGUI livesText;
@@ -209,7 +212,7 @@ public class sprinklerGame : MonoBehaviour
         } else if(transform.position == Points[myPlayer.getPrevPointIndex()].transform.position && myPlayer.getPrevPointIndex() >= 1 && myPlayer.getMoving()){ //(myPlayer.getPointIndex() != 1 || myPlayer.getPointIndex() != 0)
             myPlayer.setPointIndex(myPlayer.getPrevPointIndex());
             myPlayer.setPrevPointIndex(myPlayer.getPrevPointIndex() - 1);
-            // transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
+            transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
         }
 
         // If player isn't currently hiding or hit
@@ -243,11 +246,11 @@ public class sprinklerGame : MonoBehaviour
                 myPlayer.setMoving(true);
                 transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
             } 
-            
+            */
             else {
                 myPlayer.setMoving(false);
             }
-            */
+            
         }
         
     }
@@ -285,13 +288,20 @@ public class sprinklerGame : MonoBehaviour
 
     public void stun(){
         if(myPlayer.getHit() == true && myPlayer.getHitTimerRun() == true){
+            if(dropMail == false){
+                mailParticles.transform.position = new Vector3(transform.position[0], transform.position[1], -1); // set particle system position to player position
+                mailParticles.Play();
+                dropMail = true;
+            }
             if(hitTimer > 0){
                 hitTimer -= Time.deltaTime;
                 transform.Rotate(new Vector3(0, 0, 360) * Time.deltaTime);
+                
             } else{
                 myPlayer.setHit(false);
                 myPlayer.setHitTimerRun(false);
                 hitTimer = hitTimerSet;
+                dropMail = false;
             }
         }
     }
