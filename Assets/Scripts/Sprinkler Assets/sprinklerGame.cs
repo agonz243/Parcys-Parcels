@@ -17,14 +17,15 @@ public class sprinklerGame : MonoBehaviour
     [SerializeField] private GameObject sTimer;
     
     // General game / scene timers
-    private float hideTimer = 1F;
+    private float hideTimer = 2F;
     private float hitTimer = 2F;
 
-    private float hideTimerSet = 1F;
+    private float hideTimerSet = 2F;
     private float hitTimerSet = 2F;
 
     // Flags to start / stop timers
     private bool hideTimerRun = false;
+    private bool prevHold = false;
 
     // Text objects to display: game timer, lives, umbrella uses
     [SerializeField] private TextMeshProUGUI livesText;
@@ -208,7 +209,7 @@ public class sprinklerGame : MonoBehaviour
         } else if(transform.position == Points[myPlayer.getPrevPointIndex()].transform.position && myPlayer.getPrevPointIndex() >= 1 && myPlayer.getMoving()){ //(myPlayer.getPointIndex() != 1 || myPlayer.getPointIndex() != 0)
             myPlayer.setPointIndex(myPlayer.getPrevPointIndex());
             myPlayer.setPrevPointIndex(myPlayer.getPrevPointIndex() - 1);
-            transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
+            // transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
         }
 
         // If player isn't currently hiding or hit
@@ -227,53 +228,58 @@ public class sprinklerGame : MonoBehaviour
                 myPlayer.setMoving(true);
                 transform.up = Points[myPlayer.getPointIndex()].transform.position - transform.position;
             }
-        
-            // Backwards Movement "Z" <-- --> "C"
-            // else if(Input.GetKeyDown(KeyCode.Z) && myPlayer.getBackKeyAlt() == false){
-            //     transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed());
-            //     myPlayer.setBackKeyAlt(true);
-            //     spriteChange.ChangeSprite("u1");
-            //     myPlayer.setMoving(true);
-            //     transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
-            // } else if(Input.GetKeyDown(KeyCode.C) && myPlayer.getBackKeyAlt() == true){ 
-            //     transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed());
-            //     myPlayer.setBackKeyAlt(false);
-            //     spriteChange.ChangeSprite("u2");
-            //     myPlayer.setMoving(true);
-            //     transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
-            // } 
+            /*
+            Backwards Movement "Z" <-- --> "C"
+            else if(Input.GetKeyDown(KeyCode.Z) && myPlayer.getBackKeyAlt() == false){
+                transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed());
+                myPlayer.setBackKeyAlt(true);
+                spriteChange.ChangeSprite("u1");
+                myPlayer.setMoving(true);
+                transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
+            } else if(Input.GetKeyDown(KeyCode.C) && myPlayer.getBackKeyAlt() == true){ 
+                transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed());
+                myPlayer.setBackKeyAlt(false);
+                spriteChange.ChangeSprite("u2");
+                myPlayer.setMoving(true);
+                transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
+            } 
             
             else {
                 myPlayer.setMoving(false);
             }
+            */
         }
         
     }
 
     void hide(){
-        // Hide Input   (Input.GetKeyDown(KeyCode.W) --> Input.GetKey(KeyCode.W))
-        if(Input.GetKey(KeyCode.W)  && myPlayer.getHit() == false){ //&& myPlayer.getUmbrellaUse() != 0 && myPlayer.getHide() == false
+        // Hide Input (Input.GetKeyDown(KeyCode.W) --> Input.GetKey(KeyCode.W))  && hideTimerRun == false
+        if(Input.GetKey(KeyCode.W) && myPlayer.getHit() == false && hideTimer >= 0){ //&& myPlayer.getUmbrellaUse() != 0 && myPlayer.getHide() == false hideTimer >= 0 prevHold == false
             myPlayer.setHide(true);
-            // hideTimerRun = true;
-            // myPlayer.setUmbrellaUse(myPlayer.getUmbrellaUse() - 1);
             brella.SetActive(true);
+            // Debug.Log("hideTimer: " + hideTimer);
+            
             if (!umbrellaSource.isPlaying && play == false){
                 umbrellaSource.Play();
                 play = true;
 
             }
         }
-        else{ // otherwise the timer is out
-            myPlayer.setHide(false);
-            // hideTimerRun = false; // stop the timer
-            // hideTimer = hideTimerSet; // reset the timer
+        if(hideTimer < 0.1){
             brella.SetActive(false); // disable the umbrella
+            myPlayer.setHide(false);
+        }
+        if(Input.GetKeyUp(KeyCode.W)){
+            myPlayer.setHide(false);
+            brella.SetActive(false);
+            hideTimer = hideTimerSet; // reset the timer
             play = false;
         }
 
         // Hide Funcionality
-        if(myPlayer.getHide() == true){ //&& hideTimerRun == true
+        if(myPlayer.getHide() == true && hideTimer >= 0){ //
             brella.transform.position = new Vector3(transform.position[0], transform.position[1], -1); // set umbrella position to player position
+            hideTimer -= Time.deltaTime;
         } 
     }
 
