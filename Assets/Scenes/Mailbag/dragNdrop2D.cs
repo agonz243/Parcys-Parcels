@@ -180,6 +180,7 @@ public class dragNdrop2D : MonoBehaviour
             
             if(winnered == true)
             {
+                scoreTracker.mailbagWin = true;
                 SceneManager.LoadScene("WinPuzzleGame");
             }
 
