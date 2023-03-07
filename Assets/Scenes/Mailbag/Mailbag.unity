@@ -171,7 +171,6 @@ MonoBehaviour:
   _height: 60
   tilePrefab: {fileID: 4164474657024787135}
   camcorder: {fileID: 1573266251}
-  snapRange: 0.5
   tilesnapPoints: []
   tilesnapXY: []
   tileColliders: []
@@ -210,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
   snapPoints: []
+  snapRange: 10
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -681,6 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
   snapPoints: []
+  snapRange: 10
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -768,6 +769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
   snapPoints: []
+  snapRange: 10
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -1027,6 +1029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
   snapPoints: []
+  snapRange: 10
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -1218,6 +1221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
   snapPoints: []
+  snapRange: 10
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -1383,7 +1387,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e72669e82c440bd499c7fd7a14dd2393, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.129
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1664,7 +1668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767d6598c5934f94fbae47d18339c43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 30
+  timeLeft: 40
   timerTxt: {fileID: 1228668185}
 --- !u!1 &1231453330
 GameObject:
@@ -1700,6 +1704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
   snapPoints: []
+  snapRange: 10
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -1880,6 +1885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
   snapPoints: []
+  snapRange: 10
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -2086,6 +2092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
   snapPoints: []
+  snapRange: 10
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -2241,6 +2248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
   snapPoints: []
+  snapRange: 10
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -2406,7 +2414,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 13a92536d82ebf0499cdfe846d26ab84, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.064
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2691,6 +2699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
   snapPoints: []
+  snapRange: 10
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -2800,7 +2809,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1650433987}
-  - component: {fileID: 1650433988}
   m_Layer: 0
   m_Name: Sounds
   m_TagString: Untagged
@@ -2826,18 +2834,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1650433988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650433986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b922d621d2341b4692205b877f88124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1756072361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1984528082345248755, guid: cd01fece83c2f26478b1090156095acc, type: 3}
@@ -2945,6 +2941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
   snapPoints: []
+  snapRange: 10
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -3257,6 +3254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridCoords: {fileID: 0}
   snapPoints: []
+  snapRange: 10
   selectedObject: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10

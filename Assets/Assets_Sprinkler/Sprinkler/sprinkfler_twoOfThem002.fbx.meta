@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: 6e606558be681cf43ba7a9bfd5211ee6
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: -772572864163756394
+    second: flower :)|CameraAction
+  - first:
+      74: 5350709753043528733
+    second: flower :)|CameraAction.001
+  - first:
+      74: 8748908596878287838
+    second: flower :)|flower :).001Action
+  - first:
+      74: -4457454983827867200
+    second: flower :)|flower :).001Action.001
+  - first:
+      74: 8699094530277539826
+    second: flower :)|flower :).002Action
+  - first:
+      74: -1132954782791764488
+    second: flower :)|flower :).002Action.001
+  - first:
+      74: 5231836253294346939
+    second: flower :)|flower :).003Action
+  - first:
+      74: 3802506285115905664
+    second: flower :)|flower :).003Action.001
+  - first:
+      74: -3123482640955764357
+    second: flower :)|flower :)Action
+  - first:
+      74: 7984081497068009326
+    second: flower :)|flower :)Action.001
+  - first:
+      74: 2110214720832341147
+    second: flower :).001|CameraAction
+  - first:
+      74: 1429641892038763423
+    second: flower :).001|CameraAction.001
+  - first:
+      74: -5713485029267470821
+    second: flower :).001|flower :).001Action
+  - first:
+      74: -3789227275540831549
+    second: flower :).001|flower :).001Action.001
+  - first:
+      74: -5427049560955547207
+    second: flower :).001|flower :).002Action
+  - first:
+      74: -6513032062931609126
+    second: flower :).001|flower :).002Action.001
+  - first:
+      74: -7883845652439493214
+    second: flower :).001|flower :).003Action
+  - first:
+      74: 7894283241376439866
+    second: flower :).001|flower :).003Action.001
+  - first:
+      74: -1754373387238514934
+    second: flower :).001|flower :)Action
+  - first:
+      74: -4520405916268786545
+    second: flower :).001|flower :)Action.001
+  - first:
+      74: 7057674412458140549
+    second: flower :).002|CameraAction
+  - first:
+      74: -1935693502223100546
+    second: flower :).002|CameraAction.001
+  - first:
+      74: -2917349510150907638
+    second: flower :).002|flower :).001Action
+  - first:
+      74: -4912396467875685950
+    second: flower :).002|flower :).001Action.001
+  - first:
+      74: 3478060546974727915
+    second: flower :).002|flower :).002Action
+  - first:
+      74: 4076933441244622592
+    second: flower :).002|flower :).002Action.001
+  - first:
+      74: -6189959881888267763
+    second: flower :).002|flower :).003Action
+  - first:
+      74: -8127911360195778551
+    second: flower :).002|flower :).003Action.001
+  - first:
+      74: -1761850212665964209
+    second: flower :).002|flower :)Action
+  - first:
+      74: -8272582547652822390
+    second: flower :).002|flower :)Action.001
+  - first:
+      74: -1067087268650551725
+    second: flower :).003|CameraAction
+  - first:
+      74: 5992958259204134801
+    second: flower :).003|CameraAction.001
+  - first:
+      74: -6035665968274565519
+    second: flower :).003|flower :).001Action
+  - first:
+      74: -6504559344729163623
+    second: flower :).003|flower :).001Action.001
+  - first:
+      74: 5555205228402736515
+    second: flower :).003|flower :).002Action
+  - first:
+      74: -3938807257974036008
+    second: flower :).003|flower :).002Action.001
+  - first:
+      74: -2082182171302838572
+    second: flower :).003|flower :).003Action
+  - first:
+      74: 3289293987561066334
+    second: flower :).003|flower :).003Action.001
+  - first:
+      74: -8990787917514221500
+    second: flower :).003|flower :)Action
+  - first:
+      74: -3461100277723777607
+    second: flower :).003|flower :)Action.001
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

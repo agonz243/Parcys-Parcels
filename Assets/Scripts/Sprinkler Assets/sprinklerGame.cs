@@ -12,19 +12,23 @@ public class sprinklerGame : MonoBehaviour
     // Function to change sprite?
     [SerializeField] sprinklerSpriteChange spriteChange;
 
+    // Stuff for Particle System
+    [SerializeField] private ParticleSystem mailParticles;
+    private bool dropMail = false;
+
     // Getting timer from sprinklerTimer.cs
     sprinklerTimer SprinklerTimer;
     [SerializeField] private GameObject sTimer;
     
     // General game / scene timers
-    private float hideTimer = 1F;
+    private float hideTimer = 2F;
     private float hitTimer = 2F;
 
-    private float hideTimerSet = 1F;
+    private float hideTimerSet = 2F;
     private float hitTimerSet = 2F;
 
     // Flags to start / stop timers
-    private bool hideTimerRun = false;
+    // private bool hideTimerRun = false;
 
     // Text objects to display: game timer, lives, umbrella uses
     [SerializeField] private TextMeshProUGUI livesText;
@@ -34,6 +38,7 @@ public class sprinklerGame : MonoBehaviour
     // Audio Sources
     public AudioSource umbrellaSource;
     public AudioSource shakeSource;
+    private bool play = false;
 
     // Player class
     public class Player{
@@ -194,24 +199,6 @@ public class sprinklerGame : MonoBehaviour
     }
 
     void movement(){
-        // Debug.Log("here");
-        // Debug.Log("player index: " + myPlayer.getPointIndex());
-        // Debug.Log("next point: " + Points[myPlayer.getPointIndex()]);
-        // Debug.Log("Player Position: " + transform.position + " , Point Position: " + Points[myPlayer.getPointIndex()].transform.position);
-        // Debug.Log("Point Index: " + myPlayer.getPointIndex() + " , Prev Point Index: " + myPlayer.getPrevPointIndex());
-
-        // Rotating Player Sprite
-        // if(transform.localRotation.z != Vector3.Angle(transform.position,Points[myPlayer.getPointIndex()].transform.position)){
-                //     // transform.localRotation.z = Vector3.Angle(transform.position,Points[myPlayer.getPointIndex()].transform.position);
-                //     transform.Rotate(0, 0, Vector3.Angle(transform.position,Points[myPlayer.getPointIndex()].transform.position));
-                // }
-        // Debug.Log("Angle: " + Vector3.Angle((Points[myPlayer.getPointIndex()].transform.position), Points[myPlayer.getPrevPointIndex()].transform.position));
-        
-        // float difY = Points[myPlayer.getPrevPointIndex()].transform.position.y - Points[myPlayer.getPointIndex()].transform.position.y;
-        // float difX = Points[myPlayer.getPrevPointIndex()].transform.position.x - Points[myPlayer.getPointIndex()].transform.position.x;
-        // // Debug.Log("Inverse Tan: " + (Mathf.Rad2Deg*Mathf.Atan((difY/difX) - 90)));
-        // float atan = (Mathf.Rad2Deg*Mathf.Atan((difY/difX))); //- 90
-        // Debug.Log("Atan: " + atan);
 
         // Player's location is the same as the next point
         if(transform.position == Points[myPlayer.getPointIndex()].transform.position && myPlayer.getMoving()){
@@ -244,8 +231,8 @@ public class sprinklerGame : MonoBehaviour
                 myPlayer.setMoving(true);
                 transform.up = Points[myPlayer.getPointIndex()].transform.position - transform.position;
             }
-        
-            // Backwards Movement "Z" <-- --> "C"
+            /*
+            Backwards Movement "Z" <-- --> "C"
             else if(Input.GetKeyDown(KeyCode.Z) && myPlayer.getBackKeyAlt() == false){
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setBackKeyAlt(true);
@@ -258,49 +245,63 @@ public class sprinklerGame : MonoBehaviour
                 spriteChange.ChangeSprite("u2");
                 myPlayer.setMoving(true);
                 transform.up = Points[myPlayer.getPrevPointIndex()].transform.position - transform.position;
-            } else {
+            } 
+            */
+            else {
                 myPlayer.setMoving(false);
             }
+            
         }
         
     }
 
     void hide(){
-        // Hide Input
-        if(Input.GetKeyDown(KeyCode.W) && myPlayer.getHide() == false && myPlayer.getHit() == false && myPlayer.getUmbrellaUse() != 0){
+        // Hide Input (Input.GetKeyDown(KeyCode.W) --> Input.GetKey(KeyCode.W))  && hideTimerRun == false
+        if(Input.GetKey(KeyCode.W) && myPlayer.getHit() == false && hideTimer >= 0){ //&& myPlayer.getUmbrellaUse() != 0 && myPlayer.getHide() == false hideTimer >= 0 prevHold == false
             myPlayer.setHide(true);
-            hideTimerRun = true;
-            myPlayer.setUmbrellaUse(myPlayer.getUmbrellaUse() - 1);
             brella.SetActive(true);
-            if (!umbrellaSource.isPlaying){
+            // Debug.Log("hideTimer: " + hideTimer);
+            
+            if (!umbrellaSource.isPlaying && play == false){
                 umbrellaSource.Play();
+                play = true;
 
             }
         }
+        if(hideTimer < 0.1){
+            brella.SetActive(false); // disable the umbrella
+            myPlayer.setHide(false);
+        }
+        if(Input.GetKeyUp(KeyCode.W)){
+            myPlayer.setHide(false);
+            brella.SetActive(false);
+            hideTimer = hideTimerSet; // reset the timer
+            play = false;
+        }
 
         // Hide Funcionality
-        if(myPlayer.getHide() == true && hideTimerRun == true){
-           if(hideTimer > 0){ // there is still time to hide
-                hideTimer -= Time.deltaTime; // subtract from the time
-                brella.transform.position = new Vector3(transform.position[0], transform.position[1], -1); // set umbrella position to player position
-            } else{ // otherwise the timer is out
-                myPlayer.setHide(false);
-                hideTimerRun = false; // stop the timer
-                hideTimer = hideTimerSet; // reset the timer
-                brella.SetActive(false); // disable the umbrella
-            } 
-        }
+        if(myPlayer.getHide() == true && hideTimer >= 0){ //
+            brella.transform.position = new Vector3(transform.position[0], transform.position[1], -1); // set umbrella position to player position
+            hideTimer -= Time.deltaTime;
+        } 
     }
 
     public void stun(){
         if(myPlayer.getHit() == true && myPlayer.getHitTimerRun() == true){
+            if(dropMail == false){
+                mailParticles.transform.position = new Vector3(transform.position[0], transform.position[1], -1); // set particle system position to player position
+                mailParticles.Play();
+                dropMail = true;
+            }
             if(hitTimer > 0){
                 hitTimer -= Time.deltaTime;
                 transform.Rotate(new Vector3(0, 0, 360) * Time.deltaTime);
+                
             } else{
                 myPlayer.setHit(false);
                 myPlayer.setHitTimerRun(false);
                 hitTimer = hitTimerSet;
+                dropMail = false;
             }
         }
     }

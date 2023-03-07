@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Movement (To have same moveSpeed * Time.FixedDeltaTime[amount of time elapsed since function was last called])
-        rigidBody.MovePosition(rigidBody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rigidBody.MovePosition(rigidBody.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 
     // COLLISION W/ SPRINKLERS

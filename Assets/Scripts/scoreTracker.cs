@@ -14,4 +14,15 @@ public static class scoreTracker
     public static bool sprinklerWin = false;
     public static bool mailbagWin = false;
 
+
+    public static void reset()
+    {
+        dogTime = 0.0f;
+        sprinklerTime = 0.0f;
+        mailbagTime = 0.0f;
+
+        dogWin = false;
+        sprinklerWin = false;
+        mailbagWin = false;
+    }
 }
