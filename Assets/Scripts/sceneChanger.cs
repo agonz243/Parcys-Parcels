@@ -39,6 +39,7 @@ public class sceneChanger : MonoBehaviour
     // Load scenes
     public void LoadNextScene() {
         if (currentScene.name == "TitleScreen") {
+            scoreTracker.reset();
             SceneManager.LoadScene("DogInstructions");
         } else if (currentScene.name == "DogInstructions") {
             // Pause music during Dog Chase Minigame
