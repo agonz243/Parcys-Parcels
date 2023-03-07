@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 74660388}
   - component: {fileID: 74660387}
+  - component: {fileID: 74660389}
   m_Layer: 0
   m_Name: screenWiper
   m_TagString: Untagged
@@ -162,13 +163,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74660386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.65389985, y: 0.2604893, z: -3.1324933}
+  m_LocalPosition: {x: 9.26, y: -0, z: -3.1324933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &74660389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74660386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0fe803515aa4f139ea8097b2ae6f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  timer: 0
+  startTimer: 0
 --- !u!1 &79267372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,8 +1596,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 307642523
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1c4fd088e36724f54a2b33fcc2f9936f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1602,8 +1618,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762329070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.69, y: -0.17, z: 0}
-  m_LocalScale: {x: 2.3720622, y: 2.6389189, z: 2.3720622}
+  m_LocalPosition: {x: -21.94, y: -0.17, z: 0}
+  m_LocalScale: {x: 3.1688378, y: 3.5253315, z: 3.1688378}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
