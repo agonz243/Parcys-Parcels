@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class sprinklerTimer : MonoBehaviour
 {
-    public float totalTime = 30;
+    public float totalTime = 40;
     private float gameTimer;
     [SerializeField] private TextMeshProUGUI timerText;
 
