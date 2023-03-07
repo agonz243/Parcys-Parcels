@@ -4308,7 +4308,7 @@ PrefabInstance:
       objectReference: {fileID: 1526103338}
     - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: baseColor.a
-      value: 0.8509804
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: baseColor.b
@@ -4324,7 +4324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: offsetColor.a
-      value: 0.83137256
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: offsetColor.b
