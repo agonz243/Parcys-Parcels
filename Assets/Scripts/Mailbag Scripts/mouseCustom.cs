@@ -19,7 +19,7 @@ public class mouseCustom : MonoBehaviour
         //Vector2 hotSpot;
         if (autoCenterHotSpot)
         {
-            hotSpotAuto = new Vector2(paw.width * 0.5f, paw.height * 0.5f);
+            hotSpotAuto = new Vector2(paw.width * 0.5f, paw.height * 0.4f);
             hotSpot = hotSpotAuto;
         }
         else
