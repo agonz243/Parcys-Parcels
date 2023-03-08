@@ -9,14 +9,19 @@ public class screenWipe : MonoBehaviour
     [Range(0.1f, 3f)]
     private float wipeSpeed = 1f;
 
-    public GameObject image;
+    private GameObject image;
+
+    private Vector3 startPos;
 
     private bool isDone;
+
+    private bool sceneChanged;
 
     private float wipeProgress;
 
      private void Awake()
     {
+        image = GameObject.Find("Transition");
         isDone = true;
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(image);
@@ -30,11 +35,13 @@ public class screenWipe : MonoBehaviour
             WipeScreen();
         } else {
             wipeProgress = 0;
+            sceneChanged = false;
+            image = GameObject.Find("Transition");
         }
     }
 
 
-    private void ToggleWipe() {
+    public void ToggleWipe() {
         isDone = false;
     }
 
@@ -45,19 +52,12 @@ public class screenWipe : MonoBehaviour
         if (wipeProgress >= 6f)
         {
             isDone = true;
-        } else if (wipeProgress >= 3f)
+        } else if (wipeProgress >= 3f && !sceneChanged)
         {
             this.GetComponent<sceneChanger>().LoadNextScene();
+            sceneChanged = true;
         }
     }
-
-/*     private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.gameObject.tag == "transitioner")
-        {
-            Debug.Log("Change Scene Now!");
-            this.GetComponent<sceneChanger>().LoadNextScene();
-        }
-    } */
 
     [ContextMenu("Wipe")]
     private void Wipe() { ToggleWipe(); }

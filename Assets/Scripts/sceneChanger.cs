@@ -38,6 +38,7 @@ public class sceneChanger : MonoBehaviour
 
     // Load scenes
     public void LoadNextScene() {
+        currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == "TitleScreen") {
             SceneManager.LoadScene("DogInstructions");
         } else if (currentScene.name == "DogInstructions") {

@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wipeSpeed: 0.5
-  image: {fileID: 1762329070}
 --- !u!4 &74660388
 Transform:
   m_ObjectHideFlags: 0
@@ -1552,7 +1551,7 @@ GameObject:
   - component: {fileID: 1762329072}
   - component: {fileID: 1762329071}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Transition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
