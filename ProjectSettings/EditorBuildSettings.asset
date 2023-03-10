@@ -54,6 +54,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ScoreScreen.unity
     guid: 9f22edd7fd32eba43b8f1f42e0b6abb4
   - enabled: 1
-    path: Assets/Scenes/CreditScreen.unity
+    path: Assets/Scenes/SelfCareScreen.unity
     guid: e5aa30f82d1bb1b40bf72758c62df2d4
+  - enabled: 1
+    path: Assets/Scenes/CreditScreen.unity
+    guid: 939e97dd860d24c4389112d2bc536d88
   m_configObjects: {}
