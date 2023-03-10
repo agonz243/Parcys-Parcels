@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 999035811}
   - component: {fileID: 999035810}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PhoneBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
