@@ -1154,9 +1154,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 499906275}
-        m_TargetAssemblyTypeName: sceneChanger, Assembly-CSharp
-        m_MethodName: Wait
+      - m_Target: {fileID: 2035403387}
+        m_TargetAssemblyTypeName: screenWipe, Assembly-CSharp
+        m_MethodName: ToggleWipe
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

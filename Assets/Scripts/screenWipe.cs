@@ -52,6 +52,8 @@ public class screenWipe : MonoBehaviour
         if (wipeProgress >= 6f)
         {
             isDone = true;
+            Destroy(image);
+            Destroy(this.gameObject);
         } else if (wipeProgress >= 3f && !sceneChanged)
         {
             this.GetComponent<sceneChanger>().LoadNextScene();
