@@ -33,10 +33,6 @@ public class screenWipe : MonoBehaviour
         if (!isDone)
         {
             WipeScreen();
-        } else {
-            wipeProgress = 0;
-            sceneChanged = false;
-            image = GameObject.Find("Transition");
         }
     }
 
