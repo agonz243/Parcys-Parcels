@@ -1786,6 +1786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1798985354}
   - component: {fileID: 1798985353}
+  - component: {fileID: 1798985355}
   m_Layer: 0
   m_Name: 1x1tape
   m_TagString: Untagged
@@ -1860,6 +1861,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 22.509}
+--- !u!111 &1798985355
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798985352}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 386eea7f08b334ec79f525adcecb7e21, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 386eea7f08b334ec79f525adcecb7e21, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1832012700
 GameObject:
   m_ObjectHideFlags: 0
