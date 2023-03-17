@@ -15,6 +15,8 @@ public class DropEnvelopes : MonoBehaviour
     public GameObject envelope;
     private Vector2 envelopeSize;
     public GameObject[] envelopes;
+
+    public Sprite[] envelopeSprites;
     
     private Vector3 scaleUpVec;
     private Vector3 scaleDownVec;
@@ -52,6 +54,9 @@ public class DropEnvelopes : MonoBehaviour
 
             // Scale envelope to largest size
             currEnvelope.transform.localScale += scaleUpVec;
+
+            // Set sprite
+            currEnvelope.gameObject.GetComponent<SpriteRenderer>().sprite = envelopeSprites[Random.Range(0, envelopeSprites.Length)];
 
             // Generate random location
             Vector2 randomPos = randomVec(); 

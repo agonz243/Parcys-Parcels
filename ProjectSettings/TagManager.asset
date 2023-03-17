@@ -72,3 +72,6 @@ TagManager:
   - name: bg-obstacles
     uniqueID: 307642523
     locked: 0
+  - name: BG-UI
+    uniqueID: 2754733779
+    locked: 0

@@ -11,21 +11,14 @@ public class mouseCustom : MonoBehaviour
     //whatever settings blah blah
     public CursorMode cursorMode = CursorMode.ForceSoftware;
     public bool autoCenterHotSpot = false;
-    public Vector2 hotSpotCustom = Vector2.zero;
+    public Vector2 hotSpotCustom;
     private Vector2 hotSpotAuto;
     Vector2 hotSpot;
     private void Start()
     {
-        //Vector2 hotSpot;
-        if (autoCenterHotSpot)
-        {
-            hotSpotAuto = new Vector2(paw.width * 0.5f, paw.height * 0.4f);
-            hotSpot = hotSpotAuto;
-        }
-        else
-        {
+            hotSpotCustom = new Vector2(60.0f, 45.0f);
             hotSpot = hotSpotCustom;
-        }
+        
         Cursor.SetCursor(paw, hotSpot, CursorMode.ForceSoftware);
     }
 
@@ -34,11 +27,13 @@ public class mouseCustom : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Cursor.SetCursor(grab, hotSpot, CursorMode.ForceSoftware);
+            Cursor.SetCursor(grab, hotSpotCustom, CursorMode.ForceSoftware);
+            Debug.Log(hotSpotCustom);
         }
         if (Input.GetMouseButtonUp(0))
         {
-            Cursor.SetCursor(paw, hotSpot, CursorMode.ForceSoftware);
+            Cursor.SetCursor(paw, hotSpotCustom, CursorMode.ForceSoftware);
+            Debug.Log(hotSpotCustom);
         }
     }
 }
