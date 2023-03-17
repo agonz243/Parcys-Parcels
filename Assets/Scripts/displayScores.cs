@@ -133,7 +133,7 @@ public class displayScores : MonoBehaviour
             Portrait.gameObject.GetComponent<SpriteRenderer>().sprite = bearHappy;
         } else {
             msgBox.gameObject.GetComponent<SpriteRenderer>().sprite = blueBox;
-            Message.text = "Hey... \n Why is there slobber all over my mail...? What did you do...";
+            Message.text = "Hey Parcy... \n Why is there slobber all over my mail...? What did you do...";
             Portrait.gameObject.GetComponent<SpriteRenderer>().sprite = bearSad;
         }
     }
@@ -159,7 +159,7 @@ public class displayScores : MonoBehaviour
 
         } else {
             msgBox.gameObject.GetComponent<SpriteRenderer>().sprite = blueBox;
-            Message.text = "Hey... \n My mail is all wet. I am upset.";
+            Message.text = "G'day Mate... \n My mail is all wet. I am upset.";
             Portrait.gameObject.GetComponent<SpriteRenderer>().sprite = frogSad;
         }
     }
