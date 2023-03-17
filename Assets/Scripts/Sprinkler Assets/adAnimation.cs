@@ -27,10 +27,7 @@ public class adAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         frame = Math.Floor(parcyAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length * (parcyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime % 1) * parcyAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.frameRate);
-        // Debug.Log(parcyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
         if (frame == 0) {
             aRenderer.sprite = aPressed;
             dRenderer.sprite = d;

@@ -40,6 +40,18 @@ public class displayScores : MonoBehaviour
     public ColorBlock color2;
     public ColorBlock color3;
 
+    public Sprite frogHappy;
+    public Sprite frogSad;
+    public Sprite bearHappy;
+    public Sprite bearSad;
+    public Sprite raccoonHappy;
+    public Sprite raccoonSad;
+
+    public GameObject Portrait;
+
+    public Sprite blueBox;
+    public GameObject msgBox;
+
     // public Color myGreen = new Color(0.94f, 0.118f, 0.97f);
 
     void Awake(){
@@ -57,7 +69,7 @@ public class displayScores : MonoBehaviour
         button2.onClick.AddListener(Msg2);
         button3.onClick.AddListener(Msg3);
 
-        mailbox.text = "MAILBOX (" + numMail + ")";
+        mailbox.text = "INBOX (" + numMail + ")";
 
         if (scoreTracker.dogWin)
         {
@@ -116,9 +128,13 @@ public class displayScores : MonoBehaviour
 
         if (scoreTracker.dogWin)
         {
-            Message.text = "Success! You delivered the mail in " + scoreTracker.dogTime + " seconds!";
+            msgBox.gameObject.GetComponent<SpriteRenderer>().sprite = blueBox;
+            Message.text = "Thank you for my mail! You delivered it mail in " + scoreTracker.dogTime + " seconds!";
+            Portrait.gameObject.GetComponent<SpriteRenderer>().sprite = bearHappy;
         } else {
+            msgBox.gameObject.GetComponent<SpriteRenderer>().sprite = blueBox;
             Message.text = "Hey... \n Why is there slobber all over my mail...? What did you do...";
+            Portrait.gameObject.GetComponent<SpriteRenderer>().sprite = bearSad;
         }
     }
 
@@ -137,9 +153,14 @@ public class displayScores : MonoBehaviour
 
         if (scoreTracker.sprinklerWin)
         {
-            Message.text = "Success! You delivered the mail in " + scoreTracker.sprinklerTime + " seconds!";
+            msgBox.gameObject.GetComponent<SpriteRenderer>().sprite = blueBox;
+            Message.text = "Thank you for my mail! You delivered the mail in " + scoreTracker.sprinklerTime + " seconds!";
+            Portrait.gameObject.GetComponent<SpriteRenderer>().sprite = frogHappy;
+
         } else {
+            msgBox.gameObject.GetComponent<SpriteRenderer>().sprite = blueBox;
             Message.text = "Hey... \n My mail is all wet. I am upset.";
+            Portrait.gameObject.GetComponent<SpriteRenderer>().sprite = frogSad;
         }
     }
 
@@ -158,9 +179,13 @@ public class displayScores : MonoBehaviour
 
         if (scoreTracker.mailbagWin)
         {
-            Message.text = "Success! You delivered the mail in " + scoreTracker.mailbagTime + " seconds!";
+            msgBox.gameObject.GetComponent<SpriteRenderer>().sprite = blueBox;
+            Message.text = "Thank you for neatly organizing my mail in " + scoreTracker.mailbagTime + " seconds!";
+            Portrait.gameObject.GetComponent<SpriteRenderer>().sprite = raccoonHappy;
         } else {
+            msgBox.gameObject.GetComponent<SpriteRenderer>().sprite = blueBox;
             Message.text = "Hey... \n I didn't get all my packages in my mailbox and the ones that I did get seemed to be crammed in the mailbox. 0/10 stars ):";
+            Portrait.gameObject.GetComponent<SpriteRenderer>().sprite = raccoonSad;
         }
     }
 }
