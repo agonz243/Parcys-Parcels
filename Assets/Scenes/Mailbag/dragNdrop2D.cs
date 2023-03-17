@@ -41,6 +41,11 @@ public class dragNdrop2D : MonoBehaviour
         }
     }
 
+    public Vector3 setZ(Vector3 vector, float z){
+        vector.z = z;
+        return vector;
+    }
+
     public void snapFncn(GameObject pckg, List<Transform> ex)
     {
         //set float for snap distance limit
@@ -145,6 +150,7 @@ public class dragNdrop2D : MonoBehaviour
         if (selectedObject) //if currently holding an object with mouse click 
         {
             Debug.Log("OBJ HELD");
+            selectedObject.transform.position = setZ(selectedObject.transform.position, 9);
             selectedObject.transform.position = mousePosition + offset; //doing the moving PLUS OFFSET
             if (Input.GetMouseButtonDown(1)) //if RMB pressed
             {
@@ -184,13 +190,8 @@ public class dragNdrop2D : MonoBehaviour
                 SceneManager.LoadScene("WinPuzzleGame");
             }
 
-            //currentPos.x = Mathf.Round(currentPos.x / gridWidth) * gridWidth;
-            //currentPos.y = Mathf.Round(currentPos.y / gridHeight) * gridHeight;
-             //selectedObject.transform.position = new Vector3(Mathf.Round(mousePosition.x),
-                                        //Mathf.Round(mousePosition.y));
-
-
             //selected object set to null, no longer holding something
+            selectedObject.transform.position = setZ(selectedObject.transform.position, 10);
             selectedObject = null;
             Debug.Log("OBJ NULL");
         }
