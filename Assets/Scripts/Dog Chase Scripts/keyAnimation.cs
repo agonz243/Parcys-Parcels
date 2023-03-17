@@ -30,16 +30,12 @@ public class keyAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(parcyAnimator.GetAnimatorTransitionInfo(0).nameHash);
-
-// || parcyAnimator.GetAnimatorTransitionInfo(0).IsName("RightUp")
         if(parcyAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Up" ) {
             wRenderer.sprite = wPressed;
             aRenderer.sprite = a;
             sRenderer.sprite = s;
             dRenderer.sprite = d;
         } else if (parcyAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Left") {
-        //| parcyAnimator.GetAnimatorTransitionInfo(0).nameHash == 0) {
             wRenderer.sprite = w;
             aRenderer.sprite = aPressed;
             sRenderer.sprite = s;

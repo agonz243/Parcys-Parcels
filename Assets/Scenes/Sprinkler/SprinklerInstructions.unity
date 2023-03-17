@@ -5331,6 +5331,7 @@ GameObject:
   - component: {fileID: 494102087}
   - component: {fileID: 494102086}
   - component: {fileID: 494102088}
+  - component: {fileID: 494102089}
   m_Layer: 0
   m_Name: parcyUp1
   m_TagString: Untagged
@@ -5425,6 +5426,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &494102089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494102085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67e638a0770e1459496edc0fbebb8f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parcyAnimator: {fileID: 494102088}
+  aRenderer: {fileID: 1301201200}
+  dRenderer: {fileID: 1444958369}
+  aPressed: {fileID: 21300000, guid: 9ecf9fda40d154ec789bba1c992f8b65, type: 3}
+  dPressed: {fileID: 21300000, guid: e34170594e3ff420f9a279141f26d9ed, type: 3}
+  a: {fileID: 21300000, guid: 60e02a04f587344d68cf4a510cc31506, type: 3}
+  d: {fileID: 21300000, guid: a302b2a006de04630bfdb76a0b506a53, type: 3}
+  frame: 0
 --- !u!1 &499906269
 GameObject:
   m_ObjectHideFlags: 0
@@ -6821,7 +6842,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 43a72e52bed9e4e868913752fa00d53a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9ac3a558acd54da09dd174888d70c3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
