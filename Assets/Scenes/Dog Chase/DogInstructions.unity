@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 389529536}
   - component: {fileID: 389529535}
   - component: {fileID: 389529537}
+  - component: {fileID: 389529538}
   m_Layer: 0
   m_Name: parcyDown1
   m_TagString: Untagged
@@ -687,6 +688,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &389529538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389529534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa71d66c4fda4eb29aee3a79498047a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parcyAnimator: {fileID: 389529537}
+  wRenderer: {fileID: 1628459730}
+  aRenderer: {fileID: 1234622156}
+  sRenderer: {fileID: 511791515}
+  dRenderer: {fileID: 230084499}
+  wPressed: {fileID: 21300000, guid: b9ac3a558acd54da09dd174888d70c3d, type: 3}
+  aPressed: {fileID: 21300000, guid: 9ecf9fda40d154ec789bba1c992f8b65, type: 3}
+  sPressed: {fileID: 21300000, guid: c7c0aa18ce74f4badb8575b921a2cac0, type: 3}
+  dPressed: {fileID: 21300000, guid: e34170594e3ff420f9a279141f26d9ed, type: 3}
+  w: {fileID: 21300000, guid: 43a72e52bed9e4e868913752fa00d53a, type: 3}
+  a: {fileID: 21300000, guid: 60e02a04f587344d68cf4a510cc31506, type: 3}
+  s: {fileID: 21300000, guid: a74d325b57b0f4832b08b35f374de7d8, type: 3}
+  d: {fileID: 21300000, guid: a302b2a006de04630bfdb76a0b506a53, type: 3}
 --- !u!1 &392116791
 GameObject:
   m_ObjectHideFlags: 0
