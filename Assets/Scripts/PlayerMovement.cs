@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     // Start method deleted
-    [SerializeField]public float moveSpeed = 25f;
+    [SerializeField]public float moveSpeed = 35f;
     
     public Rigidbody2D rigidBody;
     public Animator animator; //(will be used when sprites are done!) 
@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
             envI.envelopesInInventory = 0;
             if (speedDecreased == true){
                 speedDecreased = false;
-                moveSpeed = 25f;
+                moveSpeed = 35f;
             }
             mailboxSource.Play();
 
