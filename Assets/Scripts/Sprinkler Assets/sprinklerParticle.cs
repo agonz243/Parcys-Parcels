@@ -19,7 +19,7 @@ public class sprinklerParticle : MonoBehaviour
         
         if(other.TryGetComponent(out sprinklerGame pl)){
             pl.playerHit();
-            Debug.Log("myPlayer: " + pl.myPlayer.getHide());
+            // Debug.Log("myPlayer: " + pl.myPlayer.getHide());
         }
     }
 }

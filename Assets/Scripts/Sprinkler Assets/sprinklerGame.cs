@@ -12,6 +12,9 @@ public class sprinklerGame : MonoBehaviour
     // Function to change sprite?
     [SerializeField] sprinklerSpriteChange spriteChange;
 
+    // Animator Stuff for Umbrella
+    [SerializeField] Animator animator; 
+
     // Stuff for Particle System
     [SerializeField] private ParticleSystem mailParticles;
     private bool dropMail = false;
@@ -265,6 +268,7 @@ public class sprinklerGame : MonoBehaviour
             if (!umbrellaSource.isPlaying && play == false){
                 umbrellaSource.Play();
                 play = true;
+                animator.Play("Umbrella Up", 0, 0); // play animation once?
             }
         }
         // if(hideTimer < 0.1){
@@ -272,10 +276,12 @@ public class sprinklerGame : MonoBehaviour
         //     myPlayer.setHide(false);
         // }
         if(Input.GetKeyUp(KeyCode.W)){
+            animator.Play("Umbrella Down", 0, 0); // play animation once?
             myPlayer.setHide(false);
             brella.SetActive(false);
             hideTimer = hideTimerSet; // reset the timer
             play = false;
+            
         }
 
         // Hide Funcionality
