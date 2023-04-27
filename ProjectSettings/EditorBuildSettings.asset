@@ -65,4 +65,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mailbag/MailbagInstructions.unity
     guid: 8ad07b02f9e66458395292783b980fc7
+  - enabled: 1
+    path: Assets/Scenes/Letter Segments/Beginning.unity
+    guid: 8aa04b9a4941d4aee8822c5c44b48d67
+  - enabled: 1
+    path: Assets/Scenes/Letter Segments/End1.unity
+    guid: c29a8df955e8b4130810dec342e596ed
+  - enabled: 1
+    path: Assets/Scenes/Letter Segments/End2.unity
+    guid: 409822b900d8944b3a41e1b4d9a7c52a
+  - enabled: 1
+    path: Assets/Scenes/Letter Segments/Middle.unity
+    guid: 789887622ed06465389e2aefc6ba5e87
   m_configObjects: {}

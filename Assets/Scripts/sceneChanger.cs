@@ -41,23 +41,33 @@ public class sceneChanger : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == "TitleScreen") {
             scoreTracker.reset();
+            SceneManager.LoadScene("Beginning");
+        } else if (currentScene.name == "Beginning") {
+            // Pause music during Dog Chase Minigame
             SceneManager.LoadScene("DogInstructions");
+            // Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "DogInstructions") {
             // Pause music during Dog Chase Minigame
             SceneManager.LoadScene("DogChase");
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "LoseDogGame" || currentScene.name == "WinDogGame") {
             // Play music during instructions
+            SceneManager.LoadScene("Middle");
+            // Music.instance.GetComponent<AudioSource>().Play();
+        } else if (currentScene.name == "Middle") {
+            // Pause music during Sprinkler Minigame
             SceneManager.LoadScene("SprinklerInstructions");
-            Music.instance.GetComponent<AudioSource>().Play();
+            Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "SprinklerInstructions") {
             // Pause music during Sprinkler Minigame
             SceneManager.LoadScene("Sprinkler-2");
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "Win" || currentScene.name == "Lose") {
             // Play music during instructions
-            SceneManager.LoadScene("MailbagInstructions");
+            SceneManager.LoadScene("End1");
             Music.instance.GetComponent<AudioSource>().Play();
+        } else if (currentScene.name == "End1") {
+            SceneManager.LoadScene("MailbagInstructions");
         } else if (currentScene.name == "MailbagInstructions") {
             // Pause music during Mailbag Minigame
             SceneManager.LoadScene("Mailbag");
@@ -67,6 +77,8 @@ public class sceneChanger : MonoBehaviour
             SceneManager.LoadScene("ScoreScreen");
             Music.instance.GetComponent<AudioSource>().Play();
         } else if (currentScene.name == "ScoreScreen") {
+            SceneManager.LoadScene("End2");
+        } else if (currentScene.name == "End2") {
             SceneManager.LoadScene("TitleScreen");
         } else if (currentScene.name == "CreditScreen") {
             SceneManager.LoadScene("TitleScreen");
