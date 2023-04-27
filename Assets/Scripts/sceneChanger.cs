@@ -41,23 +41,42 @@ public class sceneChanger : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == "TitleScreen") {
             scoreTracker.reset();
+            SceneManager.LoadScene("Beginning_1");
+        } else if (currentScene.name == "Beginning_1") {
+            // Pause music during Dog Chase Minigame
+            SceneManager.LoadScene("Beginning_2");
+            // Music.instance.GetComponent<AudioSource>().Pause();
+        } else if (currentScene.name == "Beginning_2") {
+            // Pause music during Dog Chase Minigame
             SceneManager.LoadScene("DogInstructions");
+            // Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "DogInstructions") {
             // Pause music during Dog Chase Minigame
             SceneManager.LoadScene("DogChase");
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "LoseDogGame" || currentScene.name == "WinDogGame") {
             // Play music during instructions
+            SceneManager.LoadScene("Middle_1");
+            // Music.instance.GetComponent<AudioSource>().Play();
+        } else if (currentScene.name == "Middle_1") {
+            // Pause music during Sprinkler Minigame
+            SceneManager.LoadScene("Middle_2");
+        } else if (currentScene.name == "Middle_2") {
+            // Pause music during Sprinkler Minigame
             SceneManager.LoadScene("SprinklerInstructions");
-            Music.instance.GetComponent<AudioSource>().Play();
+            Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "SprinklerInstructions") {
             // Pause music during Sprinkler Minigame
             SceneManager.LoadScene("Sprinkler-2");
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "Win" || currentScene.name == "Lose") {
             // Play music during instructions
-            SceneManager.LoadScene("MailbagInstructions");
+            SceneManager.LoadScene("End1_1");
             Music.instance.GetComponent<AudioSource>().Play();
+        } else if (currentScene.name == "End1_1") {
+            SceneManager.LoadScene("End1_2");
+        } else if (currentScene.name == "End1_2") {
+            SceneManager.LoadScene("MailbagInstructions");
         } else if (currentScene.name == "MailbagInstructions") {
             // Pause music during Mailbag Minigame
             SceneManager.LoadScene("Mailbag");
@@ -67,6 +86,8 @@ public class sceneChanger : MonoBehaviour
             SceneManager.LoadScene("ScoreScreen");
             Music.instance.GetComponent<AudioSource>().Play();
         } else if (currentScene.name == "ScoreScreen") {
+            SceneManager.LoadScene("End2");
+        } else if (currentScene.name == "End2") {
             SceneManager.LoadScene("TitleScreen");
         } else if (currentScene.name == "CreditScreen") {
             SceneManager.LoadScene("TitleScreen");
