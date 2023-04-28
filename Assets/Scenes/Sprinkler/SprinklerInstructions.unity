@@ -249,8 +249,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Spam the A and D keys to get to the mailbox! Watch out for the sprinklers!
-    \n"
+  m_text: "Alternate between the A and D keys to get to the mailbox! Watch out for
+    the sprinklers! \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f65839469ec57194a88273e2638db1c5, type: 2}
   m_sharedMaterial: {fileID: -6841993266531392055, guid: f65839469ec57194a88273e2638db1c5, type: 2}
