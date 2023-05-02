@@ -226,8 +226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26, y: 134}
-  m_SizeDelta: {x: 374.45, y: 51.18}
+  m_AnchoredPosition: {x: -2.49, y: 143.5}
+  m_SizeDelta: {x: 360.88, y: 46.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &139948089
 MonoBehaviour:
@@ -249,8 +249,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Spam the A and D keys to get to the mailbox! Watch out for the sprinklers!
-    \n"
+  m_text: "Alternate between the A and D keys to get to the mailbox! Watch out for
+    the sprinklers! \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f65839469ec57194a88273e2638db1c5, type: 2}
   m_sharedMaterial: {fileID: -6841993266531392055, guid: f65839469ec57194a88273e2638db1c5, type: 2}

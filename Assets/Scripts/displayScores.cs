@@ -117,7 +117,7 @@ public class displayScores : MonoBehaviour
         if (mail1 == 0){
             mail1 = 1;
             numMail --;
-            mailbox.text = "MAILBOX (" + numMail + ")";
+            mailbox.text = "INBOX (" + numMail + ")";
         }
         color1.highlightedColor = Color.grey;
         color1.normalColor = Color.white;
@@ -142,7 +142,7 @@ public class displayScores : MonoBehaviour
         if (mail2 == 0){
             mail2 = 1;
             numMail --;
-            mailbox.text = "MAILBOX (" + numMail + ")";
+            mailbox.text = "INBOX (" + numMail + ")";
         }
         color2.highlightedColor = Color.grey;
         color2.normalColor = Color.white;
@@ -168,7 +168,7 @@ public class displayScores : MonoBehaviour
         if (mail3 == 0){
             mail3 = 1;
             numMail --;
-            mailbox.text = "MAILBOX (" + numMail + ")";
+            mailbox.text = "INBOX (" + numMail + ")";
         }
         color3.highlightedColor = Color.grey;
         color3.normalColor = Color.white;
