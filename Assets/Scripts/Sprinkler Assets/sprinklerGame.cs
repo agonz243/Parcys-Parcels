@@ -30,6 +30,9 @@ public class sprinklerGame : MonoBehaviour
     private float hideTimerSet = 2F;
     private float hitTimerSet = 2F;
 
+    private float iFrameTimer = 1F;
+    private float iFrameTimerSet = 1F;
+
     // Flags to start / stop timers
     // private bool hideTimerRun = false;
 
@@ -54,7 +57,7 @@ public class sprinklerGame : MonoBehaviour
         private bool hide;
         private bool hit;
         private bool hitTimerRun;
-        private float hitTimer;
+        private bool iFrameTimerRun;
         private int lives;
         private bool moving;
 
@@ -73,6 +76,7 @@ public class sprinklerGame : MonoBehaviour
             hide = false;
             hit = false;
             hitTimerRun = false;
+            iFrameTimerRun = false;
             moving = false;
         }
 
@@ -111,6 +115,14 @@ public class sprinklerGame : MonoBehaviour
 
         public void setHitTimerRun(bool state){
             hitTimerRun = state;
+        }
+
+        public bool getIFrameTimerRun() {
+            return iFrameTimerRun;
+        }
+
+        public void setIFrameTimerRun(bool state) {
+            iFrameTimerRun = state;
         }
 
         public bool getHide(){
@@ -189,8 +201,15 @@ public class sprinklerGame : MonoBehaviour
         
         textDisplay();
 
-        if(myPlayer.getHit() == true){
+        if(myPlayer.getHit() == true && myPlayer.getIFrameTimerRun() == false){
             stun();
+        }
+
+        if(iFrameTimer > 0 && myPlayer.getIFrameTimerRun() == true){
+            iFrameTimer -= Time.deltaTime;
+        } else {
+            myPlayer.setIFrameTimerRun(false);
+            iFrameTimer = iFrameTimerSet;
         }
         
         if(SprinklerTimer.getTimer() > 1 && myPlayer.getPointIndex() == Points.Length){
@@ -280,6 +299,8 @@ public class sprinklerGame : MonoBehaviour
             myPlayer.setHide(false);
             brella.SetActive(false);
             hideTimer = hideTimerSet; // reset the timer
+            myPlayer.setIFrameTimerRun(true);
+            iFrameTimer = iFrameTimerSet;
             play = false;
             
         }
@@ -305,9 +326,11 @@ public class sprinklerGame : MonoBehaviour
                 hitTimer -= Time.deltaTime;
                 transform.Rotate(new Vector3(0, 0, 360) * Time.deltaTime);
                 
-            } else{
+            } else {
                 myPlayer.setHit(false);
                 myPlayer.setHitTimerRun(false);
+                myPlayer.setIFrameTimerRun(true);
+                iFrameTimer = iFrameTimerSet;
                 hitTimer = hitTimerSet;
                 dropMail = false;
             }
@@ -325,6 +348,9 @@ public class sprinklerGame : MonoBehaviour
             return;
         }
         if(myPlayer.getHit() == true){
+            return;
+        }
+        if(myPlayer.getIFrameTimerRun() == true) {
             return;
         }
         if(myPlayer.getLives() != 0){

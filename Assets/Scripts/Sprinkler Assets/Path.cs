@@ -177,7 +177,7 @@ public class Path : MonoBehaviour
         if(lives != 0){
                 lives--;
             }
-            hit = true;
-            hitTimerRun = true;
+        hit = true;
+        hitTimerRun = true;
     }
 }
