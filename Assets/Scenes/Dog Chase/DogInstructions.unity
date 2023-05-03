@@ -861,6 +861,7 @@ GameObject:
   - component: {fileID: 499906271}
   - component: {fileID: 499906270}
   - component: {fileID: 499906274}
+  - component: {fileID: 499906275}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -967,6 +968,18 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
+--- !u!114 &499906275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499906269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b20e36eed740c4499c3062c9f195b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &511791514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,6 +1500,18 @@ MonoBehaviour:
       - m_Target: {fileID: 499906274}
         m_TargetAssemblyTypeName: sceneChanger, Assembly-CSharp
         m_MethodName: Wait
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 499906275}
+        m_TargetAssemblyTypeName: sortMode, Assembly-CSharp
+        m_MethodName: customAxisOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
