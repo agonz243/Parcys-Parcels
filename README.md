@@ -2,7 +2,7 @@
 A shared repository housing code and assets for "Parcy's Parcels", a game created for UCSC's Game Design Studio II.
 
 # Game Description
-Parcy’s Parcels is a “Warioware'' and “Catch You Letter” inspired game that follows the cute little mouse mailman Parcy’s day. In a series of mini-games, Parcy tries to go through his routes to deliver mail to different houses while making time for himself. A casual feel-good game about working hard and remembering to take care of yourself. 
+Parcy’s Parcels is a "Warioware" and "Catch You Letter" inspired game that follows the cute little mouse mailman Parcy’s day. In a series of mini-games, Parcy tries to go through his routes to deliver mail to different houses while making time for himself. A casual feel-good game about working hard and remembering to take care of yourself. 
   
 ## Controls & Mechanics
 ### Dog Minigame
