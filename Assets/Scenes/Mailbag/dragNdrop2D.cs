@@ -16,7 +16,9 @@ public class dragNdrop2D : MonoBehaviour
 
     //defining for later use
     public GameObject selectedObject;
+    public SpriteRenderer spriteRen;
     Vector3 offset;
+    public bool isRotating;
 
     //here keeping track of values for testing (OLD VALUES)
     public Vector3 targetPos;
@@ -74,7 +76,7 @@ public class dragNdrop2D : MonoBehaviour
         }
     }
 
-    void Start()
+    void Start() //initialize the board COME BACK FOR SHADOWING
     {
         gridCoords = GameObject.Find("gridManager").GetComponent<gridManager>();
     }
@@ -82,45 +84,6 @@ public class dragNdrop2D : MonoBehaviour
 
     void Update()
     {
-        /*
-
-        //rotating function============================================================================================================
-        void RotateByDegreesZeroto90(GameObject wespin, Vector3 wespinAngle)
-        {
-            Vector3 zero = new Vector3(0f, 0f, 0f);
-            Vector3 ninety = new Vector3(0f, 0f, 90f);
-            Vector3 one80 = new Vector3(0f, 0f, 180f);
-            Vector3 two70 = new Vector3(0f, 0f, 270f);
-            Vector3 three60 = new Vector3(0f, 0f, 360f);
-            Vector3 rotationToAdd = new Vector3(0f, 0f, 0f);
-            if (wespinAngle.z >= zero.z && wespinAngle.z < ninety.z)
-            {
-                 rotationToAdd = new Vector3(0f, 0f, 90f); //was 45
-            }else if (wespinAngle.z >= ninety.z && wespinAngle.z < one80.z)
-            {
-                 rotationToAdd = new Vector3(0f, 0f, 180f);
-            } else if (wespinAngle.z >= one80.z && wespinAngle.z < two70.z)
-            {
-                 rotationToAdd = new Vector3(0f, 0f, 270f);
-            } else if (wespinAngle.z >= two70.z && wespinAngle.z < three60.z)
-            {
-                 rotationToAdd = new Vector3(0f, 0f, 360f);
-            }
-
-            //Vector3 rotationToAdd = new Vector3(0f, 0f, 90f); //was 45
-            //might need to take an entire vector here not just .z?
-            //need localRotation? dont think needed
-            Vector3 currentRotation = wespin.transform.eulerAngles; //see if x y or z with the values
-
-            currentRotation = new Vector3(Mathf.LerpAngle(currentRotation.x, rotationToAdd.x, Time.deltaTime),
-                Mathf.LerpAngle(currentRotation.y, rotationToAdd.y, Time.deltaTime),
-                Mathf.LerpAngle(currentRotation.z, rotationToAdd.z, Time.deltaTime));
-
-            wespin.transform.eulerAngles = currentRotation;
-        }
-
-        */
-
 
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //fetching mouse position relative to camera
         if (Input.GetMouseButtonDown(0)) //if LMB pressed
@@ -130,7 +93,7 @@ public class dragNdrop2D : MonoBehaviour
 
             //collider reference for mouse overlap on specific layer
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition, -10, 10);
-            Debug.Log("HOVERING OBJ");
+            //Debug.Log("HOVERING OBJ");
             
             //if we are overlapping (aka clicked on) with something
             if (targetObject)
@@ -143,25 +106,38 @@ public class dragNdrop2D : MonoBehaviour
                 
                 //if we clicked while overlapping w something, that is now our selected object (being held)
                 selectedObject = targetObject.transform.gameObject;
-                Debug.Log("SELECTING OBJ");
+                spriteRen = targetObject.GetComponent<SpriteRenderer>();
+               // Debug.Log("SELECTING OBJ");
                 offset = selectedObject.transform.position - mousePosition;
             }
         }
+
         if (selectedObject) //if currently holding an object with mouse click 
         {
-            Debug.Log("OBJ HELD");
+            spriteRen.sortingOrder = 90;
+            //Debug.Log("OBJ HELD");
             selectedObject.transform.position = setZ(selectedObject.transform.position, 9);
             selectedObject.transform.position = mousePosition + offset; //doing the moving PLUS OFFSET
-            if (Input.GetMouseButtonDown(1)) //if RMB pressed
+
+            //make sure to adjust the rotation call
+            if ((Mathf.Ceil(selectedObject.transform.eulerAngles.z) % 90 == 0 || Mathf.Ceil(selectedObject.transform.eulerAngles.z)  == 0))
             {
-                //doing the actual rotating, function above 
-                //Vector3 currRotash = selectedObject.transform.eulerAngles;
+                isRotating = false;
 
-                //always going to start at a rotation of zero, REMEMBER TO ZERO THIS OUT AT PICK UP TIME
-                //RotateByDegreesZeroto90(selectedObject, selectedObject.transform.eulerAngles);
+                //Debug.Log(selectedObject.transform.eulerAngles.z);
+            }
+            else
+            {
+                isRotating = true;
+                Debug.Log(selectedObject.transform.eulerAngles.z);
+            }
 
+            //if RMB pressed
+            if (Input.GetMouseButtonDown(1) && isRotating == false) 
+            {
+                //cover cases where box is currently rotating, call if not
                 StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 1.0f));
-
+                isRotating = true;
             }
 
         }
@@ -175,6 +151,8 @@ public class dragNdrop2D : MonoBehaviour
 
             var currentPos = selectedObject.transform.position; //fetch the current objects position
             
+            
+
             //taking instance of our gridManager to access the list of our vertices for each tile instantiated, using as snap points
             snapPoints = gridCoords.tilesnapXY;
             snapFncn(selectedObject, snapPoints);
@@ -190,6 +168,8 @@ public class dragNdrop2D : MonoBehaviour
                 SceneManager.LoadScene("WinPuzzleGame");
             }
 
+            //make sure to set sprite renderer back to base
+            spriteRen.sortingOrder = 0;
             //selected object set to null, no longer holding something
             selectedObject.transform.position = setZ(selectedObject.transform.position, 10);
             selectedObject = null;

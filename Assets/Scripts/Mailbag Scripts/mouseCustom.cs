@@ -28,12 +28,10 @@ public class mouseCustom : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Cursor.SetCursor(grab, hotSpotCustom, CursorMode.ForceSoftware);
-            Debug.Log(hotSpotCustom);
         }
         if (Input.GetMouseButtonUp(0))
         {
             Cursor.SetCursor(paw, hotSpotCustom, CursorMode.ForceSoftware);
-            Debug.Log(hotSpotCustom);
         }
     }
 }

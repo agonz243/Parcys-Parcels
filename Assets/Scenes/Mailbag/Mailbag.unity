@@ -200,8 +200,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2160367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.9, y: 63.1, z: 0}
-  m_LocalScale: {x: 3.5026996, y: 3.3462887, z: 2.8030565}
+  m_LocalPosition: {x: -60.3, y: 65.7, z: 0}
+  m_LocalScale: {x: 2.432183, y: 2.3235753, z: 1.946369}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -357,6 +357,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -451,6 +453,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -607,6 +611,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -891,6 +897,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -1068,6 +1076,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -1203,6 +1213,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -1547,6 +1559,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -1631,6 +1645,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -1791,6 +1807,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -1900,6 +1918,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -2123,6 +2143,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -2315,6 +2337,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -2471,6 +2495,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -2804,8 +2830,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 217, y: -211}
-  m_SizeDelta: {x: 54.663, y: 47.489}
+  m_AnchoredPosition: {x: 126, y: -121}
+  m_SizeDelta: {x: 41.315, y: 35.893}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1228668185
 MonoBehaviour:
@@ -2854,8 +2880,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2954,6 +2980,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -3110,6 +3138,8 @@ MonoBehaviour:
   snapPoints: []
   snapRange: 10
   selectedObject: {fileID: 0}
+  spriteRen: {fileID: 0}
+  isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -3519,7 +3549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573266248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1, y: 0, z: -10}
+  m_LocalPosition: {x: 33.5, y: 26.2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
