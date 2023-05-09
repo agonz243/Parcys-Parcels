@@ -321,6 +321,7 @@ public class sprinklerGame : MonoBehaviour
                 mailParticles.transform.position = new Vector3(transform.position[0], transform.position[1], -1); // set particle system position to player position
                 mailParticles.Play();
                 dropMail = true;
+                transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed()); // move player backwards after getting hit
             }
             if(hitTimer > 0){
                 hitTimer -= Time.deltaTime;
