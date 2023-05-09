@@ -14,6 +14,7 @@ public class sceneChanger : MonoBehaviour
     public float delay = 0.0f;
     public float timer;
     public bool startTimer = false;
+    public static bool canPause = false;
     
     // Set current scene variable
     private void Start() {

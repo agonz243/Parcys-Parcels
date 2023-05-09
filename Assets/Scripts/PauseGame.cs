@@ -38,7 +38,7 @@ public class PauseGame : MonoBehaviour
     void Update() 
     {
         // MUST ADD: Add setting time scale to 0 to actually pause game
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && sceneChanger.canPause) {
             pauseCanvas.SetActive(!pauseCanvas.activeInHierarchy);  
         }
     }
