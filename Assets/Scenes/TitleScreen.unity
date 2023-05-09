@@ -273,8 +273,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -806, y: 62}
-  m_SizeDelta: {x: 512.96, y: 184.99}
+  m_AnchoredPosition: {x: -850.85, y: 42.26001}
+  m_SizeDelta: {x: 338.32, y: 108.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &197598591
 AudioSource:
