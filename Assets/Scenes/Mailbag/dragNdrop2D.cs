@@ -38,9 +38,10 @@ public class dragNdrop2D : MonoBehaviour
         var toAngle = Quaternion.Euler(pckg.transform.eulerAngles + byAngles);
         for (var t = 0f; t < 1; t += Time.deltaTime / inTime)
         {
-            pckg.transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
-            yield return null;
+            pckg.transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t*2);
+            // yield return null;
         }
+        yield return null;
     }
 
     public Vector3 setZ(Vector3 vector, float z){
@@ -133,7 +134,8 @@ public class dragNdrop2D : MonoBehaviour
             }
 
             //if RMB pressed
-            if (Input.GetMouseButtonDown(1) && isRotating == false) 
+            // if (Input.GetMouseButtonDown(1) && isRotating == false) 
+            if (Input.GetMouseButtonDown(1)) 
             {
                 //cover cases where box is currently rotating, call if not
                 StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 1.0f));

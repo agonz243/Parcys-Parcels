@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2160367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -60.3, y: 65.7, z: 0}
+  m_LocalPosition: {x: -48.3, y: 64.7, z: 0}
   m_LocalScale: {x: 2.432183, y: 2.3235753, z: 1.946369}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2830,8 +2830,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126, y: -121}
-  m_SizeDelta: {x: 41.315, y: 35.893}
+  m_AnchoredPosition: {x: 129, y: -143.611}
+  m_SizeDelta: {x: 32.968, y: 35.246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1228668185
 MonoBehaviour:
@@ -4049,7 +4049,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &4164474657024787139
 Rigidbody2D:
