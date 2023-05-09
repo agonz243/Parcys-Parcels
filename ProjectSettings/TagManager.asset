@@ -75,3 +75,6 @@ TagManager:
   - name: BG-UI
     uniqueID: 2754733779
     locked: 0
+  - name: Pause Menu
+    uniqueID: 3029159681
+    locked: 0
