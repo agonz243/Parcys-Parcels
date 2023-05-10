@@ -42,6 +42,7 @@ public class sceneChanger : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == "TitleScreen") {
             scoreTracker.reset();
+            canPause = true;
             SceneManager.LoadScene("Beginning_1");
         } else if (currentScene.name == "Beginning_1") {
             // Pause music during Dog Chase Minigame
@@ -53,10 +54,12 @@ public class sceneChanger : MonoBehaviour
             // Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "DogInstructions") {
             // Pause music during Dog Chase Minigame
+            canPause = false;
             SceneManager.LoadScene("DogChase");
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "LoseDogGame" || currentScene.name == "WinDogGame") {
             // Play music during instructions
+            canPause = true;
             SceneManager.LoadScene("Middle_1");
             // Music.instance.GetComponent<AudioSource>().Play();
         } else if (currentScene.name == "Middle_1") {
@@ -68,9 +71,11 @@ public class sceneChanger : MonoBehaviour
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "SprinklerInstructions") {
             // Pause music during Sprinkler Minigame
+            canPause = false;
             SceneManager.LoadScene("Sprinkler-2");
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "Win" || currentScene.name == "Lose") {
+            canPause = true;
             // Play music during instructions
             SceneManager.LoadScene("End1_1");
             Music.instance.GetComponent<AudioSource>().Play();
@@ -79,6 +84,7 @@ public class sceneChanger : MonoBehaviour
         } else if (currentScene.name == "End1_2") {
             SceneManager.LoadScene("MailbagInstructions");
         } else if (currentScene.name == "MailbagInstructions") {
+            canPause = false;
             // Pause music during Mailbag Minigame
             SceneManager.LoadScene("Mailbag");
             Music.instance.GetComponent<AudioSource>().Pause();
