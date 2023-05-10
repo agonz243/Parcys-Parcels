@@ -49,18 +49,23 @@ public class PauseGame : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    // Changes scene to menu and performs appropriate resets
     public void GoToMenu()
     {
         // Destroy pause canvas and game object holding script
         Destroy(gameObject);
         Destroy(pauseCanvas);
 
+        Time.timeScale = 1;
         SceneManager.LoadScene("TitleScreen");
+        Music.instance.GetComponent<AudioSource>().Play();
         scoreTracker.reset();
     }
 
+    // Toggles the active state of the pause menu canvas
     public void togglePause()
     {
+        Time.timeScale = Time.timeScale == 1 ? 0 : 1;
         pauseCanvas.SetActive(!pauseCanvas.activeInHierarchy);
     }
 }
