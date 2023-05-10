@@ -20,7 +20,7 @@ public class PauseGame : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Function to be passed to sceneLoaded delegate
+    // On scene load, find main camera and assign it to canvas
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
@@ -39,7 +39,7 @@ public class PauseGame : MonoBehaviour
     {
         // MUST ADD: Add setting time scale to 0 to actually pause game
         if (Input.GetKeyDown(KeyCode.Escape) && sceneChanger.canPause) {
-            pauseCanvas.SetActive(!pauseCanvas.activeInHierarchy);  
+            togglePause();  
         }
     }
 
@@ -47,5 +47,20 @@ public class PauseGame : MonoBehaviour
     {
         Debug.Log("OnDisable");
         SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    public void GoToMenu()
+    {
+        // Destroy pause canvas and game object holding script
+        Destroy(gameObject);
+        Destroy(pauseCanvas);
+
+        SceneManager.LoadScene("TitleScreen");
+        scoreTracker.reset();
+    }
+
+    public void togglePause()
+    {
+        pauseCanvas.SetActive(!pauseCanvas.activeInHierarchy);
     }
 }

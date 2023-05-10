@@ -99,10 +99,4 @@ public class sceneChanger : MonoBehaviour
         }
         
     }
-
-    public void GoToMenu()
-    {
-        SceneManager.LoadScene("TitleScreen");
-        scoreTracker.reset();
-    }
 }
