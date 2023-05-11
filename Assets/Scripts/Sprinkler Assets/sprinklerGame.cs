@@ -22,6 +22,10 @@ public class sprinklerGame : MonoBehaviour
     // Getting timer from sprinklerTimer.cs
     sprinklerTimer SprinklerTimer;
     [SerializeField] private GameObject sTimer;
+
+    // Stuff for Stun
+    private Vector3 velocity = Vector3.zero;
+    private float smoothTime = 0.3F;
     
     // General game / scene timers
     private float hideTimer = 2F;
@@ -322,6 +326,7 @@ public class sprinklerGame : MonoBehaviour
                 mailParticles.Play();
                 dropMail = true;
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed()); // move player backwards after getting hit
+                // transform.position = Vector2.SmoothDamp(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, ref velocity, smoothTime);
             }
             if(hitTimer > 0){
                 hitTimer -= Time.deltaTime;
