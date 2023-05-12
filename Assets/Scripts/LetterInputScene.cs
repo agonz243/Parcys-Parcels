@@ -24,7 +24,6 @@ public class LetterInputScene : MonoBehaviour
     public void saveLetter() {
         letterSaved = input.text;
         // SceneManager.LoadScene("LetterOutput");
-        Debug.Log("Input: " + letterSaved);
         sceneChanger.LoadNextScene();
         // SceneManager.LoadScene("DogInstructions");
     }
