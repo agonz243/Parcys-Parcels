@@ -21,6 +21,8 @@ public class DropEnvelopes : MonoBehaviour
     private Vector3 scaleUpVec;
     private Vector3 scaleDownVec;
     private float scaleTime;
+    public float searchRadius;
+    private bool radiusCheck; // Flag used for cluster check
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,7 @@ public class DropEnvelopes : MonoBehaviour
         scaleTime = 0.0f;
         envelopes = new GameObject[envelopeCount];
         envelopeSize = envelope.GetComponent<BoxCollider2D>().size;
+        //searchRadius = 500f; // Radius to check for other envelopes (avoids clustering)
 
 
         // Calculate the min and max size of camera in world units
@@ -61,17 +64,35 @@ public class DropEnvelopes : MonoBehaviour
             // Generate random location
             Vector2 randomPos = randomVec(); 
 
-        // If an object exists at that position, regenerate a new position
-         RaycastHit2D hit = Physics2D.BoxCast(randomPos, envelopeSize, 0f, Vector2.down);
-         int debugCheck = 0;
-         while (hit.collider != null) 
-         {
-            randomPos = randomVec();
-            hit = Physics2D.Raycast(randomPos, -Vector2.up, 0f);
-            debugCheck++;
-         }
+            // Check if another envelope is within range to avoid clustering
+            radiusCheck = false;
 
-         currEnvelope.transform.position = randomPos;
+            // HEADS UP: IT'S GETTING LATE BUT TMRW YOU NEED TO ADD THIS INTO A FUNCTION AND RECALL
+            // IT WITHIN THE WHILE STATEMENT
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(randomPos, searchRadius);
+            foreach (var hitCollider in hitColliders)
+            {
+                if (hitCollider.name == "Envelope Collectable(Clone)")
+                {
+                    // if envelope is in range, radiusCheck is true
+                    Debug.Log("Envelope in range hehe");
+                    radiusCheck = true;
+                    break;
+                }
+            }
+
+            // If an object exists at that position, regenerate a new position
+            RaycastHit2D hit = Physics2D.BoxCast(randomPos, envelopeSize, 0f, Vector2.down);
+            int debugCheck = 0;
+            while (hit.collider != null || radiusCheck == true) 
+            {
+                randomPos = randomVec();
+                hit = Physics2D.Raycast(randomPos, -Vector2.up, 0f);
+                debugCheck++;
+                if (debugCheck > 5) { break; }
+            }
+
+            currEnvelope.transform.position = randomPos;
         }
     }
 
