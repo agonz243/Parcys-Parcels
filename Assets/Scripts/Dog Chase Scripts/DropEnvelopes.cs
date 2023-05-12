@@ -34,7 +34,7 @@ public class DropEnvelopes : MonoBehaviour
         scaleDownVec = new Vector3(-0.25f, -0.25f, 0.0f);
         scaleTime = 0.0f;
         envelopes = new GameObject[envelopeCount];
-        envelopeSize = envelope.GetComponent<BoxCollider2D>().size;
+        envelopeSize = envelope.GetComponent<BoxCollider2D>().bounds.size;
         //searchRadius = 500f; // Radius to check for other envelopes (avoids clustering)
 
 
@@ -65,16 +65,16 @@ public class DropEnvelopes : MonoBehaviour
             Vector2 randomPos = randomVec(); 
 
             // Check if another envelope is within range to avoid clustering
-            envelopeInRadius = checkInRadius(randomPos, searchRadius);
+            //envelopeInRadius = checkInRadius(randomPos, searchRadius);
 
             // If an object exists at that position, regenerate a new position
-            RaycastHit2D hit = Physics2D.BoxCast(randomPos, envelopeSize, 0f, Vector2.down);
+            RaycastHit2D hit = Physics2D.BoxCast(randomPos, envelopeSize, 0f, Vector2.down, 0f);
             int debugCheck = 0;
-            while (hit.collider != null || envelopeInRadius == true) 
+            while (hit.collider != null) 
             {
                 randomPos = randomVec();
-                envelopeInRadius = checkInRadius(randomPos, searchRadius);
-                hit = Physics2D.BoxCast(randomPos, envelopeSize, 0f, Vector2.down);
+                //envelopeInRadius = checkInRadius(randomPos, searchRadius);
+                hit = Physics2D.BoxCast(randomPos, envelopeSize, 0f, Vector2.down, 0f);
                 debugCheck++;
                 if (debugCheck > 20) 
                 { 
