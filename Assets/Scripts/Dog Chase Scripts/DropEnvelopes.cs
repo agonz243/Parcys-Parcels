@@ -21,6 +21,8 @@ public class DropEnvelopes : MonoBehaviour
     private Vector3 scaleUpVec;
     private Vector3 scaleDownVec;
     private float scaleTime;
+    public float searchRadius;
+    private bool envelopeInRadius; // Flag used for cluster check
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,8 @@ public class DropEnvelopes : MonoBehaviour
         scaleDownVec = new Vector3(-0.25f, -0.25f, 0.0f);
         scaleTime = 0.0f;
         envelopes = new GameObject[envelopeCount];
-        envelopeSize = envelope.GetComponent<BoxCollider2D>().size;
+        envelopeSize = envelope.GetComponent<BoxCollider2D>().bounds.size;
+        //searchRadius = 500f; // Radius to check for other envelopes (avoids clustering)
 
 
         // Calculate the min and max size of camera in world units
@@ -61,17 +64,26 @@ public class DropEnvelopes : MonoBehaviour
             // Generate random location
             Vector2 randomPos = randomVec(); 
 
-        // If an object exists at that position, regenerate a new position
-         RaycastHit2D hit = Physics2D.BoxCast(randomPos, envelopeSize, 0f, Vector2.down);
-         int debugCheck = 0;
-         while (hit.collider != null) 
-         {
-            randomPos = randomVec();
-            hit = Physics2D.Raycast(randomPos, -Vector2.up, 0f);
-            debugCheck++;
-         }
+            // Check if another envelope is within range to avoid clustering
+            //envelopeInRadius = checkInRadius(randomPos, searchRadius);
 
-         currEnvelope.transform.position = randomPos;
+            // If an object exists at that position, regenerate a new position
+            RaycastHit2D hit = Physics2D.BoxCast(randomPos, envelopeSize, 0f, Vector2.down, 0f);
+            int debugCheck = 0;
+            while (hit.collider != null) 
+            {
+                randomPos = randomVec();
+                //envelopeInRadius = checkInRadius(randomPos, searchRadius);
+                hit = Physics2D.BoxCast(randomPos, envelopeSize, 0f, Vector2.down, 0f);
+                debugCheck++;
+                if (debugCheck > 20) 
+                { 
+                    Debug.Log("Spawn limit exceeded, breaking");
+                    break; 
+                }
+            }
+
+            currEnvelope.transform.position = randomPos;
         }
     }
 
@@ -93,5 +105,23 @@ public class DropEnvelopes : MonoBehaviour
         float randomY = Random.Range(verticalMin, verticalMax);
         Vector2 randomPosition = new Vector2(randomX, randomY);
         return randomPosition;
+    }
+
+    // Checks if any envelopes exist within a radius centered around a point
+    // Returns true if there is an envelope within the radius, false otherwise
+    bool checkInRadius(Vector2 center, float radius)
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(center, radius);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.name == "Envelope Collectable(Clone)")
+            {
+                // if envelope is in range, return true
+                Debug.Log("Envelope in range hehe");
+                return true;
+            }
+        }
+
+        return false;
     }
 }
