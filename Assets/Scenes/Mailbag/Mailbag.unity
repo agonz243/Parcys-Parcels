@@ -358,6 +358,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -454,6 +455,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -612,6 +614,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -898,6 +901,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -1077,6 +1081,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -1214,6 +1219,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -1560,6 +1566,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -1646,6 +1653,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -1808,6 +1816,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -1919,6 +1928,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -2144,6 +2154,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -2338,6 +2349,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -2496,6 +2508,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -2981,6 +2994,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -3139,6 +3153,7 @@ MonoBehaviour:
   snapRange: 10
   selectedObject: {fileID: 0}
   spriteRen: {fileID: 0}
+  collidah: {fileID: 0}
   isRotating: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
@@ -3900,7 +3915,7 @@ PrefabInstance:
       objectReference: {fileID: 1526103338}
     - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: baseColor.a
-      value: 0.33333334
+      value: 0.09803922
       objectReference: {fileID: 0}
     - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: baseColor.b
@@ -3916,7 +3931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: offsetColor.a
-      value: 0.33333334
+      value: 0.09803922
       objectReference: {fileID: 0}
     - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: offsetColor.b

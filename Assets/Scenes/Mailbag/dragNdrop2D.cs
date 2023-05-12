@@ -17,6 +17,7 @@ public class dragNdrop2D : MonoBehaviour
     //defining for later use
     public GameObject selectedObject;
     public SpriteRenderer spriteRen;
+    public Collider2D collidah;
     Vector3 offset;
     public bool isRotating;
 
@@ -107,6 +108,7 @@ public class dragNdrop2D : MonoBehaviour
                 //if we clicked while overlapping w something, that is now our selected object (being held)
                 selectedObject = targetObject.transform.gameObject;
                 spriteRen = targetObject.GetComponent<SpriteRenderer>();
+                collidah = targetObject.GetComponent<Collider2D>();
                // Debug.Log("SELECTING OBJ");
                 offset = selectedObject.transform.position - mousePosition;
             }
@@ -115,7 +117,15 @@ public class dragNdrop2D : MonoBehaviour
         if (selectedObject) //if currently holding an object with mouse click 
         {
             spriteRen.sortingOrder = 90;
+            //want to adjust opacity on grab here, ADJUST for mailbag location/grid overla
+
+
+            //if()
+            //need on collision enter and on collision exit for transparencty adjust 
+            spriteRen.color = new Color(1f,1f,1f,.4f);
+
             //Debug.Log("OBJ HELD");
+
             selectedObject.transform.position = setZ(selectedObject.transform.position, 9);
             selectedObject.transform.position = mousePosition + offset; //doing the moving PLUS OFFSET
 
@@ -170,9 +180,12 @@ public class dragNdrop2D : MonoBehaviour
 
             //make sure to set sprite renderer back to base
             spriteRen.sortingOrder = 0;
+            spriteRen.color = new Color(1f,1f,1f,1f);
             //selected object set to null, no longer holding something
             selectedObject.transform.position = setZ(selectedObject.transform.position, 10);
             selectedObject = null;
+            //reset 2d collider too
+            collidah = null;
             Debug.Log("OBJ NULL");
         }
     }
