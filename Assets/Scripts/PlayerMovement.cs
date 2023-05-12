@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement; // can store horizontal and verticle
 
     private int envelopesHeld; // The amount of envelopes currently held for the dog minigame
-    private bool speedDecreased; // Speed decreased when holding more than 3 envelopes
 
     public AudioSource squeakSource;
     public AudioSource envCollectSource;
@@ -32,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
         envelopesHeld = 0;
         randomNum = Random.Range(1.0f, 6.0f);
         timer = 0.0f;
-        speedDecreased = false;
     }
 
     // Update is called once per frame
@@ -70,16 +68,12 @@ public class PlayerMovement : MonoBehaviour
 
     // COLLISION W/ SPRINKLERS
     private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.gameObject.tag == "Collectable"){
+        if(collision.gameObject.tag == "Collectable" && envelopesHeld < 3){
             envCollectSource.Play();
             Destroy(collision.gameObject);
             EnvelopeInventory envI = this.GetComponent<EnvelopeInventory>();
             envI.envelopesInInventory ++;
             envelopesHeld++;
-            if (envelopesHeld > 3){
-                moveSpeed --;
-                speedDecreased = true;
-            }
         } 
     }
 
@@ -92,10 +86,6 @@ public class PlayerMovement : MonoBehaviour
             mbc.envelopesInBox += envelopesHeld;
             envelopesHeld = 0;
             envI.envelopesInInventory = 0;
-            if (speedDecreased == true){
-                speedDecreased = false;
-                moveSpeed = 35f;
-            }
             mailboxSource.Play();
 
             if (mbc.envelopesInBox == 10){
@@ -107,7 +97,6 @@ public class PlayerMovement : MonoBehaviour
         } else if (collision.gameObject.tag == "Obstacle"){
             squeakSource.Play();
             Debug.Log("Obstacle");
-            // moveSpeed -= 1;
         }
     }
 }
