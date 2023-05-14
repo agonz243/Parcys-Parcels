@@ -24,8 +24,8 @@ public class sprinklerGame : MonoBehaviour
     [SerializeField] private GameObject sTimer;
 
     // Stuff for Stun
-    private Vector3 velocity = Vector3.zero;
-    private float smoothTime = 0.3F;
+    private Vector2 velocity = new Vector2(0,0);
+    private float smoothTime = 2F;
     
     // General game / scene timers
     private float hideTimer = 2F;
@@ -320,18 +320,20 @@ public class sprinklerGame : MonoBehaviour
     }
 
     public void stun(){
+        Debug.Log(transform.position);
+        Debug.Log(Points[myPlayer.getPrevPointIndex()].transform.position);
         if(myPlayer.getHit() == true && myPlayer.getHitTimerRun() == true){
             if(dropMail == false){
                 mailParticles.transform.position = new Vector3(transform.position[0], transform.position[1], -1); // set particle system position to player position
                 mailParticles.Play();
                 dropMail = true;
-                transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed()); // move player backwards after getting hit
+                // transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, myPlayer.getMoveSpeed()); // move player backwards after getting hit
                 // transform.position = Vector2.SmoothDamp(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, ref velocity, smoothTime);
             }
             if(hitTimer > 0){
                 hitTimer -= Time.deltaTime;
                 transform.Rotate(new Vector3(0, 0, 360) * Time.deltaTime);
-                
+                transform.position = Vector2.SmoothDamp(transform.position, Points[myPlayer.getPrevPointIndex()].transform.position, ref velocity, smoothTime);
             } else {
                 myPlayer.setHit(false);
                 myPlayer.setHitTimerRun(false);
