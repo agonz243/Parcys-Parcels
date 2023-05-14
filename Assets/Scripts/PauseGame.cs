@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseGame : MonoBehaviour
 {
     public GameObject pauseCanvas;
+    private bool currentMouseMode;
 
     void Awake()
     {
@@ -18,9 +19,11 @@ public class PauseGame : MonoBehaviour
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+
     }
 
     // On scene load, find main camera and assign it to canvas
+    // and grab cursor visibility
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
@@ -33,6 +36,9 @@ public class PauseGame : MonoBehaviour
         Canvas pCanvas;
         pCanvas = pauseCanvas.GetComponent<Canvas>();
         pCanvas.worldCamera = sceneCam;
+
+        // Grab cursor visibility
+        currentMouseMode = Cursor.visible;
     }
 
     void Update() 
@@ -47,6 +53,9 @@ public class PauseGame : MonoBehaviour
     {
         Debug.Log("OnDisable");
         SceneManager.sceneLoaded -= OnSceneLoaded;
+
+        // Set mouse visibility to what is was before pause
+        Cursor.visible = currentMouseMode;
     }
 
     // Changes scene to menu and performs appropriate resets
@@ -65,6 +74,10 @@ public class PauseGame : MonoBehaviour
     // Toggles the active state of the pause menu canvas
     public void togglePause()
     {
+        // Make cursor visible on toggle.
+        // This ensures that the mouse is always visible on the
+        // pause screen
+        Cursor.visible = true;
         Time.timeScale = Time.timeScale == 1 ? 0 : 1;
         pauseCanvas.SetActive(!pauseCanvas.activeInHierarchy);
     }
