@@ -320,8 +320,6 @@ public class sprinklerGame : MonoBehaviour
     }
 
     public void stun(){
-        Debug.Log(transform.position);
-        Debug.Log(Points[myPlayer.getPrevPointIndex()].transform.position);
         if(myPlayer.getHit() == true && myPlayer.getHitTimerRun() == true){
             if(dropMail == false){
                 mailParticles.transform.position = new Vector3(transform.position[0], transform.position[1], -1); // set particle system position to player position
