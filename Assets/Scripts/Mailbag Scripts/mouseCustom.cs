@@ -20,6 +20,9 @@ public class mouseCustom : MonoBehaviour
             hotSpot = hotSpotCustom;
         
         Cursor.SetCursor(paw, hotSpot, CursorMode.ForceSoftware);
+
+        // Don't destroy paw script for whole game
+        DontDestroyOnLoad(gameObject);
     }
 
     //want to add on click here, so do that u bum 
