@@ -60,7 +60,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ScoreScreen.unity
     guid: 9f22edd7fd32eba43b8f1f42e0b6abb4
   - enabled: 1
-    path: Assets/Scenes/SelfCareScreen.unity
+    path: Assets/Scenes/Letter Loop/Beginning_1.unity
     guid: e5aa30f82d1bb1b40bf72758c62df2d4
   - enabled: 1
     path: Assets/Scenes/CreditScreen.unity
@@ -72,30 +72,39 @@ EditorBuildSettings:
     path: Assets/Scenes/Mailbag/MailbagInstructions.unity
     guid: 8ad07b02f9e66458395292783b980fc7
   - enabled: 1
-    path: Assets/Scenes/Letter Loop/Beginning_1.unity
+    path: Assets/Scenes/Letter Loop/Beginning_2.unity
     guid: 8aa04b9a4941d4aee8822c5c44b48d67
   - enabled: 1
-    path: Assets/Scenes/Letter Loop/End1_1.unity
+    path: Assets/Scenes/Letter Loop/End1_2.unity
     guid: c29a8df955e8b4130810dec342e596ed
   - enabled: 1
-    path: Assets/Scenes/Letter Loop/End2_2.unity
+    path: Assets/Scenes/Letter Loop/End2_3.unity
     guid: 409822b900d8944b3a41e1b4d9a7c52a
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Letter Loop/Beginning_2.unity
+    path: Assets/Scenes/Letter Loop/Beginning_3.unity
     guid: 4fd55e85642514a3a91bbfb27938339b
   - enabled: 1
-    path: Assets/Scenes/Letter Loop/Middle_2.unity
+    path: Assets/Scenes/Letter Loop/Middle_3.unity
     guid: 0f6b8449581d141899c0f49ba91059ea
   - enabled: 1
-    path: Assets/Scenes/Letter Loop/Middle_1.unity
+    path: Assets/Scenes/Letter Loop/Middle_2.unity
     guid: 1fbb6e14f9e4b4e84a88893a8682ca6a
   - enabled: 1
-    path: Assets/Scenes/Letter Loop/End1_2.unity
+    path: Assets/Scenes/Letter Loop/End1_3.unity
     guid: e2b3efd1e072f477e859f36ce8b24037
   - enabled: 1
-    path: Assets/Scenes/Letter Loop/End2_1.unity
+    path: Assets/Scenes/Letter Loop/End2_2.unity
     guid: 6114e15cce65f4cf3980858dde4e84f7
+  - enabled: 1
+    path: Assets/Scenes/Letter Loop/Middle_1.unity
+    guid: 8f1038028fd02472e8b5307d30dffd70
+  - enabled: 1
+    path: Assets/Scenes/Letter Loop/End1_1.unity
+    guid: 97fd89fb904ed48669222bcac500176b
+  - enabled: 1
+    path: Assets/Scenes/Letter Loop/End2_1.unity
+    guid: 9c6ef83305d3042b38b3f63c776e3b2b
   m_configObjects: {}
