@@ -5,7 +5,9 @@ using UnityEngine.Video;
 public class cutscene : MonoBehaviour
 {
  
-     VideoPlayer video;
+    VideoPlayer video;
+
+    public sceneChanger sceneChanger;
  
     void Awake()
     {
@@ -17,6 +19,6 @@ public class cutscene : MonoBehaviour
  
      void ChangeScene(UnityEngine.Video.VideoPlayer vp)
     {
-        SceneManager.LoadScene("SprinklerInstructions");
+        sceneChanger.LoadNextScene();
     }
 }
