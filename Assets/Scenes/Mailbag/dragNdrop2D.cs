@@ -117,12 +117,6 @@ public class dragNdrop2D : MonoBehaviour
         if (selectedObject) //if currently holding an object with mouse click 
         {
             spriteRen.sortingOrder = 90;
-            //want to adjust opacity on grab here, ADJUST for mailbag location/grid overla
-
-
-            //if()
-            //need on collision enter and on collision exit for transparencty adjust 
-            spriteRen.color = new Color(1f,1f,1f,.4f);
 
             //Debug.Log("OBJ HELD");
 
@@ -180,10 +174,11 @@ public class dragNdrop2D : MonoBehaviour
 
             //make sure to set sprite renderer back to base
             spriteRen.sortingOrder = 0;
-            spriteRen.color = new Color(1f,1f,1f,1f);
+
             //selected object set to null, no longer holding something
             selectedObject.transform.position = setZ(selectedObject.transform.position, 10);
             selectedObject = null;
+
             //reset 2d collider too
             collidah = null;
             Debug.Log("OBJ NULL");
@@ -191,4 +186,19 @@ public class dragNdrop2D : MonoBehaviour
     }
 
 
+    /*
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+
+        if (coll.gameObject.tag == "Mailbox")
+        {
+            spriteRen.color = new Color(1f, 1f, 1f, .4f); //want to adjust transparency here of our package
+        }
+        if (coll.collider.gameObject.tag == "Packages")
+        {
+            //want to get the base position of package on pickup, store, and set current grabbed object to the base position on overlap
+        }
+
+    }
+    */
 }
