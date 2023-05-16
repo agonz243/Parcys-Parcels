@@ -186,19 +186,15 @@ public class dragNdrop2D : MonoBehaviour
     }
 
 
-    /*
+    
     private void OnCollisionEnter2D(Collision2D coll)
     {
 
-        if (coll.gameObject.tag == "Mailbox")
+        if (coll.collider.gameObject.tag == "Packages" && selectedObject == null)
         {
-            spriteRen.color = new Color(1f, 1f, 1f, .4f); //want to adjust transparency here of our package
-        }
-        if (coll.collider.gameObject.tag == "Packages")
-        {
-            //want to get the base position of package on pickup, store, and set current grabbed object to the base position on overlap
+           //want to set the original coords of the package where it was last set down (maybe origin set down?) could make sure it saves coords of spawn location
         }
 
     }
-    */
+    
 }
