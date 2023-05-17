@@ -26,16 +26,29 @@ public class PlayerMovement : MonoBehaviour
     public float timer;
     public float randomNum;
 
+    // Limits how many enevelopes the player can carry
+    [SerializeField] private int envelopeLimit = 4;
+
+    private int noCollisionParcyLayer;
+    private int defaultLayer = 0;
+
     void Start()
     {
         envelopesHeld = 0;
         randomNum = Random.Range(1.0f, 6.0f);
         timer = 0.0f;
+        noCollisionParcyLayer = LayerMask.NameToLayer("ParcyNoCollectable");
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (envelopesHeld >= envelopeLimit){
+            gameObject.layer = noCollisionParcyLayer;
+        } else {
+            gameObject.layer = defaultLayer;
+        }
         // not good to do physics related stuff here where framerate can change
 
         // Input
@@ -66,19 +79,17 @@ public class PlayerMovement : MonoBehaviour
         rigidBody.MovePosition(rigidBody.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 
-    // COLLISION W/ SPRINKLERS
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.gameObject.tag == "Collectable" && envelopesHeld < 3){
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if(collision.gameObject.tag == "Collectable" && envelopesHeld < envelopeLimit){
             envCollectSource.Play();
             Destroy(collision.gameObject);
             EnvelopeInventory envI = this.GetComponent<EnvelopeInventory>();
             envI.envelopesInInventory ++;
             envelopesHeld++;
         } 
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
         if (collision.gameObject.tag == "Mailbox")
         {
             mailboxCheck mbc = collision.gameObject.GetComponent<mailboxCheck>();
