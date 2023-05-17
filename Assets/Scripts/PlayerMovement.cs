@@ -59,38 +59,38 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        // changes angle of sprite based on what direction its moving
-        if(movement.x == 1 && movement.y == 1) {
-            float angle = player.transform.eulerAngles.z;
-            float rotateAngle = 315f - angle;
-            if(Mathf.Floor(angle) != 315f) {
-                player.transform.Rotate (0, 0, rotateAngle);
-            }
-        } else if (movement.x == -1 && movement.y == 1) {
-            float angle = player.transform.eulerAngles.z;
-            float rotateAngle = 45f - angle;
-            if(Mathf.Floor(angle) != 45f) {
-                player.transform.Rotate (0, 0, rotateAngle);
-            }
-        // } else if (movement.x == 1 && movement.y == -1) {
-        //     float angle = transform.eulerAngles.z;
-        //     float rotateAngle = 45f - angle;
-        //     if(Mathf.Floor(angle) != 45f) {
-        //         transform.Rotate (0, 0, rotateAngle);
-        //     }
-        // } else if (movement.x == -1 && movement.y == -1) {
-        //     float angle = transform.eulerAngles.z;
+        // // changes angle of sprite based on what direction its moving
+        // if(movement.x == 1 && movement.y == 1) {
+        //     float angle = player.transform.eulerAngles.z;
         //     float rotateAngle = 315f - angle;
         //     if(Mathf.Floor(angle) != 315f) {
-        //         transform.Rotate (0, 0, rotateAngle);
+        //         player.transform.Rotate (0, 0, rotateAngle);
         //     }
-        } else {
-            float angle = player.transform.eulerAngles.z;
-            float rotateAngle = 0f - angle;
-            if(Mathf.Floor(angle) != 0f) {
-                player.transform.Rotate (0, 0, rotateAngle);
-            }
-        }
+        // } else if (movement.x == -1 && movement.y == 1) {
+        //     float angle = player.transform.eulerAngles.z;
+        //     float rotateAngle = 45f - angle;
+        //     if(Mathf.Floor(angle) != 45f) {
+        //         player.transform.Rotate (0, 0, rotateAngle);
+        //     }
+        // // } else if (movement.x == 1 && movement.y == -1) {
+        // //     float angle = transform.eulerAngles.z;
+        // //     float rotateAngle = 45f - angle;
+        // //     if(Mathf.Floor(angle) != 45f) {
+        // //         transform.Rotate (0, 0, rotateAngle);
+        // //     }
+        // // } else if (movement.x == -1 && movement.y == -1) {
+        // //     float angle = transform.eulerAngles.z;
+        // //     float rotateAngle = 315f - angle;
+        // //     if(Mathf.Floor(angle) != 315f) {
+        // //         transform.Rotate (0, 0, rotateAngle);
+        // //     }
+        // } else {
+        //     float angle = player.transform.eulerAngles.z;
+        //     float rotateAngle = 0f - angle;
+        //     if(Mathf.Floor(angle) != 0f) {
+        //         player.transform.Rotate (0, 0, rotateAngle);
+        //     }
+        // }
 
 
         // Lines below used for changing the sprite during player movement!
