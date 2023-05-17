@@ -334,7 +334,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Pick up the fallen envelopes & avoid the dog! \n\nBut you can only hold
-    3 at a time\n\nDeliver the mail to the mailbox before time runs out!"
+    4 at a time\n\nDeliver the mail to the mailbox before time runs out!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f65839469ec57194a88273e2638db1c5, type: 2}
   m_sharedMaterial: {fileID: -6841993266531392055, guid: f65839469ec57194a88273e2638db1c5, type: 2}

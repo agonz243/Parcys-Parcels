@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: What are your strengths in relationships (kindness, empathy, etc.)?
+  m_text: How do you destress after a long day?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eb95a88fee60f4928bc7e2dfa6ea87ac, type: 2}
   m_sharedMaterial: {fileID: -3886183927755576177, guid: eb95a88fee60f4928bc7e2dfa6ea87ac, type: 2}
