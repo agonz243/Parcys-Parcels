@@ -54,6 +54,7 @@ public class DropEnvelopes : MonoBehaviour
             // Create envelope clone
             GameObject currEnvelope = Instantiate(envelope);
             envelopes[i] = currEnvelope;
+            currEnvelope.GetComponent<BoxCollider2D>().isTrigger = false;
 
             // Scale envelope to largest size
             currEnvelope.transform.localScale += scaleUpVec;
