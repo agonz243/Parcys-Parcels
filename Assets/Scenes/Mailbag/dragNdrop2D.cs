@@ -17,6 +17,7 @@ public class dragNdrop2D : MonoBehaviour
     //defining for later use
     public GameObject selectedObject;
     public SpriteRenderer spriteRen;
+    public Collider2D collidah;
     Vector3 offset;
     public bool isRotating;
 
@@ -108,6 +109,7 @@ public class dragNdrop2D : MonoBehaviour
                 //if we clicked while overlapping w something, that is now our selected object (being held)
                 selectedObject = targetObject.transform.gameObject;
                 spriteRen = targetObject.GetComponent<SpriteRenderer>();
+                collidah = targetObject.GetComponent<Collider2D>();
                // Debug.Log("SELECTING OBJ");
                 offset = selectedObject.transform.position - mousePosition;
             }
@@ -116,7 +118,9 @@ public class dragNdrop2D : MonoBehaviour
         if (selectedObject) //if currently holding an object with mouse click 
         {
             spriteRen.sortingOrder = 90;
+
             //Debug.Log("OBJ HELD");
+
             selectedObject.transform.position = setZ(selectedObject.transform.position, 9);
             selectedObject.transform.position = mousePosition + offset; //doing the moving PLUS OFFSET
 
@@ -172,12 +176,27 @@ public class dragNdrop2D : MonoBehaviour
 
             //make sure to set sprite renderer back to base
             spriteRen.sortingOrder = 0;
+
             //selected object set to null, no longer holding something
             selectedObject.transform.position = setZ(selectedObject.transform.position, 10);
             selectedObject = null;
+
+            //reset 2d collider too
+            collidah = null;
             Debug.Log("OBJ NULL");
         }
     }
 
 
+    
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+
+        if (coll.collider.gameObject.tag == "Packages" && selectedObject == null)
+        {
+           //want to set the original coords of the package where it was last set down (maybe origin set down?) could make sure it saves coords of spawn location
+        }
+
+    }
+    
 }
