@@ -9,14 +9,51 @@ public class Package : MonoBehaviour
     public bool Placed { get; private set; }
     public BoundsInt area;
 
+    [SerializeField] private SpriteRenderer rend;
+
+    [SerializeField] private GameObject pckge;
+
+    [SerializeField] public Collider2D collida;
     private void Start()
     {
+        rend = this.GetComponent<SpriteRenderer>();
+    }
+
+    #region Collision Detect
+    //here want to establish no overlap for boxes, on collision enter and exit used for tile collision transparency adjust, and box stacking check
+
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+
+        if (coll.GetComponent<Collider2D>().gameObject.tag == "Mailbox")
+        {
+            rend.color = new Color(1f, 1f, 1f, .4f); //want to adjust transparency here of our package
+        }
+        if (coll.GetComponent<Collider2D>().gameObject.tag == "Packages")
+        {
+            //want to get the base position of package on pickup, store, and set current grabbed object to the base position on overlap
+        }
 
     }
 
-    #region Build Methods
+    
+    private void OnTriggerExit2D(Collider2D coll)
+    {
 
 
+        if (coll.GetComponent<Collider2D>().gameObject.tag == "Mailbox")
+        {
+            rend.color = new Color(1f, 1f, 1f, 1f);
+        }
+
+        if (coll.GetComponent<Collider2D>().gameObject.tag == "Packages")
+        {
+
+
+        }
+
+    }
+    
 
     #endregion
 

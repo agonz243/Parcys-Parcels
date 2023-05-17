@@ -43,7 +43,7 @@ public class gridManager : MonoBehaviour
     public void MakeaDaGrid()
     {
         //loop over width
-        for(int x = 0; x < _width; x = x+10) //added 15 to x and y for increased size of tiles
+        for(int x = -10; x < _width; x = x+10) //added 10 to x and y for increased size of tiles
         {
             for(int y = 0; y < _height; y = y+10)
             {
