@@ -19,6 +19,13 @@ public class sprinklerGame : MonoBehaviour
     [SerializeField] private ParticleSystem mailParticles;
     private bool dropMail = false;
 
+    // Stuff for tracking if player is idle and should be
+    // reminded of controls
+    // How long, in seconds, player must idle before being reminded
+    [SerializeField]private static float reminderInterval = 5f;
+    private float reminderTimer = reminderInterval;
+ 
+
     // Getting timer from sprinklerTimer.cs
     sprinklerTimer SprinklerTimer;
     [SerializeField] private GameObject sTimer;
@@ -199,8 +206,13 @@ public class sprinklerGame : MonoBehaviour
     void Update()
     {
         if(myPlayer.getPointIndex() != Points.Length){
+            reminderTimer -= Time.deltaTime;
             movement();
             hide();
+        }
+
+        if (reminderTimer <= 0) {
+            Debug.Log("REMIND REMIND REMIND");
         }
         
         textDisplay();
@@ -245,12 +257,18 @@ public class sprinklerGame : MonoBehaviour
         if(myPlayer.getHide() == false && myPlayer.getHit() == false){
            // Forward Movement "A" <-- --> "D"
            if(Input.GetKeyDown(KeyCode.A) && myPlayer.getKeyAlt() == false){
+                // Reset control reminder timer
+                reminderTimer = reminderInterval;
+
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setKeyAlt(true);
                 spriteChange.ChangeSprite("u1");
                 myPlayer.setMoving(true);
                 transform.up = Points[myPlayer.getPointIndex()].transform.position - transform.position;
             } else if(Input.GetKeyDown(KeyCode.D) && myPlayer.getKeyAlt() == true){
+                // Reset control reminder timer
+                reminderTimer = reminderInterval;
+
                 transform.position = Vector2.MoveTowards(transform.position, Points[myPlayer.getPointIndex()].transform.position, myPlayer.getMoveSpeed());
                 myPlayer.setKeyAlt(false);
                 spriteChange.ChangeSprite("u2");
