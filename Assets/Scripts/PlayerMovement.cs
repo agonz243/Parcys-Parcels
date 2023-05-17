@@ -70,18 +70,18 @@ public class PlayerMovement : MonoBehaviour
             if(Mathf.Floor(angle) != 45f) {
                 transform.Rotate (0, 0, rotateAngle);
             }
-        } else if (movement.x == 1 && movement.y == -1) {
-            float angle = transform.eulerAngles.z;
-            float rotateAngle = 45f - angle;
-            if(Mathf.Floor(angle) != 45f) {
-                transform.Rotate (0, 0, rotateAngle);
-            }
-        } else if (movement.x == -1 && movement.y == -1) {
-            float angle = transform.eulerAngles.z;
-            float rotateAngle = 315f - angle;
-            if(Mathf.Floor(angle) != 315f) {
-                transform.Rotate (0, 0, rotateAngle);
-            }
+        // } else if (movement.x == 1 && movement.y == -1) {
+        //     float angle = transform.eulerAngles.z;
+        //     float rotateAngle = 45f - angle;
+        //     if(Mathf.Floor(angle) != 45f) {
+        //         transform.Rotate (0, 0, rotateAngle);
+        //     }
+        // } else if (movement.x == -1 && movement.y == -1) {
+        //     float angle = transform.eulerAngles.z;
+        //     float rotateAngle = 315f - angle;
+        //     if(Mathf.Floor(angle) != 315f) {
+        //         transform.Rotate (0, 0, rotateAngle);
+        //     }
         } else {
             float angle = transform.eulerAngles.z;
             float rotateAngle = 0f - angle;
