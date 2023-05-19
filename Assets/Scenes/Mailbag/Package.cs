@@ -53,9 +53,47 @@ public class Package : MonoBehaviour
         }
 
     }
-    
+
+
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+
+       //Debug.Log("MAkinit");
+        
+            Debug.Log("MAkinit");
+
+            if (coll.collider.gameObject.tag == "Packages")
+        {
+            //want to set the original coords of the package where it was last set down (maybe origin set down?) could make sure it saves coords of spawn location
+            Debug.Log("POGGERS");
+            //if package is being held CURRENTLY
+            //if(selectedObject == null)
+            //{
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("OHMYFGOAFWAfera");
+                //this.gameObject.transform.position = setXY(this.gameObject.transform.position, Random.Range(85, 117), Random.Range(-15, 72));
+                this.gameObject.transform.position = new Vector3(0, 0, 0);
+                //}
+                //else
+                //{
+
+                //}
+            }
+
+        }
+      
+        
+    }
 
     #endregion
 
 
+    //setting X and Y values 
+    public Vector3 setXY(Vector3 pckg, float x, float y)
+    {
+        pckg.x = x;
+        pckg.y = y;
+        return pckg;
+    }
 }
