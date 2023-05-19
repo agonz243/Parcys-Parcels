@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class DogTimer : MonoBehaviour
 {
 
-    public float totalTime = 30;
+    public float totalTime = 40;
     private float gameTimer; // timer for entire minigame
 
     [SerializeField]private TextMeshProUGUI timerText;

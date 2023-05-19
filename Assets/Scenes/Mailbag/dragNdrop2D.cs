@@ -45,6 +45,7 @@ public class dragNdrop2D : MonoBehaviour
             pckg.transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t*2);
             // yield return null;
         }
+
         yield return null;
     }
 
@@ -139,17 +140,17 @@ public class dragNdrop2D : MonoBehaviour
             selectedObject.transform.position = mousePosition + offset; //doing the moving PLUS OFFSET
 
             //make sure to adjust the rotation call
-            if ((Mathf.Ceil(selectedObject.transform.eulerAngles.z) % 90 == 0 || Mathf.Ceil(selectedObject.transform.eulerAngles.z)  == 0))
-            {
-                isRotating = false;
+            // if ((Mathf.Ceil(selectedObject.transform.eulerAngles.z) % 90 == 0 || Mathf.Ceil(selectedObject.transform.eulerAngles.z)  == 0))
+            // {
+            //     isRotating = false;
 
-                //Debug.Log(selectedObject.transform.eulerAngles.z);
-            }
-            else
-            {
-                isRotating = true;
-                Debug.Log(selectedObject.transform.eulerAngles.z);
-            }
+            //     //Debug.Log(selectedObject.transform.eulerAngles.z);
+            // }
+            // else
+            // {
+            //     isRotating = true;
+            //     Debug.Log(selectedObject.transform.eulerAngles.z);
+            // }
 
             //if RMB pressed
             // if (Input.GetMouseButtonDown(1) && isRotating == false) 
