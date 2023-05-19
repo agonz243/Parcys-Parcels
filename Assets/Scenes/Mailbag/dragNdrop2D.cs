@@ -28,11 +28,14 @@ public class dragNdrop2D : MonoBehaviour
     public int gridWidth = 104;
     public int gridHeight = 72;
 
-
     // Audio Sources
     public AudioSource clickSource;
     public AudioSource dropSource;
 
+
+
+
+    //ROTATE FUNCTION Using game time and Slerp NEEDS TWEAKING FOR FIX
     IEnumerator RotateMe(GameObject pckg, Vector3 byAngles, float inTime)
     {
         var fromAngle = pckg.transform.rotation;
@@ -46,11 +49,16 @@ public class dragNdrop2D : MonoBehaviour
         yield return null;
     }
 
+
+
+    //setting Z FNCN for layer priority and visibility
     public Vector3 setZ(Vector3 vector, float z){
         vector.z = z;
         return vector;
     }
 
+
+    //SNAP FNCN for grid and space snapping on Pckg drop
     public void snapFncn(GameObject pckg, List<Transform> ex)
     {
         //set float for snap distance limit
@@ -79,12 +87,18 @@ public class dragNdrop2D : MonoBehaviour
         }
     }
 
+
+
+
+
     void Start() //initialize the board COME BACK FOR SHADOWING
     {
         gridCoords = GameObject.Find("gridManager").GetComponent<gridManager>();
     }
 
 
+
+    //The Meat & Potatoes
     void Update()
     {
 
@@ -143,8 +157,7 @@ public class dragNdrop2D : MonoBehaviour
             if (Input.GetMouseButtonDown(1)) 
             {
                 //cover cases where box is currently rotating, call if not
-                // StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 1.0f));
-                selectedObject.transform.Rotate (0, 0, -45);
+                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 45, 1.0f));
                 isRotating = true;
             }
 
@@ -191,14 +204,6 @@ public class dragNdrop2D : MonoBehaviour
 
 
     
-    private void OnCollisionEnter2D(Collision2D coll)
-    {
-
-        if (coll.collider.gameObject.tag == "Packages" && selectedObject == null)
-        {
-           //want to set the original coords of the package where it was last set down (maybe origin set down?) could make sure it saves coords of spawn location
-        }
-
-    }
+    //Collision Detect for Package Overlap/Grid Bounding
     
 }
