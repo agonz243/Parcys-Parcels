@@ -264,7 +264,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 8933527}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -519,7 +519,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 97235117}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -825,7 +825,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 266254685}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -931,9 +931,9 @@ GameObject:
   m_Component:
   - component: {fileID: 620607924}
   - component: {fileID: 620607923}
+  - component: {fileID: 620607920}
   - component: {fileID: 620607922}
   - component: {fileID: 620607921}
-  - component: {fileID: 620607920}
   - component: {fileID: 620607925}
   m_Layer: 7
   m_Name: 1x3apples
@@ -952,7 +952,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 620607919}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -1181,7 +1181,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 631367618}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -1382,9 +1382,9 @@ GameObject:
   m_Component:
   - component: {fileID: 743492447}
   - component: {fileID: 743492446}
+  - component: {fileID: 743492443}
   - component: {fileID: 743492445}
   - component: {fileID: 743492444}
-  - component: {fileID: 743492443}
   - component: {fileID: 743492448}
   m_Layer: 7
   m_Name: 1x3string
@@ -1403,7 +1403,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 743492442}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -1560,9 +1560,9 @@ GameObject:
   m_Component:
   - component: {fileID: 755118571}
   - component: {fileID: 755118570}
+  - component: {fileID: 755118567}
   - component: {fileID: 755118569}
   - component: {fileID: 755118568}
-  - component: {fileID: 755118567}
   - component: {fileID: 755118572}
   m_Layer: 7
   m_Name: 1x3string (1)
@@ -1581,7 +1581,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 755118566}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -1921,12 +1921,12 @@ Rigidbody2D:
   m_GameObject: {fileID: 965832440}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2202,12 +2202,12 @@ Rigidbody2D:
   m_GameObject: {fileID: 1092435513}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2511,7 +2511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94.218994, y: -117.01199}
+  m_AnchoredPosition: {x: 118, y: -115}
   m_SizeDelta: {x: 39.32, y: 34.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1228668185
@@ -2635,9 +2635,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1438736604}
   - component: {fileID: 1438736603}
+  - component: {fileID: 1438736600}
   - component: {fileID: 1438736602}
   - component: {fileID: 1438736601}
-  - component: {fileID: 1438736600}
   - component: {fileID: 1438736605}
   m_Layer: 7
   m_Name: 1x3apples (1)
@@ -2656,7 +2656,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1438736599}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
