@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 // using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -32,44 +33,82 @@ public class PlayerMovement : MonoBehaviour
     private int noCollisionParcyLayer;
     private int defaultLayer = 0;
 
+    // Countdown at the beginning of the scene
+    public float countdownTimeLeft;
+    // public float countdownTotal;
+    public int beginGame;
+    [SerializeField]private TextMeshProUGUI countdownTxt;
+    public GameObject transRec;
+    public float alpha = 0.6f;//half transparency
+    private Material currentMat;
+
+    public float seconds;
+
     void Start()
     {
         envelopesHeld = 0;
         randomNum = Random.Range(1.0f, 6.0f);
         timer = 0.0f;
         noCollisionParcyLayer = LayerMask.NameToLayer("ParcyNoCollectable");
+        
+        // Countdown initializations:
+        beginGame = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (beginGame == 0){
+            countdownTimeLeft -= Time.deltaTime;
+            
+            if(countdownTimeLeft < 0) {
+                countdownTimeLeft = 0;
+                beginGame = 1;
+                countdownTxt.faceColor = new Color32(0, 0, 0, 0);
+            }
 
-        if (envelopesHeld >= envelopeLimit){
-            gameObject.layer = noCollisionParcyLayer;
+            if (seconds != Mathf.FloorToInt(countdownTimeLeft % 60)){
+                alpha -= 0.2f;
+            }
+
+            seconds = Mathf.FloorToInt(countdownTimeLeft % 60);
+
+            Debug.Log(alpha);
+
+            countdownTxt.text = string.Format("{0}", seconds);
+
+            transRec.GetComponent<SpriteRenderer>().color = new Color (0f, 0f, 0f, alpha);
+            
         } else {
-            gameObject.layer = defaultLayer;
+            if (envelopesHeld >= envelopeLimit){
+                gameObject.layer = noCollisionParcyLayer;
+            } else {
+                gameObject.layer = defaultLayer;
+            }
+            // not good to do physics related stuff here where framerate can change
+
+            // Input
+            // Might be a newer input system
+            // GetAxisRaw provides val between -1 & 1 (Left = -1) (Right = 1) (Nothing = 0)
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+
+
+            // Lines below used for changing the sprite during player movement!
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+
+            timer += Time.deltaTime;
+
+            if (timer > randomNum){
+                barkSource.Play();
+                randomNum = Random.Range(1.0f, 6.0f);
+                timer = 0.0f;
+            }
         }
-        // not good to do physics related stuff here where framerate can change
 
-        // Input
-        // Might be a newer input system
-        // GetAxisRaw provides val between -1 & 1 (Left = -1) (Right = 1) (Nothing = 0)
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-
-        // Lines below used for changing the sprite during player movement!
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-
-        timer += Time.deltaTime;
-
-        if (timer > randomNum){
-            barkSource.Play();
-            randomNum = Random.Range(1.0f, 6.0f);
-            timer = 0.0f;
-        }
+        // updateCountdown(countdownTimeLeft);
 
     }
 
@@ -110,4 +149,11 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Obstacle");
         }
     }
+
+    // void ChangeAlpha(Material mat, float alphaVal)
+    // {
+    //     Color oldColor = mat.color;
+    //     Color newColor = new Color(oldColor.r, oldColor.g, oldColor.b, alphaVal);
+    //     mat.SetColor("_Color", newColor);
+    // }
 }
