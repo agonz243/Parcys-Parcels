@@ -35,12 +35,16 @@ public class PlayerMovement : MonoBehaviour
 
     // Countdown at the beginning of the scene
     public float countdownTimeLeft;
-    // public float countdownTotal;
     public int beginGame;
     [SerializeField]private TextMeshProUGUI countdownTxt;
     public GameObject transRec;
     public float alpha = 0.6f;//half transparency
     private Material currentMat;
+
+    public GameObject dogAI;
+    public GameObject dummyDog;
+
+    public GameObject stopTime;
 
     public float seconds;
 
@@ -61,23 +65,30 @@ public class PlayerMovement : MonoBehaviour
         if (beginGame == 0){
             countdownTimeLeft -= Time.deltaTime;
             
-            if(countdownTimeLeft < 0) {
-                countdownTimeLeft = 0;
-                beginGame = 1;
-                countdownTxt.faceColor = new Color32(0, 0, 0, 0);
-            }
+            alpha -= 0.001f;
 
-            if (seconds != Mathf.FloorToInt(countdownTimeLeft % 60)){
-                alpha -= 0.2f;
-            }
+            transRec.GetComponent<SpriteRenderer>().color = new Color (0f, 0f, 0f, alpha);
 
             seconds = Mathf.FloorToInt(countdownTimeLeft % 60);
 
             Debug.Log(alpha);
 
-            countdownTxt.text = string.Format("{0}", seconds);
+            if (countdownTimeLeft < 1){
+                countdownTxt.text = string.Format("GO");
+            } else {
+                countdownTxt.text = string.Format("{0}", seconds);
+            }
 
-            transRec.GetComponent<SpriteRenderer>().color = new Color (0f, 0f, 0f, alpha);
+            if(countdownTimeLeft <= 0) {
+                countdownTimeLeft = 0;
+                countdownTxt.text = string.Format("GO");
+                countdownTxt.faceColor = new Color32(0, 0, 0, 0);
+                transRec.GetComponent<SpriteRenderer>().color = new Color (0f, 0f, 0f, 0f);
+                beginGame = 1;
+                dummyDog.SetActive(false);
+                dogAI.SetActive(true);
+                stopTime.SetActive(true);
+            }
             
         } else {
             if (envelopesHeld >= envelopeLimit){
