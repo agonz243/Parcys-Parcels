@@ -21,6 +21,8 @@ public class dragNdrop2D : MonoBehaviour
     Vector3 offset;
     public bool isRotating;
 
+    public bool PckgLap;
+
     //here keeping track of values for testing (OLD VALUES)
     public Vector3 targetPos;
     public float gridSize = 10f;
@@ -49,7 +51,13 @@ public class dragNdrop2D : MonoBehaviour
         yield return null;
     }
 
-
+    //setting X and Y values 
+    public Vector3 setXY(Vector3 pckg, float x, float y)
+    {
+        pckg.x = x;
+        pckg.y = y;
+        return pckg;
+    }
 
     //setting Z FNCN for layer priority and visibility
     public Vector3 setZ(Vector3 vector, float z){
@@ -125,7 +133,8 @@ public class dragNdrop2D : MonoBehaviour
                 selectedObject = targetObject.transform.gameObject;
                 spriteRen = targetObject.GetComponent<SpriteRenderer>();
                 collidah = targetObject.GetComponent<Collider2D>();
-               // Debug.Log("SELECTING OBJ");
+                PckgLap = targetObject.GetComponent<Package>().overlap;
+                //Debug.Log(PckgLap);
                 offset = selectedObject.transform.position - mousePosition;
             }
         }
@@ -164,11 +173,16 @@ public class dragNdrop2D : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0) && selectedObject) //LMB raised while holding movable object, aka dropping it
         {
-
+            PckgLap = selectedObject.GetComponent<Package>().overlap;
             if (!dropSource.isPlaying){
                 dropSource.Play();
             }
-
+            //Debug.Log(PckgLap);
+            if (PckgLap == true)
+            {
+                selectedObject.transform.position = setXY(selectedObject.transform.position, Random.Range(85, 117), Random.Range(-15, 72));
+                //selectedObject.GetComponent<Package>().overlap = false;
+            }
 
             var currentPos = selectedObject.transform.position; //fetch the current objects position
             
