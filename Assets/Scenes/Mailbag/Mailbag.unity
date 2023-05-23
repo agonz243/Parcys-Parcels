@@ -2751,13 +2751,6 @@ MonoBehaviour:
   cursorMode: 0
   autoCenterHotSpot: 0
   hotSpotCustom: {x: 0, y: 0}
-  countdownTimeLeft: 4
-  beginGame: 0
-  countdownTxt: {fileID: 421053480}
-  transRec: {fileID: 1501258106}
-  alpha: 0.1
-  stopTime: {fileID: 53911472}
-  seconds: 0
 --- !u!4 &1162164122
 Transform:
   m_ObjectHideFlags: 0
@@ -3822,6 +3815,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4164474657024787136}
     - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: stopTime
+      value: 
+      objectReference: {fileID: 53911472}
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: transRec
+      value: 
+      objectReference: {fileID: 1501258106}
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: highlights
       value: 
       objectReference: {fileID: 1526103338}
@@ -3842,6 +3843,10 @@ PrefabInstance:
       value: 0.6603774
       objectReference: {fileID: 0}
     - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: countdownTxt
+      value: 
+      objectReference: {fileID: 421053480}
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: offsetColor.a
       value: 0.0627451
       objectReference: {fileID: 0}
@@ -3856,6 +3861,10 @@ PrefabInstance:
     - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: offsetColor.r
       value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047423125673775449, guid: cd01fece83c2f26478b1090156095acc, type: 3}
+      propertyPath: countdownTimeLeft
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1686597765751994801, guid: cd01fece83c2f26478b1090156095acc, type: 3}
       propertyPath: m_RootOrder
