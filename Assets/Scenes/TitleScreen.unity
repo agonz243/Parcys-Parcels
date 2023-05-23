@@ -1194,6 +1194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 860124095}
   - component: {fileID: 860124094}
+  - component: {fileID: 860124096}
   m_Layer: 0
   m_Name: paw
   m_TagString: Untagged
@@ -1218,6 +1219,13 @@ MonoBehaviour:
   cursorMode: 0
   autoCenterHotSpot: 0
   hotSpotCustom: {x: 0, y: 0}
+  countdownTimeLeft: 0
+  beginGame: 0
+  countdownTxt: {fileID: 0}
+  transRec: {fileID: 0}
+  alpha: 0.1
+  stopTime: {fileID: 0}
+  seconds: 0
 --- !u!4 &860124095
 Transform:
   m_ObjectHideFlags: 0
@@ -1233,6 +1241,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &860124096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860124093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce73e2fe9090d42629598f90bcaeb6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1086990565
 GameObject:
   m_ObjectHideFlags: 0
