@@ -29,8 +29,11 @@ public class DogTimer : MonoBehaviour
 
             scoreTracker.dogTime = (totalTime % 60) - seconds;
         } else {
-            SceneManager.LoadScene("LoseDogGame");
-            Debug.Log("Testing switchin scenes");
+            if(SceneManager.GetActiveScene().name == "DogChase") {
+                SceneManager.LoadScene("LoseDogGame");
+            } else {
+                SceneManager.LoadScene("LosePuzzleGame");
+            }
         }
     }
 }
