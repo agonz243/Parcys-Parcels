@@ -101,6 +101,7 @@ public class sceneChanger : MonoBehaviour
             SceneManager.LoadScene("Middle_3");
         } else if (currentScene.name == "Middle_3") {
             // Debug.Log(MinigameRandomizer.minigameRandomizer.randomizeMinigame());
+            MinigameRandomizer.minigameRandomizer.randomizeMinigame();
             // Pause music during Sprinkler Minigame
             SceneManager.LoadScene(MinigameRandomizer.minigameRandomizer.getCurrentMinigame() + "Instructions");
             Music.instance.GetComponent<AudioSource>().Pause();
@@ -115,6 +116,7 @@ public class sceneChanger : MonoBehaviour
             SceneManager.LoadScene("End1_3");
         } else if (currentScene.name == "End1_3") {
             // Debug.Log(MinigameRandomizer.minigameRandomizer.randomizeMinigame());
+            MinigameRandomizer.minigameRandomizer.randomizeMinigame();
             SceneManager.LoadScene(MinigameRandomizer.minigameRandomizer.getCurrentMinigame() + "Instructions");
         } else if (currentScene.name == "MailbagInstructions") {
             canPause = false;
