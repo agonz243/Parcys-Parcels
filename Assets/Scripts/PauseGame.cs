@@ -26,7 +26,7 @@ public class PauseGame : MonoBehaviour
     // and grab cursor visibility
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("OnSceneLoaded: " + scene.name);
+        // Debug.Log("OnSceneLoaded: " + scene.name);
 
         // Get scene's main camera
         Camera sceneCam;
@@ -51,7 +51,7 @@ public class PauseGame : MonoBehaviour
 
     void OnDisable()
     {
-        Debug.Log("OnDisable");
+        // Debug.Log("OnDisable");
         SceneManager.sceneLoaded -= OnSceneLoaded;
 
         // Set mouse visibility to what is was before pause

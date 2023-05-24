@@ -18,7 +18,7 @@ public class layerChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Layer: " + sprite.sortingLayerName);
+        // Debug.Log("Layer: " + sprite.sortingLayerName);
         if(script.countdownTimeLeft > 0){
             sprite.sortingLayerName = "AboveBG";
         }
