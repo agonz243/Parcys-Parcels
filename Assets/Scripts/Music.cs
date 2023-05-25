@@ -40,10 +40,7 @@ public class Music : MonoBehaviour
  
     void Awake()
     {
-        Debug.Log("awake");
-        Debug.Log(instance);
         if (instance != null){ //!=
-            Debug.Log("reached");
             Destroy(gameObject);
         } else {
             instance = this;
