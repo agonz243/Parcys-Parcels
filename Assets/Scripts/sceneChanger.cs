@@ -57,9 +57,9 @@ public class sceneChanger : MonoBehaviour
             scoreTracker.reset();
             canPause = true;
             SceneManager.LoadScene("Beginning_1");
+            Music.instance.GetComponent<AudioSource>().Play();
             // Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "Beginning_1") {
-            Music.instance.GetComponent<AudioSource>().Play();
             SceneManager.LoadScene("Beginning_2");
         } else if (currentScene.name == "Beginning_2") {
             SceneManager.LoadScene("Beginning_3");
