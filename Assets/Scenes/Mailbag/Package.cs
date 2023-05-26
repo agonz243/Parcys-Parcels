@@ -9,6 +9,7 @@ public class Package : MonoBehaviour
     public bool Placed { get; private set; }
     public BoundsInt area;
     public bool overlap;
+    public bool bounds;
 
     [SerializeField] private SpriteRenderer rend;
 
@@ -62,6 +63,7 @@ public class Package : MonoBehaviour
         {
             overlap = true;
         }
+        //if statement for bounds collision
     }
 
 
