@@ -15,6 +15,7 @@ public class sceneChanger : MonoBehaviour
     public float timer;
     public bool startTimer = false;
     public static bool canPause = false;
+
     
     // Set current scene variable
     private void Start() {
@@ -109,9 +110,12 @@ public class sceneChanger : MonoBehaviour
             SceneManager.LoadScene(MinigameRandomizer.minigameRandomizer.getCurrentMinigame() + "Instructions");
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "SprinklerInstructions") {
+            // Choose randomly between sprinkler game layouts
+            string[] layouts = {"Sprinkler-2", "Sprinkler-3"};
+
             // Pause music during Sprinkler Minigame
             canPause = false;
-            SceneManager.LoadScene("Sprinkler-2");
+            SceneManager.LoadScene(layouts[Random.Range(0,layouts.Length)]);
             // Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "End1_1") {
             SceneManager.LoadScene("End1_2");
