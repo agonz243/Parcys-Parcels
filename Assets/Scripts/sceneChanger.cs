@@ -136,7 +136,7 @@ public class sceneChanger : MonoBehaviour
 
         } else if (currentScene.name == "CreditScreen") {
             SceneManager.LoadScene("TitleScreen");
-            Music.instance.GetComponent<AudioSource>().Pause();
+            // Music.instance.GetComponent<AudioSource>().Pause();
         } else { 
             Debug.Log("Loading nothing :(");
         }
@@ -201,7 +201,7 @@ public class sceneChanger : MonoBehaviour
             Music.instance.GetComponent<AudioSource>().Pause();
             SceneManager.LoadScene("TitleScreen");
         } else if (currentScene.name == "CreditScreen") {
-            Music.instance.GetComponent<AudioSource>().Pause();
+            // Music.instance.GetComponent<AudioSource>().Pause();
             SceneManager.LoadScene("TitleScreen");
         } else { 
             Debug.Log("Loading nothing :("); 
