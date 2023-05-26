@@ -22,6 +22,7 @@ public class dragNdrop2D : MonoBehaviour
     public bool isRotating;
 
     public bool PckgLap;
+    public bool Bounding; 
 
     //here keeping track of values for testing (OLD VALUES)
     public Vector3 targetPos;
@@ -133,7 +134,7 @@ public class dragNdrop2D : MonoBehaviour
                 selectedObject = targetObject.transform.gameObject;
                 spriteRen = targetObject.GetComponent<SpriteRenderer>();
                 collidah = targetObject.GetComponent<Collider2D>();
-                PckgLap = targetObject.GetComponent<Package>().overlap;
+                //PckgLap = targetObject.GetComponent<Package>().overlap;
                 //Debug.Log(PckgLap);
                 offset = selectedObject.transform.position - mousePosition;
             }
@@ -174,11 +175,18 @@ public class dragNdrop2D : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && selectedObject) //LMB raised while holding movable object, aka dropping it
         {
             PckgLap = selectedObject.GetComponent<Package>().overlap;
+            Bounding = selectedObject.GetComponent<Package>().bounds;
             if (!dropSource.isPlaying){
                 dropSource.Play();
             }
             //Debug.Log(PckgLap);
             if (PckgLap == true)
+            {
+                selectedObject.transform.position = setXY(selectedObject.transform.position, Random.Range(85, 117), Random.Range(-15, 72));
+                //selectedObject.GetComponent<Package>().overlap = false;
+            }
+
+            if (Bounding == true)
             {
                 selectedObject.transform.position = setXY(selectedObject.transform.position, Random.Range(85, 117), Random.Range(-15, 72));
                 //selectedObject.GetComponent<Package>().overlap = false;
