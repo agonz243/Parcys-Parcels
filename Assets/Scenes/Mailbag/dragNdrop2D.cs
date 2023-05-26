@@ -180,17 +180,17 @@ public class dragNdrop2D : MonoBehaviour
                 dropSource.Play();
             }
             //Debug.Log(PckgLap);
-            if (PckgLap == true)
+            if (PckgLap == true || Bounding == true)
             {
                 selectedObject.transform.position = setXY(selectedObject.transform.position, Random.Range(85, 117), Random.Range(-15, 72));
                 //selectedObject.GetComponent<Package>().overlap = false;
             }
 
-            if (Bounding == true)
-            {
-                selectedObject.transform.position = setXY(selectedObject.transform.position, Random.Range(85, 117), Random.Range(-15, 72));
+            //if (Bounding == true)
+            //{
+                //selectedObject.transform.position = setXY(selectedObject.transform.position, Random.Range(85, 117), Random.Range(-15, 72));
                 //selectedObject.GetComponent<Package>().overlap = false;
-            }
+            //}
 
             var currentPos = selectedObject.transform.position; //fetch the current objects position
             
