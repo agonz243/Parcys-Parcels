@@ -383,7 +383,7 @@ public class sprinklerGame : MonoBehaviour
             myPlayer.setIFrameTimerRun(true);
             iFrameTimer = iFrameTimerSet;
             play = false;
-            
+            scoreTracker.umbrellaUse++;
         }
 
         // Hide Funcionality

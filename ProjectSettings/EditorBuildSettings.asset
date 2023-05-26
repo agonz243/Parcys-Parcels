@@ -107,4 +107,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Letter Loop/End1_2.unity
     guid: ee675fb843c9a4e2c8e1f0a3a2e0df17
+  - enabled: 1
+    path: Assets/Scenes/Letter Loop/Beginning_4.unity
+    guid: eacf3239233dc4f608b761b45e05c03b
+  - enabled: 1
+    path: Assets/Scenes/Letter Loop/End1_4.unity
+    guid: d14fd6f89c0b2466ea8bb66de31e7963
+  - enabled: 1
+    path: Assets/Scenes/Letter Loop/Middle_4.unity
+    guid: 722bd312161d5466ba56a09778e228ff
   m_configObjects: {}
