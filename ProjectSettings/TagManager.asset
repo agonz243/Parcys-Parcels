@@ -11,6 +11,7 @@ TagManager:
   - BGMusic
   - Packages
   - Tile/Grid
+  - Bounds
   layers:
   - Default
   - TransparentFX

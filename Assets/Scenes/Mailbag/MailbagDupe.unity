@@ -278,6 +278,7 @@ MonoBehaviour:
   collidah: {fileID: 0}
   isRotating: 0
   PckgLap: 0
+  Bounding: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -313,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 53911474}
-  - component: {fileID: 53911475}
+  - component: {fileID: 53911473}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -321,6 +322,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &53911473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53911472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b37a36fd6df1c46338bb451ba2e9ae68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalTime: 40
+  timerText: {fileID: 1228668185}
 --- !u!4 &53911474
 Transform:
   m_ObjectHideFlags: 0
@@ -336,20 +351,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &53911475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53911472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18f43031ee75fb747845d1937345d649, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalTime: 40
-  timerText: {fileID: 1228668185}
 --- !u!1 &85102642
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +444,7 @@ MonoBehaviour:
   collidah: {fileID: 0}
   isRotating: 0
   PckgLap: 0
+  Bounding: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -752,6 +754,7 @@ MonoBehaviour:
   collidah: {fileID: 0}
   isRotating: 0
   PckgLap: 0
+  Bounding: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -1089,6 +1092,7 @@ MonoBehaviour:
   collidah: {fileID: 0}
   isRotating: 0
   PckgLap: 0
+  Bounding: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -1249,6 +1253,7 @@ MonoBehaviour:
   collidah: {fileID: 0}
   isRotating: 0
   PckgLap: 0
+  Bounding: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -1546,6 +1551,7 @@ MonoBehaviour:
   collidah: {fileID: 0}
   isRotating: 0
   PckgLap: 0
+  Bounding: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -1727,6 +1733,7 @@ MonoBehaviour:
   collidah: {fileID: 0}
   isRotating: 0
   PckgLap: 0
+  Bounding: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -2173,6 +2180,7 @@ MonoBehaviour:
   collidah: {fileID: 0}
   isRotating: 0
   PckgLap: 0
+  Bounding: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -2653,6 +2661,7 @@ MonoBehaviour:
   collidah: {fileID: 0}
   isRotating: 0
   PckgLap: 0
+  Bounding: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -3182,6 +3191,7 @@ MonoBehaviour:
   collidah: {fileID: 0}
   isRotating: 0
   PckgLap: 0
+  Bounding: 0
   targetPos: {x: 0, y: 0, z: 0}
   gridSize: 10
   gridWidth: 104
@@ -4045,7 +4055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1613.2, y: -299.5}
+  m_AnchoredPosition: {x: -2157, y: -993}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2051145610

@@ -92,4 +92,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Letter Loop/Middle_4.unity
     guid: 722bd312161d5466ba56a09778e228ff
+  - enabled: 1
+    path: Assets/Scenes/Sprinkler/Sprinkler-3.unity
+    guid: b0c6992e1b9315a479b40fe3d68bb23f
   m_configObjects: {}
