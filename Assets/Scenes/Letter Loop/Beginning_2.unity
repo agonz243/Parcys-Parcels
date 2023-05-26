@@ -1255,13 +1255,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1129846879}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bba9530033546426bb71ffad9e9c4704, type: 3}
+  m_Script: {fileID: 11500000, guid: 59720d3e89b5c4319a06fad421e72953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textboxes:
-  - {fileID: 266691000}
-  - {fileID: 1323011491}
-  - {fileID: 1754202935}
+  objects:
+  - {fileID: 266690998}
+  - {fileID: 1323011489}
+  - {fileID: 1754202933}
   sceneChanger: {fileID: 1264861326}
 --- !u!1 &1264861321
 GameObject:
