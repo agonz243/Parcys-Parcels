@@ -122,9 +122,11 @@ public class sceneChanger : MonoBehaviour
             SceneManager.LoadScene(MinigameRandomizer.minigameRandomizer.getCurrentMinigame() + "Instructions");
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "MailbagInstructions") {
+            // Array of possible layouts
+            string[] layouts = {"Mailbag", "MailbagDupe"};
             canPause = false;
             // Pause music during Mailbag Minigame
-            SceneManager.LoadScene("Mailbag");
+            SceneManager.LoadScene(layouts[Random.Range(0,layouts.Length)]);
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "End2_1") {
             SceneManager.LoadScene("End2_2");
