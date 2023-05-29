@@ -22,6 +22,6 @@ public class floatyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(startX + Mathf.Sin(Time.time * speed) * floatRange / 2.0f, startY, startZ);
+        transform.position = new Vector3(startX + Mathf.Sin(Time.time * speed) * floatRange / 2.0f, startY - Mathf.Sin(Time.time * speed) * floatRange / 2.0f, startZ);
     }
 }
