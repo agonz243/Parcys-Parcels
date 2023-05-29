@@ -1,23 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class EnvelopeInventory : MonoBehaviour
 {   
     [HideInInspector]
     public int envelopesInInventory;
-    public TextMeshProUGUI envelopesCount;
+    public Sprite[] envelopeIndicatorSprites;
+    public GameObject envelopeIndicator;
+    private SpriteRenderer indicatorSprite;
     
     // Start is called before the first frame update
     void Start()
     {
         envelopesInInventory = 0;
+        indicatorSprite = envelopeIndicator.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        envelopesCount.text = envelopesInInventory.ToString();
+         indicatorSprite.sprite = envelopeIndicatorSprites[envelopesInInventory];
     }
 }
