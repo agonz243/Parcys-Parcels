@@ -9,6 +9,8 @@ public class EnvelopeInventory : MonoBehaviour
     public Sprite[] envelopeIndicatorSprites;
     public GameObject envelopeIndicator;
     private SpriteRenderer indicatorSprite;
+
+    public GameObject mailboxArrow; // Arrow to highlight mailbox
     
     // Start is called before the first frame update
     void Start()
@@ -21,5 +23,12 @@ public class EnvelopeInventory : MonoBehaviour
     void Update()
     {
          indicatorSprite.sprite = envelopeIndicatorSprites[envelopesInInventory];
+
+         if (envelopesInInventory == 4)
+         {
+            mailboxArrow.SetActive(true);
+         } else {
+            mailboxArrow.SetActive(false);
+         }
     }
 }
