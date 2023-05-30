@@ -20,10 +20,15 @@ public class StatDisplayer : MonoBehaviour
     public Sprite mailbagWin;
     public Sprite mailbagLose;
 
+    public Sprite frogWin;
+    public Sprite frogLose;
+
     // Photos
     public SpriteRenderer dogPhoto;
     public SpriteRenderer sprinklerPhoto;
     public SpriteRenderer mailbagPhoto;
+    
+    public SpriteRenderer frogStationery;
 
     // Start is called before the first frame update
     void Start()
@@ -40,9 +45,11 @@ public class StatDisplayer : MonoBehaviour
         if (scoreTracker.sprinklerWin) {
             time2.text = "Sprinklers work hard but I work harder" + Environment.NewLine + "I got the job done in " + scoreTracker.sprinklerTime + " seconds and only used my umbrella " + scoreTracker.umbrellaUse + " times! ";
             sprinklerPhoto.sprite = sprinklerWin;
+            frogStationery.sprite = frogWin;
         } else {
             time2.text = "I really wasn’t ready to audition for Catworld Ninja Warrior ...my hat felt wet like soggy stream-water socks!";
             sprinklerPhoto.sprite = sprinklerLose;
+            frogStationery.sprite = frogLose;
         }
 
         if (scoreTracker.mailbagWin) {
