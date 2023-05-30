@@ -410,8 +410,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116, y: -363}
-  m_SizeDelta: {x: 1195.66, y: 1455.57}
+  m_AnchoredPosition: {x: -116, y: 33.331}
+  m_SizeDelta: {x: 1195.7, y: 662.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266691000
 MonoBehaviour:
@@ -433,14 +433,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "heya penpal!!\n\n8:> <- that\u2019s me haha! do you see it? the 8 is my
-    big ol\u2019 ears\u2026  sorry, that was silly. even though I love getting to
-    write to new pals, the first letter is always the hardest! anyway, I\u2019m so
-    glad to start this new penpalship with you! \n\nyou already know my name is Parcy,
-    but there\u2019s lots more to me (and you!) than names! let\u2019s start small:
-    I\u2019m your friendly neighborhood mailmouse! I like to eat cheese, sleep, and
-    I\u2019ve recently started scrapbooking so I can make, cherish, and relive good
-    memories. \n"
+  m_text: "Hey, New Penpal!!\n\n8:> <- it\u2019s me, Parcy! do you see it? the 8
+    is my big ol\u2019 ears\u2026  sorry, that was silly. even though I love getting
+    to write to new pals, the first letter is always the hardest! \n\nAnyway, you
+    already know my name is Parcy, but there\u2019s lots more to me (and you!) than
+    names! let\u2019s start small: I\u2019m your friendly neighborhood mailmouse!
+    I like to eat cheese, sleep, and I\u2019ve recently started scrapbooking so I
+    can make, cherish, and relive good memories. I was hoping you might like to join
+    in, so I\u2019ve included some stationery to make it a little more fun and easy
+    to begin! "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 465bb432784e047828cf1b7f7603b34c, type: 2}
   m_sharedMaterial: {fileID: -4872268693370171346, guid: 465bb432784e047828cf1b7f7603b34c, type: 2}
@@ -862,7 +863,6 @@ MonoBehaviour:
   objects:
   - {fileID: 266690998}
   - {fileID: 1323011489}
-  - {fileID: 1754202933}
   sceneChanger: {fileID: 1264861326}
 --- !u!1 &1264861321
 GameObject:
@@ -960,7 +960,6 @@ RectTransform:
   - {fileID: 706168723}
   - {fileID: 266690999}
   - {fileID: 1323011490}
-  - {fileID: 1754202934}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1042,14 +1041,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "I was hoping you might like to embark on a scrapbooking journey together,
-    so I thought I\u2019d start you off with some stationery to make it a little
-    more fun and easy to begin! I didn\u2019t want to choose a whole scrapbook itself
-    for you, since the size and theme can change a lot about how you use it (like
-    how the pages of mine are printed to look like big ol\u2019 slices of CHEESE)
-    so I\u2019ll leave that decision up to you! \n\nThanks for letting me write your
-    ear off ;D I\u2019ve got to head to bed now so I can get up in time for work.
-    Is that something you ever struggle with? \n"
+  m_text: "Thanks for letting me write your ear off ;D I\u2019ve got to head to bed
+    now so I\u2019m ready for work. Is that something you ever struggle with? I\u2019d
+    love to know how you might motivate yourself to get out of bed :) \n\nHaving
+    a little fig jam with my classic gouda cheese breakfast often does the trick
+    for me 8;>\n\nAnyway, it was lovely writing this letter, and I couldn\u2019t
+    be more excited to hear back!\n\nTake care,\n8:* Parcy\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 465bb432784e047828cf1b7f7603b34c, type: 2}
   m_sharedMaterial: {fileID: -4872268693370171346, guid: 465bb432784e047828cf1b7f7603b34c, type: 2}
@@ -1210,144 +1207,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1754202933
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1754202934}
-  - component: {fileID: 1754202936}
-  - component: {fileID: 1754202935}
-  m_Layer: 5
-  m_Name: Page3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1754202934
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754202933}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1264861325}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -124.38999, y: -363}
-  m_SizeDelta: {x: 1178.87, y: 1455.57}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1754202935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754202933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: "You might not be a morning person (I certainly am not !) but I\u2019d
-    love to know how you might motivate yourself to get out of bed and get ready
-    for the day, especially anything you might do to break monotony or start off
-    on the right foot :) Having a little fig jam with my classic gouda cheese breakfast
-    often does the trick for me 8;>\n\nAnyway, it was lovely getting to write this
-    letter, and I couldn\u2019t be more excited to receive your response!\n\nTake
-    care and good night,\n8:* Parcy\n"
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 465bb432784e047828cf1b7f7603b34c, type: 2}
-  m_sharedMaterial: {fileID: -4872268693370171346, guid: 465bb432784e047828cf1b7f7603b34c, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4280775624
-  m_fontColor: {r: 0.7830189, g: 0.45209885, b: 0.15143289, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 44
-  m_fontSizeBase: 44
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 22.223083, z: 0, w: 1.4845581}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1754202936
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754202933}
-  m_CullTransparentMesh: 1
