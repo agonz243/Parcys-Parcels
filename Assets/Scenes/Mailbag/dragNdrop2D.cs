@@ -169,6 +169,10 @@ public class dragNdrop2D : MonoBehaviour
                 //cover cases where box is currently rotating, call if not
                 StartCoroutine(RotateMe(selectedObject, Vector3.forward * 45, 1.0f));
                 isRotating = true;
+            } else if (Input.GetKeyDown("space")){
+                //cover cases where box is currently rotating, call if not
+                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 45, 1.0f));
+                isRotating = true;
             }
 
         }

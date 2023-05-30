@@ -85,6 +85,10 @@ public class Tile : MonoBehaviour
                 stopTime.SetActive(true);
             }
 
+            Cursor.visible = false;
+
+        } else {
+            Cursor.visible = true;
         }
     }
 
