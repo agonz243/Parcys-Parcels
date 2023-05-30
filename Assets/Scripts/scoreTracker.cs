@@ -15,6 +15,8 @@ public static class scoreTracker
     public static bool sprinklerWin = false;
     public static bool mailbagWin = false;
 
+    public static string firstMinigame = "";
+
 
     public static void reset()
     {

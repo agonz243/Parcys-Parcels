@@ -68,6 +68,7 @@ public class sceneChanger : MonoBehaviour
         } else if (currentScene.name == "Beginning_4") {
             // picks random minigame and removes it from array
             MinigameRandomizer.minigameRandomizer.randomizeMinigame();
+            scoreTracker.firstMinigame = MinigameRandomizer.minigameRandomizer.getCurrentMinigame();
             // Pause music during Dog Chase Minigame
             SceneManager.LoadScene(MinigameRandomizer.minigameRandomizer.getCurrentMinigame() + "Instructions");
             Music.instance.GetComponent<AudioSource>().Pause();
