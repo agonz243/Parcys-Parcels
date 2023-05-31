@@ -8374,11 +8374,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   envelopesInInventory: 0
   envelopeIndicatorSprites:
-  - {fileID: 21300000, guid: b4dc3eb0c1ca96e49a5db1d8de6dac45, type: 3}
-  - {fileID: 21300000, guid: 4e907e8fd7fb75149adb942c9cf3a5c3, type: 3}
-  - {fileID: 21300000, guid: bcf96fc3356cd2e479a052436c46e76f, type: 3}
-  - {fileID: 21300000, guid: 4fe0196cfdf7ce148978a82b197d193b, type: 3}
-  - {fileID: 21300000, guid: 4fe0196cfdf7ce148978a82b197d193b, type: 3}
+  - {fileID: 21300000, guid: 4273572bfd1dea2479dee76716d2e5fe, type: 3}
+  - {fileID: 21300000, guid: a4b2fdf26e752ea4d906593dfeaa1010, type: 3}
+  - {fileID: 21300000, guid: f3bfcf21f884b4046a0b7155f1bdeb52, type: 3}
+  - {fileID: 21300000, guid: f51cd16bbe71a7d4db02694542528afc, type: 3}
+  - {fileID: 21300000, guid: f11ae51e439f2b641b62be20c70c6e3c, type: 3}
   envelopeIndicator: {fileID: 2136393746}
   mailboxArrow: {fileID: 2087738412}
 --- !u!70 &850454279
@@ -13096,12 +13096,12 @@ SpriteRenderer:
   m_SortingLayerID: -1540233517
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b4dc3eb0c1ca96e49a5db1d8de6dac45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4273572bfd1dea2479dee76716d2e5fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.83137256}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6, y: 5}
+  m_Size: {x: 6.5, y: 5.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -13115,8 +13115,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136393746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -847, y: -423, z: -861.26355}
-  m_LocalScale: {x: 39.72049, y: 39.72049, z: 39.72049}
+  m_LocalPosition: {x: -869, y: -423, z: -861.26355}
+  m_LocalScale: {x: 34.45435, y: 34.45435, z: 34.45435}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1498201485}
