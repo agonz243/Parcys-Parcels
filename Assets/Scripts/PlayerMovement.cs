@@ -34,18 +34,13 @@ public class PlayerMovement : MonoBehaviour
     private int defaultLayer = 0;
 
     public GameObject player;
+    // public CountdownDog countdown;
 
     // Countdown at the beginning of the scene
-    public float countdownTimeLeft;
-    public int beginGame;
-    [SerializeField]private TextMeshProUGUI countdownTxt;
-    public GameObject transRec;
-    public float alpha = 0.1f;//half transparency
-    private Material currentMat;
     public GameObject dogAI;
     public GameObject dummyDog;
-    public GameObject stopTime;
-    public float seconds;
+
+    private bool gameStart;
 
     void Start()
     {
@@ -54,60 +49,21 @@ public class PlayerMovement : MonoBehaviour
         timer = 0.0f;
         noCollisionParcyLayer = LayerMask.NameToLayer("ParcyNoCollectable");
 
-        beginGame = 0;
+        gameStart = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (beginGame == 0){
-            countdownTimeLeft -= Time.deltaTime;
-            alpha -= 0.001f;
-
-            transRec.GetComponent<SpriteRenderer>().color = new Color (0f, 0f, 0f, alpha);
-
-            if (seconds != Mathf.FloorToInt(countdownTimeLeft % 60)){
-                squeakSource.Play();
-            }
-
-            seconds = Mathf.FloorToInt(countdownTimeLeft % 60);
-
-            // Debug.Log(alpha);
-
-            if (countdownTimeLeft < 1){
-                countdownTxt.outlineColor = new Color (0.12f, 0.48f, 0.16f, 1f); // dark green outline
-                countdownTxt.faceColor = new Color (0f, 1f, 0f, 1f); // green font
-                countdownTxt.text = string.Format("GO!");
-            } else if (countdownTimeLeft < 2){
-                countdownTxt.outlineColor = new Color (1f, 0.67f, 0.04f, 1f); // dark yellow outline
-                countdownTxt.faceColor = new Color (1f, 0.78f, 0.31f, 1f); // yellow font
-                countdownTxt.text = string.Format("{0}", seconds);
-            } else if (countdownTimeLeft < 3) {
-                countdownTxt.outlineColor = new Color (0.91f, 0.45f, 0.30f, 1f); // dark orange outline
-                countdownTxt.faceColor = new Color(1.0f, 0.64f, 0.0f, 1f); // orange font
-                countdownTxt.text = string.Format("{0}", seconds);
-            } else if (countdownTimeLeft < 4) {
-                // countdownTxt.outlineColor = new Color (0.51f, 0.20f, 0.25f, 1f); // dark red outline
-                countdownTxt.outlineColor = new Color (0.47f, 0.09f, 0.15f, 1f); // dark red outline
-                countdownTxt.faceColor = new Color (0.66f, 0.14f, 0.21f, 1f); // red font
-                countdownTxt.text = string.Format("{0}", seconds);
-            }
-
-            if(countdownTimeLeft <= 0) {
-                countdownTimeLeft = 0;
-                // countdownTxt.text = string.Format("GO!");
-                countdownTxt.faceColor = new Color32(0, 0, 0, 0);
-                countdownTxt.outlineWidth = 0.0f;
-                countdownTxt.outlineColor = new Color32(0, 0, 0, 0);
-                transRec.GetComponent<SpriteRenderer>().color = new Color (0f, 0f, 0f, 0f);
-                beginGame = 1;
+        if (!Countdown.counting){
+            if (!gameStart) {
                 dummyDog.SetActive(false);
                 dogAI.SetActive(true);
-                stopTime.SetActive(true);
                 barkSource.Play();
+                gameStart = true;
             }
+            
 
-        } else {
             if (envelopesHeld >= envelopeLimit){
                 gameObject.layer = noCollisionParcyLayer;
             } else {

@@ -84,6 +84,7 @@ public class sceneChanger : MonoBehaviour
                 Music.instance.GetComponent<AudioSource>().Play();
             } else if (MinigameRandomizer.minigameRandomizer.getMinigameCount() == 2) {
                 // Play music during instructions
+                canPause = true;
                 SceneManager.LoadScene("End1_1");
                 Music.instance.GetComponent<AudioSource>().Play();
             } else if (MinigameRandomizer.minigameRandomizer.getMinigameCount() == 3) {

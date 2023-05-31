@@ -8421,15 +8421,8 @@ MonoBehaviour:
   randomNum: 0
   envelopeLimit: 4
   player: {fileID: 230225062}
-  countdownTimeLeft: 4
-  beginGame: 0
-  countdownTxt: {fileID: 1083241734}
-  transRec: {fileID: 1566045330}
-  alpha: 0.1
   dogAI: {fileID: 990331195}
   dummyDog: {fileID: 1845373749}
-  stopTime: {fileID: 521411523}
-  seconds: 0
 --- !u!50 &850454276
 Rigidbody2D:
   serializedVersion: 4
@@ -8571,6 +8564,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &985871195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 985871197}
+  - component: {fileID: 985871196}
+  m_Layer: 0
+  m_Name: Countdown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &985871196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985871195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e09be1d43734403986b913db750e26b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squeakSource: {fileID: 1128558302}
+  countdownTimeLeft: 4
+  beginGame: 0
+  countdownTxt: {fileID: 1083241734}
+  transRec: {fileID: 1566045330}
+  alpha: 0.1
+  stopTime: {fileID: 521411523}
+  seconds: 0
+--- !u!4 &985871197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985871195}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.2, z: 0}
+  m_LocalScale: {x: 219.35114, y: 128.80746, z: 117.62}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &990331195
 GameObject:
@@ -9330,7 +9375,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1264312736
 GameObject:
@@ -10839,7 +10884,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1613438239
 GameObject:
