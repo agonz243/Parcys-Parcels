@@ -19,7 +19,7 @@ public class layerChange : MonoBehaviour
     void Update()
     {
         // Debug.Log("Layer: " + sprite.sortingLayerName);
-        if(script.countdownTimeLeft > 0){
+        if(Countdown.counting){
             sprite.sortingLayerName = "AboveBG";
         }
         else if(script.myPlayer.getPointIndex() > 10){
