@@ -7,12 +7,20 @@ public class PauseGame : MonoBehaviour
 {
     public GameObject pauseCanvas;
     private bool currentMouseMode;
+    private static PauseGame pauseSingleton = null;
 
     void Awake()
     {
-        // Retain pause screen canvas and pause controller
-        DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(pauseCanvas);
+        if (pauseSingleton == null) {
+            pauseSingleton = this;
+            // Retain pause screen canvas and pause controller
+            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(pauseCanvas);
+        } else {
+            Destroy(gameObject);
+            Destroy(pauseCanvas);
+        }
+
     }
 
     // On enable, subscribe to event listener that tracks scene loads
@@ -26,8 +34,6 @@ public class PauseGame : MonoBehaviour
     // and grab cursor visibility
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Debug.Log("OnSceneLoaded: " + scene.name);
-
         // Get scene's main camera
         Camera sceneCam;
         sceneCam = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -53,22 +59,20 @@ public class PauseGame : MonoBehaviour
     {
         // Debug.Log("OnDisable");
         SceneManager.sceneLoaded -= OnSceneLoaded;
-
-        // Set mouse visibility to what is was before pause
-        Cursor.visible = currentMouseMode;
     }
 
     // Changes scene to menu and performs appropriate resets
     public void GoToMenu()
     {
-        // Destroy pause canvas and game object holding script
-        Destroy(gameObject);
-        Destroy(pauseCanvas);
+        // Cleanup
+        currentMouseMode = true;
+        togglePause(); // Unpause game
+        sceneChanger.canPause = false; // Make sure pause is still disabled on title
+        Time.timeScale = 1; // Reset time scale 
 
-        Time.timeScale = 1;
         SceneManager.LoadScene("TitleScreen");
         Music.instance.GetComponent<AudioSource>().Play();
-        scoreTracker.reset();
+        scoreTracker.reset(); // Reset tracked scores
     }
 
     // Toggles the active state of the pause menu canvas
