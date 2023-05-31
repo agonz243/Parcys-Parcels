@@ -119,7 +119,6 @@ public class dragNdrop2D : MonoBehaviour
 
             //collider reference for mouse overlap on specific layer
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition, -10, 10);
-            //Debug.Log("HOVERING OBJ");
             
             //if we are overlapping (aka clicked on) with something
             if (targetObject)
@@ -144,7 +143,6 @@ public class dragNdrop2D : MonoBehaviour
         {
             spriteRen.sortingOrder = 90;
 
-            //Debug.Log("OBJ HELD");
 
             selectedObject.transform.position = setZ(selectedObject.transform.position, 9);
             selectedObject.transform.position = mousePosition + offset; //doing the moving PLUS OFFSET
@@ -178,23 +176,24 @@ public class dragNdrop2D : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0) && selectedObject) //LMB raised while holding movable object, aka dropping it
         {
+            //checking cases for return to spawn (aka invalid drop)
+            
+            //AARON/GRAHAM WILL CHANGE--------------------------------
             PckgLap = selectedObject.GetComponent<Package>().overlap;
             Bounding = selectedObject.GetComponent<Package>().bounds;
+            //-------------------------------------------------------
+
+            //for playing audio on drop
             if (!dropSource.isPlaying){
                 dropSource.Play();
             }
-            //Debug.Log(PckgLap);
+
+            //Bounding conditionals
             if (PckgLap == true || Bounding == true)
             {
                 selectedObject.transform.position = setXY(selectedObject.transform.position, Random.Range(85, 117), Random.Range(-15, 72));
                 //selectedObject.GetComponent<Package>().overlap = false;
             }
-
-            //if (Bounding == true)
-            //{
-                //selectedObject.transform.position = setXY(selectedObject.transform.position, Random.Range(85, 117), Random.Range(-15, 72));
-                //selectedObject.GetComponent<Package>().overlap = false;
-            //}
 
             var currentPos = selectedObject.transform.position; //fetch the current objects position
             
