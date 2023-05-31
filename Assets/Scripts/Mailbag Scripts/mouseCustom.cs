@@ -14,17 +14,24 @@ public class mouseCustom : MonoBehaviour
     public Vector2 hotSpotCustom;
     private Vector2 hotSpotAuto;
     Vector2 hotSpot;
+    private static mouseCustom mouseSingleton = null;
 
 
     private void Start()
     {
-            hotSpotCustom = new Vector2(60.0f, 45.0f);
-            hotSpot = hotSpotCustom;
+        if (mouseSingleton == null) {
+            // Don't destroy paw script for whole game
+            mouseSingleton = this;
+            DontDestroyOnLoad(gameObject);  
+        } else {
+            Destroy(gameObject);
+        }
+        hotSpotCustom = new Vector2(60.0f, 45.0f);
+        hotSpot = hotSpotCustom;
         
         Cursor.SetCursor(paw, hotSpot, CursorMode.ForceSoftware);
 
-        // Don't destroy paw script for whole game
-        DontDestroyOnLoad(gameObject);
+
 
     }
 
