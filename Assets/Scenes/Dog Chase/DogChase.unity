@@ -8460,10 +8460,10 @@ MonoBehaviour:
   envelopesInInventory: 0
   envelopeIndicatorSprites:
   - {fileID: 21300000, guid: 4273572bfd1dea2479dee76716d2e5fe, type: 3}
-  - {fileID: 21300000, guid: a4b2fdf26e752ea4d906593dfeaa1010, type: 3}
-  - {fileID: 21300000, guid: f3bfcf21f884b4046a0b7155f1bdeb52, type: 3}
-  - {fileID: 21300000, guid: f51cd16bbe71a7d4db02694542528afc, type: 3}
-  - {fileID: 21300000, guid: f11ae51e439f2b641b62be20c70c6e3c, type: 3}
+  - {fileID: 21300000, guid: 68e9b386f86524a47ac35d16d6cdd7f3, type: 3}
+  - {fileID: 21300000, guid: 43aab2ead63a84d5d9b321b75cb0d7eb, type: 3}
+  - {fileID: 21300000, guid: 65b2dc02e89654f1ebf8e7edfbf796a4, type: 3}
+  - {fileID: 21300000, guid: d37ddf900cafb4604a5847887e5c2efc, type: 3}
   envelopeIndicator: {fileID: 2136393746}
   objective: {fileID: 126250815}
   objectiveEmpty: {fileID: 21300000, guid: 0366ca0d693164874a1a9dae61248b63, type: 3}
