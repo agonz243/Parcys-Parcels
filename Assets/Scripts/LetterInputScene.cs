@@ -8,6 +8,7 @@ public class LetterInputScene : MonoBehaviour
 {
     public static LetterInputScene letterInputScene;
     public TMP_InputField input;
+    public TextMeshProUGUI intro;
     public string letterSaved;
 
     public sceneChanger sceneChanger;
@@ -22,7 +23,7 @@ public class LetterInputScene : MonoBehaviour
     }
 
     public void saveLetter() {
-        letterSaved = input.text;
+        letterSaved = intro.text + input.text;
         // SceneManager.LoadScene("LetterOutput");
         sceneChanger.LoadNextScene();
         // SceneManager.LoadScene("DogInstructions");

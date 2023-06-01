@@ -451,8 +451,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -210.51, y: -97}
-  m_SizeDelta: {x: 578.42, y: 456.64}
+  m_AnchoredPosition: {x: -210.51, y: -117.12}
+  m_SizeDelta: {x: 578.42, y: 416.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &790262482
 MonoBehaviour:
@@ -1187,7 +1187,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Do you have anything you do to destress when things just feel too overwhelming?
+  m_text: 'Heya Parcy!
+
+
+    When things feel too overwhelming, I destress by...
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eb95a88fee60f4928bc7e2dfa6ea87ac, type: 2}
   m_sharedMaterial: {fileID: -3886183927755576177, guid: eb95a88fee60f4928bc7e2dfa6ea87ac, type: 2}
@@ -1365,7 +1370,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
@@ -1429,6 +1434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 790262482}
+  intro: {fileID: 1507816586}
   letterSaved: 
   sceneChanger: {fileID: 1832828078}
 --- !u!4 &1772508783
