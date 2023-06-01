@@ -31,8 +31,10 @@ public class Tile : MonoBehaviour
     void Update()
     {
         if (Countdown.counting){
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         } else {
+            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
     }
