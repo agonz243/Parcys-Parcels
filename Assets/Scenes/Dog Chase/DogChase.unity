@@ -2642,7 +2642,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.8, y: 1.17}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 1.8, y: 1.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -2696,7 +2696,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.8, y: 1.17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -12613,11 +12613,11 @@ MonoBehaviour:
   envelope: {fileID: 674083939}
   envelopes: []
   envelopeSprites:
-  - {fileID: 21300000, guid: 9e3104d693249e44198ed6031c1bda64, type: 3}
-  - {fileID: 21300000, guid: cf9557904043d7a4893bf53f3f59091e, type: 3}
+  - {fileID: 21300000, guid: 1891663b2a44c4cb2b366a354f99287b, type: 3}
+  - {fileID: 21300000, guid: 6d4ccc8f08f0e46efa85333a8f73ec2e, type: 3}
   - {fileID: 21300000, guid: 044683cd422ddda4cb864972334bc65a, type: 3}
   - {fileID: 21300000, guid: d26e3e6d167c93540a5d1904631117a5, type: 3}
-  - {fileID: 21300000, guid: e71aa9b99c6f3cd449038e8045437539, type: 3}
+  - {fileID: 21300000, guid: 147f0be219cedd545a9da7c79c5aefef, type: 3}
   - {fileID: 21300000, guid: 8b103db0ef352f14499475e89f989ee6, type: 3}
   - {fileID: 21300000, guid: c11534310e194a945844beb617503036, type: 3}
   - {fileID: 21300000, guid: 8abf7c327f426474a9ad54af8bb00739, type: 3}
