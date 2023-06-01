@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     // Countdown at the beginning of the scene
     public GameObject dogAI;
     public GameObject dummyDog;
+    public GameObject parcyArrow;
 
     private bool gameStart;
 
@@ -59,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
             if (!gameStart) {
                 dummyDog.SetActive(false);
                 dogAI.SetActive(true);
+                parcyArrow.SetActive(false);
                 barkSource.Play();
                 gameStart = true;
             }
