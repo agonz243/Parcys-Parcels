@@ -24,6 +24,7 @@ public class sprinklerGame : MonoBehaviour
     // How long, in seconds, player must idle before being reminded
     [SerializeField]private static float reminderInterval = 5f;
     private float reminderTimer = reminderInterval;
+    public GameObject reminderGFX;
  
 
     // Getting timer from sprinklerTimer.cs
@@ -214,6 +215,9 @@ public class sprinklerGame : MonoBehaviour
 
             if (reminderTimer <= 0) {
                 Debug.Log("REMIND REMIND REMIND");
+                reminderGFX.SetActive(true);
+            } else {
+                reminderGFX.SetActive(false);
             }
             
             textDisplay();
@@ -318,7 +322,7 @@ public class sprinklerGame : MonoBehaviour
         //     brella.SetActive(false); // disable the umbrella
         //     myPlayer.setHide(false);
         // }
-        if(Input.GetKeyUp(KeyCode.W)){
+        if(Input.GetKeyUp(KeyCode.W) && myPlayer.getHit() == false){
             animator.Play("Umbrella Down", 0, 0); // play animation once?
             myPlayer.setHide(false);
             brella.SetActive(false);
@@ -330,7 +334,7 @@ public class sprinklerGame : MonoBehaviour
         }
 
         // Hide Funcionality
-        if(myPlayer.getHide() == true ){ // && hideTimer >= 0
+        if(myPlayer.getHide() == true && myPlayer.getHit() == false){ // && hideTimer >= 0
             brella.transform.position = new Vector3(transform.position[0], transform.position[1], -1); // set umbrella position to player position
             //hideTimer -= Time.deltaTime;
         } else{
