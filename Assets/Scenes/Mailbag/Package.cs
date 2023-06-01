@@ -10,6 +10,7 @@ public class Package : MonoBehaviour
     public BoundsInt area;
     public bool overlap;
     public bool bounds;
+    public int packageOverlapCount;
 
     [SerializeField] private SpriteRenderer rend;
 
@@ -61,13 +62,15 @@ public class Package : MonoBehaviour
     {
         if (coll.collider.gameObject.tag == "Packages")
         {
-            overlap = true;
+            packageOverlapCount++;
         }
         //if statement for bounds collision
         if(coll.collider.gameObject.tag == "Bounds")
         {
             bounds = true;
         }
+
+        OverlapCheck();
     }
 
 
@@ -76,12 +79,23 @@ public class Package : MonoBehaviour
     {
         if (coll.collider.gameObject.tag == "Packages")
         {
-                overlap = false;
+            packageOverlapCount--;
         }
 
         if (coll.collider.gameObject.tag == "Bounds")
         {
             bounds = false;
+        }
+
+        OverlapCheck();
+    }
+
+    private void OverlapCheck() 
+    {
+        if (packageOverlapCount > 0) {
+            overlap = true;
+        } else {
+            overlap = false;
         }
     }
 
