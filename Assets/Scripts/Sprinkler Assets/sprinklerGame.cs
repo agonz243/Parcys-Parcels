@@ -214,7 +214,6 @@ public class sprinklerGame : MonoBehaviour
             }
 
             if (reminderTimer <= 0) {
-                Debug.Log("REMIND REMIND REMIND");
                 reminderGFX.SetActive(true);
             } else {
                 reminderGFX.SetActive(false);
