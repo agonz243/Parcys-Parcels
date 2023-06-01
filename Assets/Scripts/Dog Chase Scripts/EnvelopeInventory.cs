@@ -9,6 +9,10 @@ public class EnvelopeInventory : MonoBehaviour
     public Sprite[] envelopeIndicatorSprites;
     public GameObject envelopeIndicator;
     private SpriteRenderer indicatorSprite;
+    public SpriteRenderer objective;
+
+    public Sprite objectiveEmpty;
+    public Sprite objectiveFull;
 
     public GameObject mailboxArrow; // Arrow to highlight mailbox
     
@@ -17,6 +21,7 @@ public class EnvelopeInventory : MonoBehaviour
     {
         envelopesInInventory = 0;
         indicatorSprite = envelopeIndicator.GetComponent<SpriteRenderer>();
+        objective.sprite = objectiveEmpty;
     }
 
     // Update is called once per frame
@@ -27,7 +32,9 @@ public class EnvelopeInventory : MonoBehaviour
          if (envelopesInInventory == 4)
          {
             mailboxArrow.SetActive(true);
+            objective.sprite = objectiveFull;
          } else {
+            objective.sprite = objectiveEmpty;
             mailboxArrow.SetActive(false);
          }
     }
