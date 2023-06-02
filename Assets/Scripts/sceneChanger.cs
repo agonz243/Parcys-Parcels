@@ -137,7 +137,6 @@ public class sceneChanger : MonoBehaviour
         } else if (currentScene.name == "End2_3") {
             SceneManager.LoadScene("TitleScreen");
             Music.instance.GetComponent<AudioSource>().Pause();
-
         } else if (currentScene.name == "CreditScreen") {
             SceneManager.LoadScene("TitleScreen");
             // Music.instance.GetComponent<AudioSource>().Pause();
