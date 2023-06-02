@@ -143,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
             Destroy(collision.gameObject);
             EnvelopeInventory envI = this.GetComponent<EnvelopeInventory>();
             envI.envelopesInInventory ++;
+            envI.totalEnvelopes++;
             envelopesHeld++;
         } 
 

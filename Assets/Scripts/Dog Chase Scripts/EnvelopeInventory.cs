@@ -6,6 +6,7 @@ public class EnvelopeInventory : MonoBehaviour
 {   
     [HideInInspector]
     public int envelopesInInventory;
+    public int totalEnvelopes;
     public Sprite[] envelopeIndicatorSprites;
     public GameObject envelopeIndicator;
     private SpriteRenderer indicatorSprite;
@@ -20,6 +21,7 @@ public class EnvelopeInventory : MonoBehaviour
     void Start()
     {
         envelopesInInventory = 0;
+        totalEnvelopes = 0;
         indicatorSprite = envelopeIndicator.GetComponent<SpriteRenderer>();
         objective.sprite = objectiveEmpty;
     }
@@ -31,6 +33,9 @@ public class EnvelopeInventory : MonoBehaviour
 
          if (envelopesInInventory == 4)
          {
+            mailboxArrow.SetActive(true);
+            objective.sprite = objectiveFull;
+         } else if (totalEnvelopes == 10){
             mailboxArrow.SetActive(true);
             objective.sprite = objectiveFull;
          } else {
