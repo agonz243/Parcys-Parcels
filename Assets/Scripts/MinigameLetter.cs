@@ -27,13 +27,13 @@ public class MinigameLetter : MonoBehaviour
             if (scoreTracker.sprinklerWin) {
                 page1.text += "I took a different route than usual, and when I got to one of the houses I saw their sprinklers were still on! They had a sign showing I couldn’t step on the grass so I had to follow the stone path while dodging the water droplets!! Gonna start putting bobbin’ ‘n’ weavin’ on my resume, ‘cause those sprinklers ate my dust!";
             } else {
-                page1.text += "I took a different route than usual, and when I got to one of the houses I saw their sprinklers were still on! They had a sign showing I couldn’t step on the grass so I had to follow the stone path while dodging the water droplets!! Unfortunately, I ended up drenched and had to pause to wring my hat out, so I was late to my next stop. I’ll keep an emergency towel in my truck from now on!";
+                page1.text += "I took a different route than usual, and when I got to one of the houses I saw their sprinklers were still on! I had to follow a stone path while dodging the sprinkler beams!! Unfortunately, I was late to my next stop after wringing out my hat. I’ll keep an emergency towel in my truck from now on!";
             }
         } else if (scoreTracker.firstMinigame == "Mailbag") {
             if (scoreTracker.mailbagWin) {
-                page1.text += "I’m not used to so many packages being ordered to one house, but I really got to flex my stacking skills 8:D I got those packages nice and orderly without squashing a single corner! ";
+                page1.text += "I’m not used to so many packages being ordered to one house, but I really got to flex my stacking skills 8:D I got those packages nice and orderly without squashing a single corner! Time to transfer these skills to the Tetris leaderboard heheheh…";
             } else {
-                page1.text += "mailbag nay";
+                page1.text += "Maybe I should play some Tetris to unwind, ‘cause delivering for this one house was a bit of a nightmare 8:’< They had ordered a Lot of packages, and I was struggling to fit them all into the little mailbox. I got ‘em eventually, but it took a bit longer than I’d’ve liked!";
             }
         } else {
             page1.text += "somethings wrong - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in";
