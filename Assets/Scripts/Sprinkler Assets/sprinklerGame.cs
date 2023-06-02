@@ -25,6 +25,7 @@ public class sprinklerGame : MonoBehaviour
     [SerializeField]private static float reminderInterval = 5f;
     private float reminderTimer = reminderInterval;
     public GameObject reminderGFX;
+    public FollowParcy reminder;
  
 
     // Getting timer from sprinklerTimer.cs
@@ -189,6 +190,7 @@ public class sprinklerGame : MonoBehaviour
     void Awake()
     {
         SprinklerTimer = sTimer.GetComponent<sprinklerTimer>();
+        reminder = this.GetComponent<FollowParcy>();
     }
 
     // Start is called before the first frame update
@@ -214,6 +216,7 @@ public class sprinklerGame : MonoBehaviour
             }
 
             if (reminderTimer <= 0) {
+                reminder.MoveReminder();
                 reminderGFX.SetActive(true);
             } else {
                 reminderGFX.SetActive(false);
