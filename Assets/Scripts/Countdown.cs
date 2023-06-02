@@ -6,7 +6,11 @@ using TMPro;
 
 public class Countdown : MonoBehaviour
 {
-    public AudioSource squeakSource;
+    public AudioSource squeak1;
+    public AudioSource squeak2;
+    public AudioSource squeak3;
+    public AudioSource squeak4;
+
     // public AudioSource barkSource;
 
     // Countdown at the beginning of the scene
@@ -38,7 +42,19 @@ public class Countdown : MonoBehaviour
             transRec.GetComponent<SpriteRenderer>().color = new Color (0f, 0f, 0f, alpha);
 
             if (seconds != Mathf.FloorToInt(countdownTimeLeft % 60)){
-                squeakSource.Play();
+                if (seconds == 3){
+                    squeak3.Play();
+                    Debug.Log(seconds);
+                } else if (seconds == 2){
+                    squeak2.Play();
+                    Debug.Log(seconds);
+                } else if (seconds == 1){
+                    squeak1.Play();
+                    Debug.Log(seconds);
+                } else {
+                    squeak4.Play();
+                    Debug.Log(seconds);
+                }
             }
 
             seconds = Mathf.FloorToInt(countdownTimeLeft % 60);
