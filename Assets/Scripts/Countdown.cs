@@ -10,6 +10,7 @@ public class Countdown : MonoBehaviour
     public AudioSource squeak2;
     public AudioSource squeak3;
     public AudioSource squeak4;
+    public bool hasSqueaked;
 
     // public AudioSource barkSource;
 
@@ -30,6 +31,7 @@ public class Countdown : MonoBehaviour
     {
         beginGame = 0;
         counting = true;
+        hasSqueaked = false;
     }
 
     // Update is called once per frame
@@ -44,16 +46,13 @@ public class Countdown : MonoBehaviour
             if (seconds != Mathf.FloorToInt(countdownTimeLeft % 60)){
                 if (seconds == 3){
                     squeak3.Play();
-                    Debug.Log(seconds);
                 } else if (seconds == 2){
                     squeak2.Play();
-                    Debug.Log(seconds);
                 } else if (seconds == 1){
                     squeak1.Play();
-                    Debug.Log(seconds);
-                } else {
+                } else if (hasSqueaked == false  && seconds == 0){
                     squeak4.Play();
-                    Debug.Log(seconds);
+                    hasSqueaked = true;
                 }
             }
 
