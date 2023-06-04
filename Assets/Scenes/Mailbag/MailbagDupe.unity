@@ -629,7 +629,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7095ab66bcfe9264ebe8b565f5c411ba, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a4e4d00c895d840dca449ad14e990601, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.134
   m_Pitch: 1
@@ -3359,7 +3359,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e72669e82c440bd499c7fd7a14dd2393, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 814468db932d6314c91e99469e0a2bf2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
@@ -4171,6 +4171,7 @@ MonoBehaviour:
   squeak2: {fileID: 1896060653}
   squeak3: {fileID: 1351755355}
   squeak4: {fileID: 403297328}
+  hasSqueaked: 0
   countdownTimeLeft: 4
   beginGame: 0
   countdownTxt: {fileID: 421053480}
@@ -4546,7 +4547,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 13a92536d82ebf0499cdfe846d26ab84, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 34dcbf5e0fb224b07bc2b1ac3f41af2e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1

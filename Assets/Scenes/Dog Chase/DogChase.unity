@@ -7843,6 +7843,7 @@ MonoBehaviour:
   squeak2: {fileID: 1228505709}
   squeak3: {fileID: 1524537536}
   squeak4: {fileID: 1823742617}
+  hasSqueaked: 0
   countdownTimeLeft: 4
   beginGame: 0
   countdownTxt: {fileID: 1083241734}
@@ -9392,9 +9393,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4565e56d9f05d0a489f221817db41589, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 346aef09707b94fb9b01f76815f76fc8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.06
+  m_Volume: 0.297
   m_Pitch: 1
   Loop: 1
   Mute: 0
