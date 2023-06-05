@@ -315,7 +315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 53911474}
-  - component: {fileID: 53911473}
+  - component: {fileID: 53911475}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -323,20 +323,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &53911473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53911472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b37a36fd6df1c46338bb451ba2e9ae68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalTime: 40
-  timerText: {fileID: 1228668185}
 --- !u!4 &53911474
 Transform:
   m_ObjectHideFlags: 0
@@ -352,6 +338,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &53911475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53911472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f43031ee75fb747845d1937345d649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalTime: 41
+  timerText: {fileID: 1228668185}
 --- !u!1 &85102642
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,7 +3505,6 @@ GameObject:
   - component: {fileID: 1228668184}
   - component: {fileID: 1228668186}
   - component: {fileID: 1228668185}
-  - component: {fileID: 1228668187}
   m_Layer: 0
   m_Name: Timer Text
   m_TagString: Untagged
@@ -3630,20 +3629,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228668183}
   m_CullTransparentMesh: 1
---- !u!114 &1228668187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228668183}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b37a36fd6df1c46338bb451ba2e9ae68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalTime: 41
-  timerText: {fileID: 1228668185}
 --- !u!1 &1281310865
 GameObject:
   m_ObjectHideFlags: 0
