@@ -670,8 +670,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -198}
-  m_SizeDelta: {x: 234.15, y: 57.96}
+  m_AnchoredPosition: {x: 25, y: -195.16998}
+  m_SizeDelta: {x: 298.75, y: 55.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &392116793
 MonoBehaviour:
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLEASE FIT!
+  m_text: Parcel Pile Up
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d734a2ed32ec26e40a5fc7d00d0c5327, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e5bc251f2e1a93542aa5b6f37e1877b2, type: 2}

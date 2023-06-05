@@ -6499,7 +6499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NOT THE SPRINKLERS!
+  m_text: Sprinkler Sprint
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d734a2ed32ec26e40a5fc7d00d0c5327, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e5bc251f2e1a93542aa5b6f37e1877b2, type: 2}
