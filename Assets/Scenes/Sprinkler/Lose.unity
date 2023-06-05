@@ -238,7 +238,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneChanger: {fileID: 1936853678}
-  clip: {fileID: 0}
   clipToParcy: {fileID: 32900000, guid: 046e52cbc6004405a8d771d57e702a48, type: 3}
   clipToPlayer: {fileID: 32900000, guid: f4db100c9c8d2af4db8d07fddc91e438, type: 3}
 --- !u!328 &74689466
@@ -308,7 +307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &84921355
 MonoBehaviour:
   m_ObjectHideFlags: 0
