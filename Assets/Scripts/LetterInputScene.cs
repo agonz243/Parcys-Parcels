@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class LetterInputScene : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class LetterInputScene : MonoBehaviour
     public TMP_InputField input;
     public TextMeshProUGUI intro;
     public string letterSaved;
+    public VideoPlayer vidPlayer;
+    public PageSwitch pageTurn;
 
     public sceneChanger sceneChanger;
     
@@ -25,7 +28,9 @@ public class LetterInputScene : MonoBehaviour
     public void saveLetter() {
         letterSaved = intro.text + input.text;
         // SceneManager.LoadScene("LetterOutput");
-        sceneChanger.LoadNextScene();
+        // sceneChanger.LoadNextScene();
+        pageTurn.NextPage();
+        vidPlayer.GetComponent<VidLoader>().Next();
         // SceneManager.LoadScene("DogInstructions");
     }
 }
