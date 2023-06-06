@@ -204,6 +204,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneChanger: {fileID: 1541920206}
+  clipToParcy: {fileID: 0}
+  clipToPlayer: {fileID: 0}
 --- !u!1 &79267372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,7 +1509,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0a4105af771b2574099feca28024dc06, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad7d72822e8cb45b89d1e969ea296601, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
