@@ -117,6 +117,8 @@ public class sceneChanger : MonoBehaviour
             SceneManager.LoadScene(layouts[Random.Range(0,layouts.Length)]);
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "End2") {
+            SceneManager.LoadScene("CreditScroll");
+        } else if (currentScene.name == "CreditScroll"){
             SceneManager.LoadScene("TitleScreen");
             Music.instance.GetComponent<AudioSource>().Pause();
         } else if (currentScene.name == "CreditScreen") {

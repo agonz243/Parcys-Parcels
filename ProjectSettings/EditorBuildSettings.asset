@@ -65,4 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dog Chase/DogInstructions.unity
     guid: 2abc6dac34167445aa376219054be2e8
+  - enabled: 1
+    path: Assets/Scenes/CreditScroll.unity
+    guid: dff976df4c76d46258e00614a556850c
   m_configObjects: {}
