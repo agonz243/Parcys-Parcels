@@ -636,7 +636,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.239
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1104,7 +1104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneChanger: {fileID: 1923718343}
-  clip: {fileID: 0}
   clipToParcy: {fileID: 32900000, guid: 046e52cbc6004405a8d771d57e702a48, type: 3}
   clipToPlayer: {fileID: 32900000, guid: f4db100c9c8d2af4db8d07fddc91e438, type: 3}
 --- !u!328 &1135104637
