@@ -335,7 +335,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5b2d64eb8107d4827b477b3c293a7510, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.566
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1270,7 +1270,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: eda5b81a8e8fa4fb3890fb4c001bec83, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.369
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -23317,7 +23317,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a855ab3f6213e42f4bca87a9276ab415, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.071
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -23697,7 +23697,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 42d41d093e08842419aa00a4d22cccb7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.33
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -30764,7 +30764,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ea33c53839a18d94f8444b03dfb06262, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.369
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -40113,7 +40113,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5da6cefde39394528b1373d540e351c7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.423
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -41706,7 +41706,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b771401c06cb04d0eb93cdcf36fca1ac, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.328
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -53773,9 +53773,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f9c1c58bef382d541b3bb961a70384e4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d4253bcd8ed37d24a963e9ab2130a35e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.545
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -371,6 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413c84d9c7bf442ccbafd0223f3266fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wipeLength: 0.5
   wipeSpeed: 0.5
 --- !u!4 &199308036
 Transform:
@@ -398,7 +399,7 @@ GameObject:
   - component: {fileID: 334561087}
   - component: {fileID: 334561086}
   m_Layer: 0
-  m_Name: mailbag-lose-photo
+  m_Name: MailbagLosePhoto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -684,7 +685,7 @@ GameObject:
   - component: {fileID: 509321593}
   - component: {fileID: 509321592}
   m_Layer: 0
-  m_Name: tape
+  m_Name: TapeBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,7 +939,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a37927b7b5cd31f47a71055f0f33b0a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1080,6 +1081,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1591384319}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &950873115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,7 +1142,7 @@ GameObject:
   - component: {fileID: 953438527}
   - component: {fileID: 953438526}
   m_Layer: 0
-  m_Name: cheeseCorkBoard
+  m_Name: CheeseBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1213,7 +1226,7 @@ GameObject:
   - component: {fileID: 1013976439}
   - component: {fileID: 1013976438}
   m_Layer: 0
-  m_Name: tape (1)
+  m_Name: TapeTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1317,7 +1330,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneChanger: {fileID: 714007987}
-  clip: {fileID: 0}
   clipToParcy: {fileID: 32900000, guid: 046e52cbc6004405a8d771d57e702a48, type: 3}
   clipToPlayer: {fileID: 32900000, guid: f4db100c9c8d2af4db8d07fddc91e438, type: 3}
 --- !u!328 &1247713981
@@ -1399,7 +1411,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2b2a4df918127744ca5808808a222d7a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.297
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1525,9 +1537,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a37927b7b5cd31f47a71055f0f33b0a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0

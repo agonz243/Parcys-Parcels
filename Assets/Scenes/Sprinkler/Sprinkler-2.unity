@@ -10785,7 +10785,7 @@ GameObject:
   - component: {fileID: 155993241}
   - component: {fileID: 155993240}
   m_Layer: 0
-  m_Name: yard
+  m_Name: YardBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28073,7 +28073,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a855ab3f6213e42f4bca87a9276ab415, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.071
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -28168,7 +28168,7 @@ GameObject:
   - component: {fileID: 494066824}
   - component: {fileID: 494066823}
   m_Layer: 0
-  m_Name: Square
+  m_Name: DimRec
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28789,7 +28789,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 42d41d093e08842419aa00a4d22cccb7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.33
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -40401,7 +40401,7 @@ GameObject:
   - component: {fileID: 826109022}
   - component: {fileID: 826109021}
   m_Layer: 0
-  m_Name: no-sign
+  m_Name: NoGrassSign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42194,7 +42194,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5b2d64eb8107d4827b477b3c293a7510, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.566
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -47651,7 +47651,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: eda5b81a8e8fa4fb3890fb4c001bec83, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.369
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -47899,7 +47899,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ea33c53839a18d94f8444b03dfb06262, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.369
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -61271,7 +61271,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: af49c8dbcb2c3499a927021004455758, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.071
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -67675,7 +67675,7 @@ GameObject:
   - component: {fileID: 1939538144}
   - component: {fileID: 1939538143}
   m_Layer: 0
-  m_Name: cursorDisabler
+  m_Name: CursorDisabler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67719,7 +67719,7 @@ GameObject:
   - component: {fileID: 1940083961}
   - component: {fileID: 1940083960}
   m_Layer: 0
-  m_Name: flamingo
+  m_Name: Flamingo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68069,7 +68069,7 @@ GameObject:
   - component: {fileID: 1994444820}
   - component: {fileID: 1994444819}
   m_Layer: 0
-  m_Name: brella-sign2
+  m_Name: UmbrellaSign2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68270,7 +68270,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5da6cefde39394528b1373d540e351c7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.423
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -68480,10 +68480,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f9c1c58bef382d541b3bb961a70384e4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d4253bcd8ed37d24a963e9ab2130a35e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.545
-  m_Pitch: 1
+  m_Volume: 1
+  m_Pitch: 0.8
   Loop: 0
   Mute: 0
   Spatialize: 0

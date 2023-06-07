@@ -648,7 +648,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a37927b7b5cd31f47a71055f0f33b0a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -790,6 +790,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 607926237}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &349594552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5682,7 +5694,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 04a35e3d761ff1d4d97ef7aa586c74f2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5779,7 +5791,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &494102085
 GameObject:
@@ -5794,7 +5806,7 @@ GameObject:
   - component: {fileID: 494102088}
   - component: {fileID: 494102089}
   m_Layer: 0
-  m_Name: parcyUp1
+  m_Name: ParcyUp1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6006,7 +6018,7 @@ RectTransform:
   - {fileID: 349594549}
   - {fileID: 1109068665}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0.375, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6317,9 +6329,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a37927b7b5cd31f47a71055f0f33b0a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6416,7 +6428,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &627109977
 GameObject:
@@ -6430,7 +6442,7 @@ GameObject:
   - component: {fileID: 627109978}
   - component: {fileID: 627109980}
   m_Layer: 0
-  m_Name: cheeseUmbrella
+  m_Name: CheeseUmbrella
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6605,7 +6617,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &878012499
 GameObject:
@@ -6786,7 +6798,7 @@ GameObject:
   - component: {fileID: 1025767000}
   - component: {fileID: 1025766999}
   m_Layer: 0
-  m_Name: messageScratchy
+  m_Name: MessageScratchyTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6857,7 +6869,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.177}
 --- !u!1 &1039662699
 GameObject:
@@ -6870,7 +6882,7 @@ GameObject:
   - component: {fileID: 1039662701}
   - component: {fileID: 1039662700}
   m_Layer: 0
-  m_Name: sprinklerMailbox
+  m_Name: SprinklerMailbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6954,7 +6966,7 @@ GameObject:
   - component: {fileID: 1071534306}
   - component: {fileID: 1071534305}
   m_Layer: 0
-  m_Name: arrow
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7025,7 +7037,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1109068664
 GameObject:
@@ -7195,7 +7207,7 @@ Transform:
   - {fileID: 1301201199}
   - {fileID: 1444958368}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1124921703
 GameObject:
@@ -7208,7 +7220,7 @@ GameObject:
   - component: {fileID: 1124921705}
   - component: {fileID: 1124921704}
   m_Layer: 0
-  m_Name: phone
+  m_Name: PhoneBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7279,7 +7291,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1162126521
 GameObject:
@@ -7292,7 +7304,7 @@ GameObject:
   - component: {fileID: 1162126523}
   - component: {fileID: 1162126522}
   m_Layer: 0
-  m_Name: w
+  m_Name: W
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12602,7 +12614,7 @@ GameObject:
   - component: {fileID: 2003166568}
   - component: {fileID: 2003166567}
   m_Layer: 0
-  m_Name: messageScratchy (1)
+  m_Name: MessageScratchyBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12673,7 +12685,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.177}
 --- !u!1 &2034517327
 GameObject:
@@ -12884,7 +12896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2066961614}
   m_Layer: 0
-  m_Name: path
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12909,7 +12921,7 @@ Transform:
   - {fileID: 1233497731}
   - {fileID: 2042254966}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2070070674
 GameObject:
@@ -13009,7 +13021,7 @@ Transform:
   m_Children:
   - {fileID: 7044082983553832546}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &919132149198910263
 GameObject:
@@ -13021,7 +13033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450653655312781}
   m_Layer: 0
-  m_Name: sprinkfler_twoOfThem002
+  m_Name: Sprinkler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

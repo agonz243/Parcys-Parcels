@@ -374,6 +374,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 2103853400}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &23915801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,7 +689,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f3237243c18064940bbb3b7c422ce3ed, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.311
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1369,7 +1381,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneChanger: {fileID: 5612816}
-  clip: {fileID: 0}
   clipToParcy: {fileID: 32900000, guid: 046e52cbc6004405a8d771d57e702a48, type: 3}
   clipToPlayer: {fileID: 32900000, guid: f4db100c9c8d2af4db8d07fddc91e438, type: 3}
 --- !u!328 &784855173
@@ -1551,6 +1562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413c84d9c7bf442ccbafd0223f3266fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wipeLength: 0.5
   wipeSpeed: 0.5
 --- !u!4 &1526027261
 Transform:
@@ -1596,7 +1608,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0

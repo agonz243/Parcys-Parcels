@@ -26,7 +26,7 @@ public class sceneChanger : MonoBehaviour
     void Update(){
         if (startTimer == true){
             timer += Time.deltaTime;
-            if (timer > 1f){
+            if (timer > 0.5f){
                 LoadNextScene();
                 timer = 0;
             }
@@ -61,8 +61,9 @@ public class sceneChanger : MonoBehaviour
         if (currentScene.name == "TitleScreen") {
             scoreTracker.reset();
             canPause = true;
-            SceneManager.LoadScene("Beginning");
             Music.instance.GetComponent<AudioSource>().Play();
+            SceneManager.LoadScene("Beginning");
+            // Music.instance.GetComponent<AudioSource>().Play();
         } else if (currentScene.name == "Beginning") {
             // picks random minigame and removes it from array
             MinigameRandomizer.minigameRandomizer.randomizeMinigame();

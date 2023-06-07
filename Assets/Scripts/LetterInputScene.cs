@@ -51,19 +51,15 @@ public class LetterInputScene : MonoBehaviour
                 scribble.Play();
                 scribblePlayed = true;
                 typing = true;
-                Debug.Log("scribble");
             } else if (!scribble.isPlaying){
                 scribble.Play();
                 typing = true;
-                Debug.Log("unpause scribble");
-                
             }
         } else {
             if(pauseDelay <= 0) {
                 pauseDelay = 1;
                 typing = false;
                 scribble.Pause();
-                // Debug.Log("nothing");
             }
     
         }

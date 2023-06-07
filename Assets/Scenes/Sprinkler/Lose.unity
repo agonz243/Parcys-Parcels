@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 49595375}
   - component: {fileID: 49595374}
   m_Layer: 0
-  m_Name: sprinkler-lose-photo
+  m_Name: SprinklerLosePhoto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413c84d9c7bf442ccbafd0223f3266fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wipeLength: 0.5
   wipeSpeed: 0.5
 --- !u!4 &84921357
 Transform:
@@ -401,7 +402,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a37927b7b5cd31f47a71055f0f33b0a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -543,6 +544,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 783951853}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &298721455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,7 +605,7 @@ GameObject:
   - component: {fileID: 345746852}
   - component: {fileID: 345746851}
   m_Layer: 0
-  m_Name: tape
+  m_Name: TapeBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -676,7 +689,7 @@ GameObject:
   - component: {fileID: 433890386}
   - component: {fileID: 433890385}
   m_Layer: 0
-  m_Name: cheeseCorkBoard
+  m_Name: CheeseBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1079,9 +1092,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a37927b7b5cd31f47a71055f0f33b0a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1191,7 +1204,7 @@ GameObject:
   - component: {fileID: 1168672666}
   - component: {fileID: 1168672665}
   m_Layer: 0
-  m_Name: mouseEnabler
+  m_Name: MouseEnabler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1353,7 +1366,7 @@ GameObject:
   - component: {fileID: 1276099491}
   - component: {fileID: 1276099490}
   m_Layer: 0
-  m_Name: tape (1)
+  m_Name: TapeTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

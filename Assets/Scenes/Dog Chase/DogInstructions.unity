@@ -152,7 +152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 04a35e3d761ff1d4d97ef7aa586c74f2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 538742007}
   - component: {fileID: 538742006}
   m_Layer: 0
-  m_Name: stampyBox_openEmpty
+  m_Name: Mailbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -738,7 +738,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a37927b7b5cd31f47a71055f0f33b0a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -873,7 +873,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: a37927b7b5cd31f47a71055f0f33b0a2, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1042,7 +1042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &745299929
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1876,7 +1876,7 @@ GameObject:
   - component: {fileID: 1171310958}
   - component: {fileID: 1171310957}
   m_Layer: 0
-  m_Name: phone (1)
+  m_Name: PhoneBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2183,7 +2183,7 @@ GameObject:
   - component: {fileID: 1322761241}
   - component: {fileID: 1322761240}
   m_Layer: 0
-  m_Name: messageScratchy
+  m_Name: MessageScratchy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2486,7 +2486,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a37927b7b5cd31f47a71055f0f33b0a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0508984464eebcc49a0ca0cd470a2c7d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -2600,7 +2600,7 @@ GameObject:
   - component: {fileID: 1930600512}
   - component: {fileID: 1930600511}
   m_Layer: 0
-  m_Name: parcyDown1
+  m_Name: ParcyDown1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
