@@ -7,7 +7,10 @@ public class screenWipe : MonoBehaviour
 {
     [SerializeField]
     [Range(0f, 1f)]
-    private float wipeSpeed = 0.5f;
+    private float wipeLength = 0.5f;
+
+    [SerializeField]
+    private float wipeSpeed = 3f;
 
     private GameObject image;
 
@@ -18,6 +21,8 @@ public class screenWipe : MonoBehaviour
     private bool sceneChanged;
 
     private float wipeProgress;
+
+    private bool debugmoveflag;
 
      private void Awake()
     {
@@ -39,12 +44,18 @@ public class screenWipe : MonoBehaviour
 
     public void ToggleWipe() {
         isDone = false;
+        //debugmoveflag = true;
     }
 
     private void WipeScreen()
     {
-        wipeProgress += Time.deltaTime * (1f / wipeSpeed);
-        image.transform.position += new Vector3(0.3f, 0, 0);
+        wipeProgress += Time.deltaTime * (1f / wipeLength);
+        // if (debugmoveflag == true){
+        //     image.transform.position += new Vector3(3f, 0, 0);
+        // }
+
+        image.transform.position += new Vector3(wipeSpeed, 0, 0);
+        
         if (wipeProgress >= 6f)
         {
             isDone = true;
@@ -52,6 +63,7 @@ public class screenWipe : MonoBehaviour
             Destroy(this.gameObject);
         } else if (wipeProgress >= 3f && !sceneChanged)
         {
+            //debugmoveflag = false;
             this.GetComponent<sceneChanger>().LoadNextScene();
             sceneChanged = true;
         }
