@@ -31,6 +31,12 @@ public class sceneChanger : MonoBehaviour
                 timer = 0;
             }
         }
+
+        // Press ] and \ to go to credits scroll scene
+        if (Input.GetKeyDown(KeyCode.RightBracket) && Input.GetKeyDown(KeyCode.Backslash)){
+            SceneManager.LoadScene("CreditScroll");
+            Music.instance.GetComponent<AudioSource>().Play();
+        }
     }
 
     // Function to start timer
@@ -128,5 +134,9 @@ public class sceneChanger : MonoBehaviour
         } else { 
             Debug.Log("Loading nothing :(");
         }
+    }
+
+    public void playLetterLoop(){
+        Music.instance.GetComponent<AudioSource>().Play();
     }
 }
