@@ -35,7 +35,7 @@ public class dragNdrop2D : MonoBehaviour
     public AudioSource clickSource;
     public AudioSource dropSource;
 
-
+    private Scene currentScene;
 
 
     //ROTATE FUNCTION Using game time and Slerp NEEDS TWEAKING FOR FIX
@@ -103,6 +103,7 @@ public class dragNdrop2D : MonoBehaviour
     void Start() //initialize the board COME BACK FOR SHADOWING
     {
         gridCoords = GameObject.Find("gridManager").GetComponent<gridManager>();
+        currentScene = SceneManager.GetActiveScene();
     }
 
 
@@ -164,13 +165,25 @@ public class dragNdrop2D : MonoBehaviour
             // if (Input.GetMouseButtonDown(1) && isRotating == false) 
             if (Input.GetMouseButtonDown(1)) 
             {
-                //cover cases where box is currently rotating, call if not
-                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 45, 1.0f));
-                isRotating = true;
+                if(currentScene.name == "MailbagDupe") {
+                    //cover cases where box is currently rotating, call if not
+                    StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 1.0f));
+                    isRotating = true;
+                } else {
+                    //cover cases where box is currently rotating, call if not
+                    StartCoroutine(RotateMe(selectedObject, Vector3.forward * 45, 1.0f));
+                    isRotating = true;
+                }
             } else if (Input.GetKeyDown("space")){
-                //cover cases where box is currently rotating, call if not
-                StartCoroutine(RotateMe(selectedObject, Vector3.forward * 45, 1.0f));
-                isRotating = true;
+                if(currentScene.name == "MailbagDupe") {
+                    //cover cases where box is currently rotating, call if not
+                    StartCoroutine(RotateMe(selectedObject, Vector3.forward * 90, 1.0f));
+                    isRotating = true;
+                } else {
+                    //cover cases where box is currently rotating, call if not
+                    StartCoroutine(RotateMe(selectedObject, Vector3.forward * 45, 1.0f));
+                    isRotating = true;
+                }
             }
 
         }
