@@ -323,7 +323,6 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
-  currentAudio: {fileID: 0}
 --- !u!114 &84921356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,6 +871,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1422108786}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &520124604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1368,7 +1379,6 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
-  currentAudio: {fileID: 0}
 --- !u!1 &1276099489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,7 +1691,6 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
-  currentAudio: {fileID: 0}
 --- !u!4 &1936853679
 Transform:
   m_ObjectHideFlags: 0

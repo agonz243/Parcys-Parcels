@@ -116,7 +116,6 @@ public class dragNdrop2D : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) //if LMB pressed
         {
             //mouse position finding bounds
-            //Debug.Log(mousePosition);
 
             //collider reference for mouse overlap on specific layer
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition, -10, 10);
@@ -134,8 +133,6 @@ public class dragNdrop2D : MonoBehaviour
                 selectedObject = targetObject.transform.gameObject;
                 spriteRen = targetObject.GetComponent<SpriteRenderer>();
                 collidah = targetObject.GetComponent<Collider2D>();
-                //PckgLap = targetObject.GetComponent<Package>().overlap;
-                //Debug.Log(PckgLap);
                 offset = selectedObject.transform.position - mousePosition;
             }
         }
@@ -148,21 +145,7 @@ public class dragNdrop2D : MonoBehaviour
             selectedObject.transform.position = setZ(selectedObject.transform.position, 9);
             selectedObject.transform.position = mousePosition + offset; //doing the moving PLUS OFFSET
 
-            //make sure to adjust the rotation call
-            // if ((Mathf.Ceil(selectedObject.transform.eulerAngles.z) % 90 == 0 || Mathf.Ceil(selectedObject.transform.eulerAngles.z)  == 0))
-            // {
-            //     isRotating = false;
 
-            //     //Debug.Log(selectedObject.transform.eulerAngles.z);
-            // }
-            // else
-            // {
-            //     isRotating = true;
-            //     Debug.Log(selectedObject.transform.eulerAngles.z);
-            // }
-
-            //if RMB pressed
-            // if (Input.GetMouseButtonDown(1) && isRotating == false) 
             if (Input.GetMouseButtonDown(1)) 
             {
                 if(currentScene.name == "MailbagDupe") {
@@ -205,7 +188,6 @@ public class dragNdrop2D : MonoBehaviour
             if (PckgLap == true || Bounding == true)
             {
                 selectedObject.transform.position = setXY(selectedObject.transform.position, Random.Range(85, 117), Random.Range(-15, 72));
-                //selectedObject.GetComponent<Package>().overlap = false;
             }
 
             var currentPos = selectedObject.transform.position; //fetch the current objects position
@@ -236,7 +218,6 @@ public class dragNdrop2D : MonoBehaviour
 
             //reset 2d collider too
             collidah = null;
-            Debug.Log("OBJ NULL");
         }
     }
 

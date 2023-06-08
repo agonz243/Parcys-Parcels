@@ -155,7 +155,6 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
-  currentAudio: {fileID: 0}
 --- !u!4 &5612817
 Transform:
   m_ObjectHideFlags: 0
@@ -390,6 +389,18 @@ MonoBehaviour:
       - m_Target: {fileID: 499906274}
         m_TargetAssemblyTypeName: sceneChanger, Assembly-CSharp
         m_MethodName: playLetterLoop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 311837050}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1223,7 +1234,6 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
-  currentAudio: {fileID: 0}
 --- !u!114 &499906275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1564,7 +1574,6 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
-  currentAudio: {fileID: 0}
 --- !u!114 &1526027260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1714,8 +1723,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103853399}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.59986806, y: -0.18459135, z: -9.94682}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.59986806, y: -0.18459135, z: -9.946823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
