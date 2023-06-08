@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f43031ee75fb747845d1937345d649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 41
+  totalTime: 46
   timerText: {fileID: 1228668185}
 --- !u!1 &85102642
 GameObject:
@@ -3552,7 +3552,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 40
+  m_text: 45
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d734a2ed32ec26e40a5fc7d00d0c5327, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: fcc2da4296ce1174e9c5b154be49884b, type: 2}
