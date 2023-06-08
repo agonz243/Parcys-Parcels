@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 810.4001, y: -378.30682}
-  m_SizeDelta: {x: 299.14, y: 260.7}
+  m_AnchoredPosition: {x: 801, y: -379}
+  m_SizeDelta: {x: 249.3, y: 174.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &147052269
 AudioSource:
@@ -352,14 +352,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.86666673, g: 0.77647066, b: 0.4666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 80b40422137784ff19b28a65f0db6a27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1410d567968c040cb8feb75f2b30ad90, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1341,6 +1341,7 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
+  currentAudio: {fileID: 0}
 --- !u!1 &1428411183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,8 +1718,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 831, y: -389.9168}
-  m_SizeDelta: {x: 299.17, y: 260.7}
+  m_AnchoredPosition: {x: 801, y: -379}
+  m_SizeDelta: {x: 249.3, y: 174.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1673932652
 AudioSource:
@@ -1909,14 +1910,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.86666673, g: 0.77647066, b: 0.4666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 80b40422137784ff19b28a65f0db6a27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1410d567968c040cb8feb75f2b30ad90, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2142,6 +2143,7 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
+  currentAudio: {fileID: 0}
 --- !u!4 &2061747691
 Transform:
   m_ObjectHideFlags: 0

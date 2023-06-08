@@ -155,6 +155,7 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
+  currentAudio: {fileID: 0}
 --- !u!4 &5612817
 Transform:
   m_ObjectHideFlags: 0
@@ -207,8 +208,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 811, y: 131}
-  m_SizeDelta: {x: 299.17, y: 260.7}
+  m_AnchoredPosition: {x: 798, y: 111}
+  m_SizeDelta: {x: 249.3, y: 174.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &23915799
 AudioSource:
@@ -386,6 +387,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 499906274}
+        m_TargetAssemblyTypeName: sceneChanger, Assembly-CSharp
+        m_MethodName: playLetterLoop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &23915801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,14 +412,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9568628, g: 0.9294118, b: 0.8196079, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 80b40422137784ff19b28a65f0db6a27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e12629293ecd41a4b841f5e930f8fc9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1210,6 +1223,7 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
+  currentAudio: {fileID: 0}
 --- !u!114 &499906275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1550,6 +1564,7 @@ MonoBehaviour:
   delay: 0
   timer: 0
   startTimer: 0
+  currentAudio: {fileID: 0}
 --- !u!114 &1526027260
 MonoBehaviour:
   m_ObjectHideFlags: 0

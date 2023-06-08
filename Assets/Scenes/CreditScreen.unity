@@ -814,6 +814,7 @@ MonoBehaviour:
   delay: 3
   timer: 0
   startTimer: 0
+  currentAudio: {fileID: 0}
 --- !u!1 &562559252
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,8 +937,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 616, y: 181}
-  m_SizeDelta: {x: 213.8, y: 72.48}
+  m_AnchoredPosition: {x: 729, y: 118}
+  m_SizeDelta: {x: 116.79, y: 60.118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &636826860
 AudioSource:
@@ -1123,7 +1124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 80b40422137784ff19b28a65f0db6a27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6aa13961eeb7e49d6b98db8a52e98a24, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1941,8 +1942,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85, y: -486}
-  m_SizeDelta: {x: 302.72, y: 291.82}
+  m_AnchoredPosition: {x: 0, y: -486.35}
+  m_SizeDelta: {x: 255.67, y: 291.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1765648366
 MonoBehaviour:
@@ -1964,7 +1965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ALL ORIGINAL MUSIC AND SOUNDS
+  m_text: ALL ORIGINAL ART, MUSIC, & SOUNDS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af57852af2c54104dacfc400cf996045, type: 2}
   m_sharedMaterial: {fileID: -7128275259767563507, guid: af57852af2c54104dacfc400cf996045, type: 2}
@@ -1998,7 +1999,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2027,7 +2028,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -141.36398, w: -0.96910477}
+  m_margin: {x: 0, y: 0, z: -0.2740327, w: -0.96910477}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2160,7 +2161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -0.392, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14, y: 1.0000076}
+  m_AnchoredPosition: {x: -7.6000023, y: 0.0000019073486}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1967718316

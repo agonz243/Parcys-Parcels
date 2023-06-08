@@ -16,10 +16,19 @@ public class sceneChanger : MonoBehaviour
     public bool startTimer = false;
     public static bool canPause = false;
 
+    public GameObject currentAudio;
+    private AudioSource currentMusic;
+
     
     // Set current scene variable
     private void Start() {
     	currentScene = SceneManager.GetActiveScene();
+        // if (currentMusic )
+        // currentMusic = null;
+        Debug.Log("current audio " + currentAudio);
+        if (currentAudio) {
+            currentMusic = currentAudio.GetComponent<AudioSource>();
+        }
     }
 
     // Wait for timer before loading next scene
@@ -137,6 +146,11 @@ public class sceneChanger : MonoBehaviour
     }
 
     public void playLetterLoop(){
+        Debug.Log(currentMusic);
+        if (currentMusic) {
+            Debug.Log("hello");
+            currentMusic.Pause();
+        }
         Music.instance.GetComponent<AudioSource>().Play();
     }
 }
